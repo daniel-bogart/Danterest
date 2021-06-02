@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Root from './root';
+import Root from './components/root';
 // import configureStore from './store/store';
 
 /*
@@ -11,6 +11,7 @@ prop passed in, inside the div with id 'root'.
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   // const store = configureStore();
+
 
   ReactDOM.render(<Root />, root);
 })

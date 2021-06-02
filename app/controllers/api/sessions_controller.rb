@@ -1,7 +1,12 @@
 class Api::SessionsController < ApplicationController
+
+  skip_before_action :verify_authenticity_token
+
   def create
-    # Find user by credentials
-    @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+    @user = User.find_by_credentials(
+      params[:user][:username], 
+      params[:user][:password]
+      )
     if @user.nil?
       render json: ['Incorrect username or password'], status: 401
     else
