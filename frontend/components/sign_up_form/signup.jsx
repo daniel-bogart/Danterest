@@ -7,6 +7,7 @@ class Signup extends React.Component {
             username: '',
             email: '',
             password: '',
+            age: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +22,7 @@ class Signup extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createNewUser(this.state)
-        .then( () => this.props.history.push('/chirps'));
+        .then( () => this.props.history.push('/UserProfile'));
     }
 
     render () {
@@ -48,6 +49,13 @@ class Signup extends React.Component {
                         type="text"
                         value={this.state.password}
                         onChange={this.handleInput('password')}
+                        />
+                    </label>
+                    <label>Age:
+                        <input
+                        type="number"
+                        value={this.state.age}
+                        onChange={this.handleInput('age')}
                         />
                     </label>
                     <button onClick={this.handleSubmit}>Sign Up</button>
