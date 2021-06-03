@@ -21,6 +21,15 @@ class Signup extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.sliceEmail(e);
+        if username length greater than 0 then call lines 33/43 | call in componentdidupdate || settimeout method on lines 33/34 new method
+    }
+    
+    sliceEmail() {
+        const email = this.state.email;
+        const emailArray = email.split('@');
+        const username = emailArray[0];
+        this.setState({ username: username});
         this.props.createNewUser(this.state)
         .then( () => this.props.history.push('/UserProfile'));
     }
@@ -30,13 +39,6 @@ class Signup extends React.Component {
             <div className="session-form">
                 <h2>Sign Up!</h2>
                 <form>
-                    <label>Username:
-                        <input
-                        type="text"
-                        value={this.state.username}
-                        onChange={this.handleInput('username')}
-                        />
-                    </label>
                     <label>Email:
                         <input
                         type="text"
