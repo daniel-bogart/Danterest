@@ -4,13 +4,20 @@ class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
+            username: null,
             email: '',
             password: '',
             age: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidUpdate() {
+        if (this.state.username) {
+            this.props.createNewUser(this.state)
+                .then( () => this.props.history.push('/UserProfile'));
+        }
     }
 
     handleInput(type) {
@@ -21,17 +28,11 @@ class Signup extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.sliceEmail(e);
-        if username length greater than 0 then call lines 33/43 | call in componentdidupdate || settimeout method on lines 33/34 new method
-    }
-    
-    sliceEmail() {
         const email = this.state.email;
         const emailArray = email.split('@');
         const username = emailArray[0];
         this.setState({ username: username});
-        this.props.createNewUser(this.state)
-        .then( () => this.props.history.push('/UserProfile'));
+        // if username length greater than 0 then call lines 33/43 | call in componentdidupdate || settimeout method on lines 33/34 new method
     }
 
     render () {
