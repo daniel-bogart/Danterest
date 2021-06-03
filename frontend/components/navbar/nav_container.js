@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Nav from './navbar';
 
 const mapStateToProps = state => ({
-  currentUser: state.entities.users[state.session.id]
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

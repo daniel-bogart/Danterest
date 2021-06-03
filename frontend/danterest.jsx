@@ -10,10 +10,20 @@ prop passed in, inside the div with id 'root'.
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
 
+  let preloadedState = undefined;
+  
+  if (window.currentUser) {
+    preloadedState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      },
+      session: { id: window.currentUser.id }
+    };
+  } 
+  let store = configureStore(preloadedState);
+  
   window.store = store;
-
 
   ReactDOM.render(<Root store={store}/>, root);
 })
