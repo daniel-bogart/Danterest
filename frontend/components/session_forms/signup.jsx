@@ -32,7 +32,6 @@ class Signup extends React.Component {
         const emailArray = email.split('@');
         const username = emailArray[0];
         this.setState({ username: username});
-        // if username length greater than 0 then call lines 33/43 | call in componentdidupdate || settimeout method on lines 33/34 new method
     }
 
     render () {
