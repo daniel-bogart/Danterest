@@ -11,11 +11,10 @@ class NavBar extends React.Component {
       username: null
     }
 
-    // this.isCurrentUser = this.isCurrentUser.bind(this);
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.currentUser !== prevProps.currentUser) {
+    if (this.props.currentUser !== prevProps.currentUser && this.props.currentUser) {
       // this.fetchData(this.props.currentUser);
       this.setState({ username: this.props.currentUser.username})
     }
@@ -23,32 +22,46 @@ class NavBar extends React.Component {
 
   
 
-  // const login_button = () => (
-  //   <nav className="login">
-  //     <button className="login-button" onClick={() =>}
-  //   </nav>
-  // )
-  // isCurrentUser() {
-  //   if (this.props.currentUser) {
-  //     debugger
-  //     return <h3>{this.props.currentUser.username}</h3>
-  //   }
-  // }
 
   render() {
 
+    const displayLogo = this.props.currentUser ? (
+      <div className="home-links-loggedin">
+        <Link to="/" className="home-logo2">
+          <img src={window.dLogo} />
+        </Link>
+        <Link to="/" className="home-link">
+          <p>Home</p>
+        </Link>
+      </div>
+    ) : (
+      <Link to="/" className="home-logo1">
+        <img src={window.danterestLogo} />
+      </Link>
+    );
+
+    const display = this.props.currentUser ? (
+      <div>
+        <h3>Hello, {this.props.currentUser.username}</h3>
+        <button className="nav-logout" onClick={this.props.logout}>Logout</button>
+      </div>
+    ) : (
+      <div className="login-signup">
+      {/* <button className="login">Login</button> */}
+      <Link className="login" to="/login" >Login</Link>
+      {/* <button className="signup">Sign Up</button> */}
+      <Link className="sign-up" to="/signup" >Sign Up</Link>
+      </div>
+    );
+
     return (
       <nav className="navbar">
-        <Link to="/" className="home-link">
-          <span className="dan-logo">Danterest</span>
-        </Link>
-        <button className="login">Login</button>
-        <button className="signup">Sign Up</button>
-        <h3>{this.state.username}</h3>
+        {displayLogo}
+        {display}
       </nav>
     )
-  }
-}
+  };
+};
 
 
 

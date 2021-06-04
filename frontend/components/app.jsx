@@ -12,7 +12,10 @@ const App = () => (
     </header>
     <AuthRoute path="/signup" component={SignupContainer}/>
     <AuthRoute path="/login" component={LoginContainer}/>
+    {/* <AuthRoute path="/UserProfile" component={LoginContainer}/>  */}
   </div>
 );
 
 export default App;
+
+// TODO: Fix UserProfile - replace LoginContainer with user profile container

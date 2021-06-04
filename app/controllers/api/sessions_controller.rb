@@ -16,9 +16,10 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    if @current_user
+    @user = current_user
+    if @user
     logout!
-    render json: { message: 'Logout successful!' }
+    render "api/users/show"
     else
       render json: @user.errors.full_messages, status: 404
     end

@@ -1,0 +1,53 @@
+.home-logo1 img{
+  width: 150px;
+  height: auto;
+  margin-top: -30px;
+};
+
+.home-logo2 img{
+  width: 25px;
+  height: auto;
+  margin-top: 5px;
+  margin: 10px;
+};
+
+.home-link {
+  border: solid 2px;
+  border-radius: 25px;
+  padding: 16px;
+  background-color: rgb(26, 26, 26);
+  color: azure;
+  text-decoration: none;
+  font-size: medium;
+  font-family: Helvetica, sans-serif;
+}
+
+.home-links-loggedin {
+  display: flex;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+};
+
+.login-signup {
+  display: flex;
+  margin-top: 10px;
+}
+
+.login {
+  margin: 2px;
+  padding: 2px;
+}
+
+.sign-up {
+  margin: 2px;
+  padding: 2px;
+}
+
+.nav-username {
+  margin-top: 12px;
+  padding: 2px;
+}
