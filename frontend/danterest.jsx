@@ -15,13 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (window.currentUser) {
     preloadedState = {
-      entities: {
-        users: { [window.currentUser.id]: window.currentUser }
-      },
+      users: { [window.currentUser.id]: window.currentUser },
       session: { id: window.currentUser.id }
     };
   } 
-  let store = configureStore(preloadedState);
+  const store = configureStore(preloadedState);
   
   window.store = store;
 

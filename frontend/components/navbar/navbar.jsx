@@ -7,24 +7,13 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: null
-    }
 
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.currentUser !== prevProps.currentUser && this.props.currentUser) {
-      // this.fetchData(this.props.currentUser);
-      this.setState({ username: this.props.currentUser.username})
-    }
-  };
 
   
-
-
   render() {
-
+    console.log(this.props)
     const displayLogo = this.props.currentUser ? (
       <div className="home-links-loggedin">
         <Link to="/" className="home-logo2">
@@ -63,27 +52,4 @@ class NavBar extends React.Component {
   };
 };
 
-
-
-
-
-
-
 export default NavBar
-// class NavBar extends React.Component {
-
-
-//   render () {
-
-//     return (
-//       <header className="navbar">
-//         <h1 className="dan-logo">
-
-//         </h1>
-//         <div className="nav-links">
-//           {this.sessionView()}
-//         </div>
-//       </header>
-//     )
-//   }
-// }
