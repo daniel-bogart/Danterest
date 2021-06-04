@@ -7,16 +7,22 @@ class Signup extends React.Component {
             username: null,
             email: '',
             password: '',
-            age: ''
+            age: '',
+            submitting: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.props.removeErrors();
+    }
+
     componentDidUpdate() {
         if (this.state.username) {
             this.props.createNewUser(this.state)
-                .then( () => this.props.history.push('/UserProfile'));
+                .then( () => this.props.history.push('/UserProfile'))
+                .fail( this.setState({username: null}))
         }
     }
 
@@ -28,16 +34,28 @@ class Signup extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.setState({submitting: true})
         const email = this.state.email;
         const emailArray = email.split('@');
         const username = emailArray[0];
         this.setState({ username: username});
     }
 
+    displayErrors() {
+        return (
+            <ul className="rendor-errors">
+                {this.props.errors.map((error1, idx1) => {
+                    return <li key={idx1}>{error1}</li>
+                })}
+            </ul>
+        )
+    }
+
     render () {
         return (
             <div className="session-form">
                 <h2>Welcome to Danterest</h2>
+                {this.displayErrors()}
                 <form>
                     <label>Email:
                         <input

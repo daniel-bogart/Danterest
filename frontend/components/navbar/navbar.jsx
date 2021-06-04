@@ -10,10 +10,20 @@ class NavBar extends React.Component {
 
   }
 
+  showModal() {
+    state = {
+      show: false,
+    };
+    showModal = (e) => {
+      this.setState({ show: true });
+    };
+  }
+
 
   
   render() {
-    console.log(this.props)
+    const { openModal, closeModal } = this.props;
+
     const displayLogo = this.props.currentUser ? (
       <div className="home-links-loggedin">
         <Link to="/" className="home-logo2">
@@ -30,16 +40,16 @@ class NavBar extends React.Component {
     );
 
     const display = this.props.currentUser ? (
-      <div>
+      <div className="nav-greeting">
         <h3>Hello, {this.props.currentUser.username}</h3>
         <button className="nav-logout" onClick={this.props.logout}>Logout</button>
       </div>
     ) : (
       <div className="login-signup">
-      {/* <button className="login">Login</button> */}
-      <Link className="login" to="/login" >Login</Link>
-      {/* <button className="signup">Sign Up</button> */}
-      <Link className="sign-up" to="/signup" >Sign Up</Link>
+      <button className="login-btn" onClick={() => openModal('login')}>Log in</button>
+      {/* <Link className="login" to="/login" >Login</Link> */}
+      <button className="signup-btn" onClick={() => openModal('login')}>Sign up</button>
+      {/* <Link className="sign-up" to="/signup" >Sign Up</Link> */}
       </div>
     );
 

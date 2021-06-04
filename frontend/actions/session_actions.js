@@ -29,12 +29,12 @@ export const removeErrors = () => ({
 
 
 export const createNewUser = formUser => dispatch => postUser(formUser)
-  .then(user => dispatch(receiveCurrentUser(user)))
-  .fail(error => (dispatch(receiveErrors(error.responseJSON))));
+  .then((user) => dispatch(receiveCurrentUser(user)), (error) => dispatch(receiveErrors(error.responseJSON)));
+  // .fail(error => (dispatch(receiveErrors(error.responseJSON))));
 
 export const login = formUser => dispatch => postSession(formUser)
-  .then(user => dispatch(receiveCurrentUser(user)))
-  .fail(error => (dispatch(receiveErrors(error.responseJSON))));
+  .then((user) => dispatch(receiveCurrentUser(user)), (error) => dispatch(receiveErrors(error.responseJSON)));
+  // .fail(error => (dispatch(receiveErrors(error.responseJSON))));
 
 
 export const logout = () => dispatch => deleteSession()

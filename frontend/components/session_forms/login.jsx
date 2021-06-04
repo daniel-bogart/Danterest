@@ -17,6 +17,7 @@ class Login extends React.Component {
 
     componentDidMount() {
         this.props.removeErrors();
+        this.props.closeModal();
     }
 
     handleInput(type) {
@@ -35,22 +36,22 @@ class Login extends React.Component {
         .then( () => this.props.history.push('/'));
     }
 
-    // displayErrors() {
-    //     if (this.props.errors.length > 0) {
-    //         return (
-    //             <div className="login-errors">
-    //                 <p>poopeeeweeeeeee</p>
-    //             </div>
-    //         )
-    //     }
-    // }
+    displayErrors() {
+        return (
+            <ul className="rendor-errors">
+                {this.props.errors.map((error, idx) => {
+                    return <li key={idx}>{error}</li>
+                })}
+            </ul>
+        )
+    }
 
     render () {
         return (
-            <div className="session-form">
+            <div className="login-form-container">
                 <h2>Welcome to Danterest</h2>
-                {/* {this.displayErrors()} */}
-                <form>
+                {this.displayErrors()}
+                <form className="login-form-box" onSubmit={this.handleSubmit}>
                     <label>Email:
                         <input
                         type="text"
