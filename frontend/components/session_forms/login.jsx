@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props) {
@@ -17,7 +18,7 @@ class Login extends React.Component {
 
     componentDidMount() {
         this.props.removeErrors();
-        this.props.closeModal();
+        // this.props.closeModal();
     }
 
     handleInput(type) {
@@ -29,11 +30,11 @@ class Login extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
-        .then( () => this.props.history.push('/'));
+        .then(this.props.closeModal());
     }
     demoSubmit() {
         this.props.login(this.demo)
-        .then( () => this.props.history.push('/'));
+        .then(this.props.closeModal());
     }
 
     displayErrors() {
@@ -49,26 +50,30 @@ class Login extends React.Component {
     render () {
         return (
             <div className="login-form-container">
-                <h2>Welcome to Danterest</h2>
-                {this.displayErrors()}
                 <form className="login-form-box" onSubmit={this.handleSubmit}>
-                    <label>Email:
-                        <input
-                        type="text"
-                        value={this.state.email}
-                        onChange={this.handleInput('email')}
-                        />
-                    </label>
-                    <label>Password:
-                        <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.handleInput('password')}
-                        />
-                    </label>
-                    <button onClick={this.handleSubmit}>Login</button>
-                    <div onClick={this.demoSubmit} className="demo-user">
-                        Continue as Demo User
+                <h2>Welcome to Danterest</h2>
+                <br/>
+                    <div onClick={this.props.closeModal} className="close-x">X</div>
+                {this.displayErrors()}
+                    <div className="login-form">
+                        <label>Email:
+                            <input
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.handleInput('email')}
+                            />
+                        </label>
+                        <label>Password:
+                            <input
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleInput('password')}
+                            />
+                        </label>
+                        <button onClick={this.handleSubmit}>Login</button>
+                        <div onClick={this.demoSubmit} className="demo-user">
+                            Continue as Demo User
+                        </div>
                     </div>
                 </form>
             </div>
@@ -76,4 +81,4 @@ class Login extends React.Component {
     }
 };
 
-export default Login;
+export default withRouter(Login);

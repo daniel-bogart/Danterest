@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom';
 
 class Signup extends React.Component {
     constructor(props) {
@@ -18,13 +19,6 @@ class Signup extends React.Component {
         this.props.removeErrors();
     }
 
-    componentDidUpdate() {
-        if (this.state.username) {
-            this.props.createNewUser(this.state)
-                .then( () => this.props.history.push('/UserProfile'))
-                .fail( this.setState({username: null}))
-        }
-    }
 
     handleInput(type) {
         return (e) => {
@@ -38,7 +32,10 @@ class Signup extends React.Component {
         const email = this.state.email;
         const emailArray = email.split('@');
         const username = emailArray[0];
-        this.setState({ username: username});
+        this.setState({ username: username}, () => {
+            this.props.createNewUser(this.state)
+                .then(this.props.closeModal())
+        });
     }
 
     displayErrors() {
@@ -53,36 +50,40 @@ class Signup extends React.Component {
 
     render () {
         return (
-            <div className="session-form">
+            <div className="signup-form-container">
+                <form className="signup-form-box" onSubmit={this.handleSubmit}>
                 <h2>Welcome to Danterest</h2>
+                <br/>
+                    <div onClick={this.props.closeModal} className="close-y">Y</div>
                 {this.displayErrors()}
-                <form>
-                    <label>Email:
-                        <input
-                        type="text"
-                        value={this.state.email}
-                        onChange={this.handleInput('email')}
-                        />
-                    </label>
-                    <label>Password:
-                        <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.handleInput('password')}
-                        />
-                    </label>
-                    <label>Age:
-                        <input
-                        type="number"
-                        value={this.state.age}
-                        onChange={this.handleInput('age')}
-                        />
-                    </label>
-                    <button onClick={this.handleSubmit}>Sign Up</button>
+                    <div className="signup-form">
+                        <label>Email:
+                            <input
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.handleInput('email')}
+                            />
+                        </label>
+                        <label>Password:
+                            <input
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleInput('password')}
+                            />
+                        </label>
+                        <label>Age:
+                            <input
+                            type="number"
+                            value={this.state.age}
+                            onChange={this.handleInput('age')}
+                            />
+                        </label>
+                        <button onClick={this.handleSubmit}>Sign Up</button>
+                    </div>
                 </form>
             </div>
         );
     }
 };
 
-export default Signup;
+export default withRouter(Signup);
