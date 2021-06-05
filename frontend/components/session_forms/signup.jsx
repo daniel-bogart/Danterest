@@ -34,7 +34,7 @@ class Signup extends React.Component {
         const username = emailArray[0];
         this.setState({ username: username}, () => {
             this.props.createNewUser(this.state)
-                .then(this.props.closeModal())
+                .then(() => this.props.closeModal())
         });
     }
 
@@ -54,7 +54,7 @@ class Signup extends React.Component {
                 <form className="signup-form-box" onSubmit={this.handleSubmit}>
                 <h2>Welcome to Danterest</h2>
                 <br/>
-                    <div onClick={this.props.closeModal} className="close-y">Y</div>
+                    <div onClick={this.props.closeModal} className="close-x">X</div>
                 {this.displayErrors()}
                     <div className="signup-form">
                         <label>Email:

@@ -29,12 +29,13 @@ class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state)
-        .then(this.props.closeModal());
+        const user = Object.assign({}, this.state)
+        this.props.login(user)
+            .then (() => this.props.closeModal());
     }
     demoSubmit() {
         this.props.login(this.demo)
-        .then(this.props.closeModal());
+            .then(() => this.props.closeModal());
     }
 
     displayErrors() {
