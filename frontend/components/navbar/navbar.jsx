@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import SearchBar from './search_bar';
 // import DropDown from './dropdown';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 
 class NavBar extends React.Component {
@@ -26,30 +27,31 @@ class NavBar extends React.Component {
 
     const displayLogo = this.props.currentUser ? (
       <div className="home-links-loggedin">
-        <Link to="/" className="home-logo2">
-          <img src={window.dLogo} />
+        <Link to="/" className="logo-wrapper" >
+          <img className="home-logo2" src={window.dLogo} />
         </Link>
         <Link to="/" className="home-link">
-          <p>Home</p>
+          Home
         </Link>
       </div>
     ) : (
-      <Link to="/" className="home-logo1">
-        <img src={window.danterestLogo} />
-      </Link>
+      <div className="logo-wrapper">
+        <Link to="/" className="home-logo1">
+          <img src={window.danterestLogo} />
+        </Link>
+      </div>
     );
 
     const display = this.props.currentUser ? (
       <div className="nav-greeting">
         <h3>Hello, {this.props.currentUser.username}</h3>
-        <button className="nav-logout" onClick={this.props.logout}>Logout</button>
+        <div className="nav-logout" onClick={this.props.logout}>Logout</div>
+        <div className="nav-dropdown"><MdKeyboardArrowDown size={25}/></div>
       </div>
     ) : (
       <div className="login-signup">
         <div className="login-btn" onClick={() => openModal('login')}>Log in</div>
-        {/* <Link className="login" to="/login" >Login</Link> */}
         <div className="signup-btn" onClick={() => openModal('signup')}>Sign up</div>
-        {/* <Link className="sign-up" to="/signup" >Sign Up</Link> */}
       </div>
     );
 

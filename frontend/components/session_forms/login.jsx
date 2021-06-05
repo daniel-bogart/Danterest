@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
+import { MdClose } from 'react-icons/md';
 
 class Login extends React.Component {
     constructor(props) {
@@ -51,27 +52,33 @@ class Login extends React.Component {
     render () {
         return (
             <div className="login-form-container">
+                <div onClick={this.props.closeModal} className="close-x"><MdClose size={25}/></div>
+                <div className="auth1-logo-wrapper">
+                    <img className="dan-logo2" src={window.dLogo}/>
+                </div>
+                <h2 className="auth-title">Welcome to Danterest</h2>
                 <form className="login-form-box" onSubmit={this.handleSubmit}>
-                <h2>Welcome to Danterest</h2>
-                <br/>
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
+                    
                 {this.displayErrors()}
                     <div className="login-form">
-                        <label>Email:
+                        <label>
                             <input
                             type="text"
                             value={this.state.email}
                             onChange={this.handleInput('email')}
+                            placeholder="Email"
                             />
                         </label>
-                        <label>Password:
+                        <label>
                             <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
+                            placeholder="Password"
                             />
                         </label>
-                        <button onClick={this.handleSubmit}>Login</button>
+                        <div className="auth-btn" onClick={this.handleSubmit}>Log in</div>
+                        <p className="or">OR</p>
                         <div onClick={this.demoSubmit} className="demo-user">
                             Continue as Demo User
                         </div>

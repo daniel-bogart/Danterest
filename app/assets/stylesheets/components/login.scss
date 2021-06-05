@@ -1,13 +1,13 @@
 .demo-user {
-  width: 182px;
-  display: flex;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
   font-weight: bold;
-  margin: 10px;
-  padding: 5px;
+  padding: 12px 16px;
   background-color: rgb(80, 125, 216);
   border-radius: 20px;
   color: white;
+  text-align: center;
 }
 
 .demo-user:hover{
@@ -15,11 +15,69 @@
 }
 
 .rendor-errors {
-  font-family: sans-serif;
   color: red;
 }
 
 .login-form-container {
   display: flex;
   flex-direction: column;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid grey;
+}
+
+.auth-btn {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  font-weight: bold;
+  padding: 12px 16px;
+  background-color: rgb(230, 0, 35);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+}
+
+.dan-logo2 {
+  height: 40px;
+  width: 40px;
+}
+
+.auth1-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.login-form > label {
+  font-size: 20px;
+}
+
+.auth-title {
+  margin-bottom: 16px;
+}
+
+.close-x {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-x:hover {
+  cursor: pointer;
+}
+
+.or {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
 }

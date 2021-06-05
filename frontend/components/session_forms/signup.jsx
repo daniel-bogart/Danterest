@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
+import { MdClose } from 'react-icons/md';
 
 class Signup extends React.Component {
     constructor(props) {
@@ -51,34 +52,40 @@ class Signup extends React.Component {
     render () {
         return (
             <div className="signup-form-container">
-                <form className="signup-form-box" onSubmit={this.handleSubmit}>
+                    <div onClick={this.props.closeModal} className="close-x"><MdClose size={25}/></div>
+                <div className="auth1-logo-wrapper">
+                    <img className="dan-logo2" src={window.dLogo}/>
+                </div>
                 <h2>Welcome to Danterest</h2>
+                <form className="signup-form-box" onSubmit={this.handleSubmit}>
                 <br/>
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
                 {this.displayErrors()}
                     <div className="signup-form">
-                        <label>Email:
+                        <label>
                             <input
                             type="text"
                             value={this.state.email}
                             onChange={this.handleInput('email')}
+                            placeholder="Email"
                             />
                         </label>
-                        <label>Password:
+                        <label>
                             <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
+                            placeholder="Password"
                             />
                         </label>
-                        <label>Age:
+                        <label>
                             <input
                             type="number"
                             value={this.state.age}
                             onChange={this.handleInput('age')}
+                            placeholder="Age"
                             />
                         </label>
-                        <button onClick={this.handleSubmit}>Sign Up</button>
+                        <div className="auth-btn" onClick={this.handleSubmit}>Sign Up</div>
                     </div>
                 </form>
             </div>
