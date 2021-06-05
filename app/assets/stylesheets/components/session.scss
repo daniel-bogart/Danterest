@@ -36,6 +36,13 @@ input {
   border: 1px solid lightgray;
 }
 
+input:focus {
+  outline-offset: 0px;
+  outline: none;
+  border: 3px solid rgb(80, 125, 216);
+  border-radius: 12px;
+}
+
 .auth-btn {
   width: 100%;
   display: block;
@@ -72,6 +79,10 @@ input {
   margin-bottom: 16px;
   color: rgb(53, 53, 53);
 }
+.auth-title > h3 {
+  display: flex;
+  justify-content: center;
+}
 
 .close-x {
   display: flex;
@@ -92,4 +103,49 @@ input {
 
 .session-form-inputs {
   padding: 32px 0px;
+}
+
+.already-member {
+  display: flex;
+  justify-content: center;
+  color: rgb(53, 53, 53);
+  padding-top: 32px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.already-member:hover {
+  cursor: pointer;
+}
+.auth-footer {
+  padding-top: 36px;
+  color: grey;
+}
+
+.auth-footer > h6 {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-footer h6:nth-of-type(2){
+  color: rgb(53, 53, 53);
+  padding-top: 5px;
+}
+
+.auth-footer h6:nth-of-type(2):hover{
+  cursor: pointer;
+}
+
+.need-account {
+  display: flex;
+  justify-content: center;
+  color: rgb(53, 53, 53);
+  font-weight: 600;
+  font-size: 16px;
+  padding-top: 36px;
+}
+
+.need-account:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }

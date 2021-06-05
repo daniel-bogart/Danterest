@@ -50,6 +50,8 @@ class Login extends React.Component {
     }
 
     render () {
+
+        const { openModal, closeModal } = this.props;
         return (
             <div className="login-form-container">
                 <div onClick={this.props.closeModal} className="close-x"><MdClose size={25}/></div>
@@ -84,6 +86,12 @@ class Login extends React.Component {
                         <div onClick={this.demoSubmit} className="demo-user">
                             Continue as Demo User
                         </div>
+                        <div className="auth-footer">
+                            <h6>By continuing, you agree to Danterest's Terms of</h6>
+                            <h6>Service, Privacy policy.</h6>
+                        </div>
+                        <div className="need-account" onClick={() => openModal('signup')}>
+                            Not on Danterest yet? Sign up</div>
                     </div>
                 </form>
             </div>

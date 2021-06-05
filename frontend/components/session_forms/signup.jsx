@@ -49,14 +49,27 @@ class Signup extends React.Component {
         )
     }
 
+    showModal() {
+        state = {
+            show: false,
+        };
+        showModal = (e) => {
+            this.setState({ show: true });
+        };
+    }
+
     render () {
+        const { openModal, closeModal } = this.props;
         return (
             <div className="signup-form-container">
                     <div onClick={this.props.closeModal} className="close-x"><MdClose size={25}/></div>
                 <div className="auth1-logo-wrapper">
                     <img className="dan-logo2" src={window.dLogo}/>
                 </div>
-                <h2>Welcome to Danterest</h2>
+                <div className="auth-title">
+                    <h2>Welcome to Danterest</h2>
+                    <h3>Find new ideas to try</h3>
+                </div>
                 <form className="signup-form-box" onSubmit={this.handleSubmit}>
                 <br/>
                 {this.displayErrors()}
@@ -86,6 +99,12 @@ class Signup extends React.Component {
                             />
                         </label>
                         <div className="auth-btn" onClick={this.handleSubmit}>Sign Up</div>
+                        <div className="auth-footer">
+                            <h6>By continuing, you agree to Danterest's Terms of</h6>
+                            <h6>Service, Privacy policy.</h6>
+                        </div>
+                        <div className="already-member" onClick={() => openModal('login')}>
+                            Already a member? Log in</div>
                     </div>
                 </form>
             </div>

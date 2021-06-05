@@ -18,7 +18,8 @@ const mapDispatchToProps = dispatch => ({
             Sign up
         </button>
     ),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    openModal: (formType) => dispatch(openModal(formType))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

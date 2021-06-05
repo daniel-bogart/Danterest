@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // import SearchBar from './search_bar';
 // import DropDown from './dropdown';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { FaGithub, FaPinterest } from 'react-icons/fa';
 
 
 class NavBar extends React.Component {
@@ -20,8 +21,6 @@ class NavBar extends React.Component {
     };
   }
 
-
-  
   render() {
     const { openModal, closeModal } = this.props;
 
@@ -44,7 +43,11 @@ class NavBar extends React.Component {
 
     const display = this.props.currentUser ? (
       <div className="nav-greeting">
-        <h3>Hello, {this.props.currentUser.username}</h3>
+          <div className="user-greeting">Hello, {this.props.currentUser.username}!</div>
+        <a href="https://github.com/daniel-bogart" target="_blank"
+            className="nav-icons"><FaGithub size={28}/></a>
+        <a href="https://www.pinterest.com/" target="_blank" 
+            className="nav-icons"><FaPinterest size={28}/></a>
         <div className="nav-logout" onClick={this.props.logout}>Logout</div>
         <div className="nav-dropdown"><MdKeyboardArrowDown size={25}/></div>
       </div>

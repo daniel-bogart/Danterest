@@ -23,8 +23,8 @@
   display: flex;
   align-items: center;
   border-radius: 24px;
-  background: grey;
   padding: 0px 16px;
+  font-weight: 600;
 }
 
 // .home-logo2:hover {
@@ -116,8 +116,21 @@
 
 .nav-logout:hover {
   cursor: pointer;
+  background: lightgrey;
 }
 
 .nav-dropdown {
   color: grey;
+  padding: 0px 8px;
+}
+
+.nav-icons {
+  color: grey;
+  padding: 0px 8px;
+}
+
+.user-greeting {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
