@@ -61,22 +61,24 @@ class Login extends React.Component {
                     
                 {this.displayErrors()}
                     <div className="login-form">
-                        <label>
-                            <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleInput('email')}
-                            placeholder="Email"
-                            />
-                        </label>
-                        <label>
-                            <input
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput('password')}
-                            placeholder="Password"
-                            />
-                        </label>
+                        <div className="session-form-inputs">
+                            <label>
+                                <input
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.handleInput('email')}
+                                placeholder="Email"
+                                />
+                            </label>
+                            <label>
+                                <input
+                                type="password"
+                                value={this.state.password}
+                                onChange={this.handleInput('password')}
+                                placeholder="Password"
+                                />
+                            </label>
+                        </div>
                         <div className="auth-btn" onClick={this.handleSubmit}>Log in</div>
                         <p className="or">OR</p>
                         <div onClick={this.demoSubmit} className="demo-user">
