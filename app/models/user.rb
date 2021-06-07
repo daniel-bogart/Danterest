@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  first_name      :string
+#  last_name       :string
+#  age             :integer
+#
 class User < ApplicationRecord
     validates :username, :email, presence: true, uniqueness: true
     validates :password_digest, :age, presence: true
@@ -7,6 +22,14 @@ class User < ApplicationRecord
     attr_reader :password 
 
     after_initialize :ensure_session_token
+
+    has_many :boards,
+    foreign_key: :user_id,
+    class_name: :Board,
+
+    has_many :pins,
+    class_name: :Pin,
+    foreign_key: :user_id
 
 
     def self.find_by_credentials(email, password)

@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: pins_on_boards
+#
+#  id         :bigint           not null, primary key
+#  pin_id     :integer          not null
+#  board_id   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  pin_id: 1
+  board_id: 1
+  description: MyString
+
+two:
+  pin_id: 1
+  board_id: 1
+  description: MyString

@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: pins
+#
+#  id          :bigint           not null, primary key
+#  author_id   :integer
+#  title       :string           not null
+#  description :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+one:
+  author_id: 1
+  title: MyString
+  description: MyString
+
+two:
+  author_id: 1
+  title: MyString
+  description: MyString
