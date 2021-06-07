@@ -39,13 +39,17 @@ class Login extends React.Component {
     }
 
     displayErrors() {
-        return (
-            <ul className="rendor-errors">
-                {this.props.errors.map((error, idx) => {
-                    return <li key={idx}>{error}</li>
-                })}
-            </ul>
-        )
+        if (!this.props.errors.length) {
+            return null
+        } else {
+            return (
+                <ul className="rendor-errors">
+                    {this.props.errors.map((error1, idx1) => {
+                        return <li key={idx1}>{error1}</li>
+                    })}
+                </ul>
+            )
+        }
     }
 
     render () {
