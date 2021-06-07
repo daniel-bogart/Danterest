@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_211641) do
+ActiveRecord::Schema.define(version: 2021_06_07_234300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,12 +46,11 @@ ActiveRecord::Schema.define(version: 2021_06_07_211641) do
   end
 
   create_table "pins", force: :cascade do |t|
-    t.integer "author_id"
     t.string "title", null: false
     t.string "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_pins_on_author_id"
+    t.integer "author_id", null: false
   end
 
   create_table "pins_on_boards", force: :cascade do |t|

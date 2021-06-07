@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
     has_many :boards,
     foreign_key: :user_id,
-    class_name: :Board,
+    class_name: :Board
 
     has_many :pins,
     class_name: :Pin,
