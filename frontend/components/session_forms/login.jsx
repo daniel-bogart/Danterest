@@ -19,7 +19,6 @@ class Login extends React.Component {
 
     componentDidMount() {
         this.props.removeErrors();
-        // this.props.closeModal();
     }
 
     handleInput(type) {
@@ -66,7 +65,7 @@ class Login extends React.Component {
                         <div className="session-form-inputs">
                             <label>
                                 <input
-                                type="text"
+                                type="email"
                                 value={this.state.email}
                                 onChange={this.handleInput('email')}
                                 placeholder="Email"

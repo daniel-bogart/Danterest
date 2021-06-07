@@ -28,11 +28,13 @@ class Signup extends React.Component {
     }
 
     handleSubmit(e) {
+        const userNumber = Math.floor(1000 + Math.random() * 8999);
+        const userStringNum = userNumber.toString();
         e.preventDefault();
         this.setState({submitting: true})
         const email = this.state.email;
         const emailArray = email.split('@');
-        const username = emailArray[0];
+        const username = emailArray[0] + userStringNum;
         this.setState({ username: username}, () => {
             this.props.createNewUser(this.state)
                 .then(() => this.props.closeModal())
@@ -76,7 +78,7 @@ class Signup extends React.Component {
                     <div className="signup-form">
                         <label>
                             <input
-                            type="text"
+                            type="email"
                             value={this.state.email}
                             onChange={this.handleInput('email')}
                             placeholder="Email"
