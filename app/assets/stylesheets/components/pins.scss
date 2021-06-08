@@ -1,0 +1,25 @@
+// Place all the styles related to the api/pins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.masonry {
+  display: flex;
+  flex-flow: column wrap;
+  max-height: 3000px; /* Adjustment for the gutter */
+  column-count: 4;
+  column-gap: 1em;
+  padding: 20px;
+}
+
+.pin-image {
+  height: auto;
+  width: 300px;
+}
+
+.pin {
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 300px;
+}
+

@@ -9,15 +9,19 @@ export default class PinIndex extends React.Component {
     this.props.fetchAllPins();
   }
 
+  // shufflePins() {
+  //   shuffle(this.props.pins);
+  // }
+
   render() {
     return (
-      <ul>
+      <ul className="masonry">
         {this.props.pins.map((pin) => {
           return (
-            <li key={pin.id}>
-              <h2>{pin.title}</h2>
-              <h3>{pin.description}</h3>
-              <img src={pin.photoUrl} />
+            <li className="pin" key={pin.id}>
+              {/* <h3>{pin.description}</h3> */}
+              <img className="pin-image" src={pin.photoUrl} />
+              <h3>{pin.title}</h3>
             </li>
           );
         })}
