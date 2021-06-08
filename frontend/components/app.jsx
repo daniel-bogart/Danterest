@@ -5,6 +5,7 @@ import LoginContainer from './session_forms/login_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import NavbarContainer from './navbar/nav_container';
 import Modal from './modal/modal';
+import PinIndexContainer from "./pins/pin_index_container";
 
 const App = () => (
   <div>
@@ -12,8 +13,12 @@ const App = () => (
     <header>
       <Route path="/" component={NavbarContainer}></Route>
     </header>
-    <AuthRoute path="/signup" component={SignupContainer}/>
-    <AuthRoute path="/login" component={LoginContainer}/>
+    <Switch>
+      <AuthRoute path="/signup" component={SignupContainer}/>
+      <AuthRoute path="/login" component={LoginContainer}/>
+      <Route exact path="/" component={PinIndexContainer}/>
+      <Redirect to="/"/>
+    </Switch>
   </div>
 );
 
