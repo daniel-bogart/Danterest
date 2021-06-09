@@ -5,17 +5,25 @@
 .masonry {
   display: flex;
   flex-flow: column wrap;
-  max-height: 3000px; /* Adjustment for the gutter */
-  column-count: 4;
+  max-height: 2700px; /* Adjustment for the gutter */
+  column-count: 5;
   column-gap: 1em;
   padding: 20px;
 }
 
-.pin-index-image {
-  height: auto;
-  width: 300px;
-  border-radius: 20%;
-}
+// .masonry {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-template-rows: masonry;
+//   gap: 20px;
+//   padding: 20px;
+// }
+
+// .pin-index-image {
+//   height: auto;
+//   width: 300px;
+//   border-radius: 24px;
+// }
 
 .index-pin {
   display: inline-block;
@@ -28,6 +36,22 @@
 .pin-image {
   height: auto;
   width: 300px;
-  border-radius: 20%;
+  border-radius: 24px;
+}
+
+.index-pin > h3 {
+  font-weight: 600;
+}
+
+.pin-show-image {
+  height: auto;
+  width: 450px;
+  border-radius: 24px;
+}
+
+.pin{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 

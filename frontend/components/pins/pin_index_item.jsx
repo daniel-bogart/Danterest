@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function PinIndexItem(props) {
   return (
-    <Link to={`/pins/${props.pin.id}`}><img src={props.pin.photoUrl}/></Link>
+    <Link to={`/pins/${props.pin.id}`}><img className="pin-image" src={props.pin.photoUrl}/></Link>
   )
 }
 

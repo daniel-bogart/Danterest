@@ -1,4 +1,5 @@
 class Api::PinsController < ApplicationController
+  before_action :require_logged_in, only: [:index]
 
   def show
     @pin = Pin.find(params[:id])

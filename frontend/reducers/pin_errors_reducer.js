@@ -5,9 +5,11 @@ import {
 
 const pinErrorsReducer = (state = [], action) => {
   Object.freeze(state);
+  const nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_PIN_ERRORS:
       return action.errors;
+      return nextState
     case REMOVE_ERRORS:
       return [];
     default:

@@ -7,7 +7,6 @@ class PinShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchPin(this.props.match.params.pinId)
   }
 
@@ -17,7 +16,7 @@ class PinShow extends React.Component {
       <div className="pin" key={this.props.pin.id}>
         <h1>{this.props.pin.title}</h1>
         <h3>{this.props.pin.description}</h3>
-        <img className="pin-image" src={this.props.pin.photoUrl} />
+        <img className="pin-show-image" src={this.props.pin.photoUrl} />
       </div>
     )
   }

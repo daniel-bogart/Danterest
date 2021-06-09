@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state => {
   return {
-    pins: Object.values(state.entities.pins)
+    pins: Object.values(state.entities.pins),
+    session: state.session
   };
 };
 

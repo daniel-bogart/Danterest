@@ -23,6 +23,7 @@ export default class PinIndex extends React.Component {
           return (
             <li className="index-pin" key={pin.id}>
               <PinIndexItem className="index-pin" pin={pin}/>
+              <h3>{pin.title}</h3>
             </li>
           );
         })}
@@ -30,3 +31,5 @@ export default class PinIndex extends React.Component {
     );
   }
 }
+
+
