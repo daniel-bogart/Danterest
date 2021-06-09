@@ -11,15 +11,23 @@
   padding: 20px;
 }
 
-.pin-image {
+.pin-index-image {
   height: auto;
   width: 300px;
+  border-radius: 20%;
 }
 
-.pin {
-  background-color: #eee;
+.index-pin {
   display: inline-block;
   margin: 0 0 1em;
   width: 300px;
+  border-radius: 10%;
+  text-align: center;
+}
+
+.pin-image {
+  height: auto;
+  width: 300px;
+  border-radius: 20%;
 }
 

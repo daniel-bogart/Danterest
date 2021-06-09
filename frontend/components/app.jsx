@@ -6,6 +6,7 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import NavbarContainer from './navbar/nav_container';
 import Modal from './modal/modal';
 import PinIndexContainer from "./pins/pin_index_container";
+import PinShowContainer from "./pins/pin_show_container";
 
 const App = () => (
   <div>
@@ -14,6 +15,7 @@ const App = () => (
       <Route path="/" component={NavbarContainer}></Route>
     </header>
     <Switch>
+      <ProtectedRoute path="/pins/:pinId" component={PinShowContainer} />
       <AuthRoute path="/signup" component={SignupContainer}/>
       <AuthRoute path="/login" component={LoginContainer}/>
       <Route exact path="/" component={PinIndexContainer}/>

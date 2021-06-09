@@ -12,7 +12,8 @@ const pinsReducer = (state = {}, action) => {
     case RECEIVE_ALL_PINS:
       return Object.assign({}, action.pins);
     case RECEIVE_PIN:
-      return nextState[action.pin.id] = action.pin;
+      nextState[action.pin.id] = action.pin;
+      return nextState;
     case REMOVE_PIN:
       delete nextState[action.pinId];
       return nextState;
