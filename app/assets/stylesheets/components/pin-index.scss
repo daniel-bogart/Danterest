@@ -1,0 +1,22 @@
+.loader-container {
+  background: transparent;
+  width: 100%;
+  height: 100%; 
+}
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid var(--main-red);
+  border-radius: 50%;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}

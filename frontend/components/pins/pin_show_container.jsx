@@ -3,7 +3,6 @@ import { fetchPin, deletePin } from "../../actions/pin_actions";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return {
     pin: state.entities.pins[ownProps.match.params.pinId],
     session: state.session

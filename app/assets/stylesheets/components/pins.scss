@@ -1,6 +1,9 @@
 // Place all the styles related to the api/pins controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+:root {
+  --main-red: rgb(230, 0, 35);
+}
 
 .masonry {
   display: flex;
@@ -19,11 +22,6 @@
 //   padding: 20px;
 // }
 
-// .pin-index-image {
-//   height: auto;
-//   width: 300px;
-//   border-radius: 24px;
-// }
 
 .index-pin {
   display: inline-block;
@@ -31,12 +29,14 @@
   width: 300px;
   border-radius: 10%;
   text-align: center;
+  // cursor: zoom-in;
 }
 
 .pin-image {
   height: auto;
   width: 300px;
   border-radius: 24px;
+  cursor: zoom-in;
 }
 
 .index-pin > h3 {
@@ -45,13 +45,89 @@
 
 .pin-show-image {
   height: auto;
-  width: 450px;
-  border-radius: 24px;
+  width: 100%;
+  border-radius: 32px;
+  max-width: 600px;
 }
 
 .pin{
+
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  // display: block;
+  // box-sizing: border-box;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 32px;
+  min-height: 600px;
+}
+
+.pin-container {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.pin-show-image-container {
   flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  min-height: 300px;
+  min-width: 200px;
+  max-width: 600px;
+  margin: 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 32px;
+
+}
+
+.pinfo {
+  display: block;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  flex-direction: column;
+}
+
+.pinfo-title {
+  width: 100%;
+  font-size: x-large;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 24px;
+}
+
+.pinfo-description {
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.save-board-button {
+  background: var(--main-red);
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 24px;
+  padding: 8px 12px;
+  height: 40px;
+  margin: 8px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.pinfo-nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-button {
+  cursor: pointer;
 }
 

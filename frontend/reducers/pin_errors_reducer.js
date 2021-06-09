@@ -9,7 +9,6 @@ const pinErrorsReducer = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_PIN_ERRORS:
       return action.errors;
-      return nextState
     case REMOVE_ERRORS:
       return [];
     default:
