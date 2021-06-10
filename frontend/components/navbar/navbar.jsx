@@ -26,7 +26,6 @@ class NavBar extends React.Component {
   render() {
     const { openModal, closeModal } = this.props;
 
-    // const homeLogo = 
 
     const displayLogo = this.props.currentUser ? (
       <div className="home-links-loggedin">
