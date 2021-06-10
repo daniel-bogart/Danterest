@@ -52,7 +52,7 @@ class NavBar extends React.Component {
             className="nav-icons"><FaGithub size={28}/></a>
         <a href="https://www.pinterest.com/" target="_blank" 
             className="nav-icons"><FaPinterest size={28}/></a>
-        <NavLink className="nav-icons" to={`/users/${currentUser.id}`}><FaUserCircle size={28}/></NavLink>
+        <NavLink className="nav-icons" to={`/users/${this.props.currentUser.id}`}><FaUserCircle size={28}/></NavLink>
         <div className="nav-logout" onClick={this.props.logout}>Logout</div>
         <div className="nav-dropdown"><MdKeyboardArrowDown size={25}/></div>
       </div>

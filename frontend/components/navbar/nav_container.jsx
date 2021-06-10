@@ -5,7 +5,8 @@ import Nav from './navbar';
 import { closeModal, openModal } from "../../actions/modal_actions"
 
 const mapStateToProps = state => ({
-  currentUser: state.entities.users[state.session.id]
+  currentUser: state.entities.users[state.session.id],
+  session: state.session
 });
 
 const mapDispatchToProps = dispatch => ({
