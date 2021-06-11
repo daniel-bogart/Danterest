@@ -7,6 +7,7 @@ import { removeErrors } from '../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     user: state.entities.users[ownProps.match.params.userId],
+    // user: state.entities.users[state.session.id],
     session: state.session
   };
 };

@@ -46,6 +46,7 @@
   margin-left: 16px;
   width: 100px;
   height: 100px;
+  text-decoration: none;
 }
 
 .bii:hover {
@@ -64,4 +65,8 @@
 .create-board-button:hover {
   cursor: pointer;
   background: rgb(239, 239, 239);
+}
+
+.bii-link {
+  text-decoration: none;
 }

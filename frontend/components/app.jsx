@@ -8,6 +8,7 @@ import Modal from './modal/modal';
 import PinIndexContainer from "./pins/pin_index_container";
 import PinShowContainer from "./pins/pin_show_container";
 import UserProfileContainer from "./user/user_profile_container";
+import BoardShowContainer from "./boards/board_show_container";
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
       <ProtectedRoute exact path="/" component={PinIndexContainer}/>
       <ProtectedRoute path="/pins/:pinId" component={PinShowContainer} />
       <ProtectedRoute path="/users/:userId" component={UserProfileContainer} />
+      <ProtectedRoute path="/users/:userId/:boardId" component={BoardShowContainer} />
       <AuthRoute path="/signup" component={SignupContainer}/>
       <AuthRoute path="/login" component={LoginContainer}/>
       <Redirect to="/"/>
