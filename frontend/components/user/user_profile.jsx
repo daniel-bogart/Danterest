@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
+import BoardIndexContainer from "../boards/board_index_container";
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class UserProfile extends React.Component {
         <div className="create-board-button">
           <div><FaPlus size={28}/></div>
         </div>
+        <BoardIndexContainer />
       </div>
     )
   }

@@ -6,8 +6,8 @@ class Api::BoardsController < ApplicationController
   end
 
   def index
-    @user = User.find_by(id: params[:id])
-    @boards = @user.boards
+    # @user = User.find_by(id: params[:id])
+    @boards = current_user.boards
     render :index
   end
 

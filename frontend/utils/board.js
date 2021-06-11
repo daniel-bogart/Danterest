@@ -1,9 +1,9 @@
-export const fetchAllBoards = (userId) => (
-  $.ajax({
+export const fetchAllBoards = (userId) => {
+  return $.ajax({
     url: `/api/users/${userId}/boards`,
     method: 'GET'
   })
-);
+};
 
 export const fetchBoard = (userId, boardId) => (
   $.ajax({
@@ -14,7 +14,7 @@ export const fetchBoard = (userId, boardId) => (
 
 export const fetchPinsOnBoard = () => (
   $.ajax({
-    url: `/api/pins_on_board`,
+    url: '/api/pins_on_board',
     method: 'GET'
   })
 )
