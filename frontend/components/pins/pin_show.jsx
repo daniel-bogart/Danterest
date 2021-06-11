@@ -5,9 +5,26 @@ import { FaArrowLeft } from 'react-icons/fa';
 class PinShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      expanded: 'false'
+    }
 
     this.goBack = this.goBack.bind(this);
   }
+
+  handleClick() {
+    if (this.state.expanded === 'false') {
+    document.getElementById("pin-background").className = 'darken-background';
+    document.getElementById("image-modal").className = 'expanded-image';
+    this.setState({expanded: 'true'});
+    } else {
+      document.getElementById("image-modal").className = 'pin-show-image';
+      document.getElementById("pin-background").className = 'pin-container';
+      this.setState({expanded: 'false'});
+    }
+  }
+
+
 
   componentDidMount() {
     this.props.fetchPin(this.props.match.params.pinId)
@@ -16,12 +33,14 @@ class PinShow extends React.Component {
     this.props.history.goBack();
   }
   render() {
+
     if (this.props.pin === undefined ) return null;
     return (
-      <div className="pin-container">
+      <div id="pin-background" className="pin-container">
         <div className="pin" key={this.props.pin.id}>
           <div className="pin-show-image-container">
-            <img className="pin-show-image" src={this.props.pin.photoUrl} />
+            <img onClick={()=>this.handleClick()} 
+            id="image-modal" className="pin-show-image" src={this.props.pin.photoUrl} />
           </div>
           <div className="pinfo">
             <div className="pinfo-nav">

@@ -6,51 +6,11 @@
 }
 
 
-
-// .masonry {
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr);
-//   grid-template-rows: masonry;
-//   gap: 20px;
-//   padding: 20px;
-// }
-
-
-.index-pin {
-  // display: inline-block;
-  margin: 0 0 1em;
-  width: 300px;
-  border-radius: 10%;
-  text-align: center;
-  page-break-inside: avoid;
-  // cursor: zoom-in;
-}
-
-// .pin-image {
-//   height: auto;
-//   width: 300px;
-//   border-radius: 24px;
-//   cursor: zoom-in;
-// }
-
-.index-pin > h3 {
-  font-weight: 600;
-}
-
-.pin-show-image {
-  height: auto;
-  width: 100%;
-  border-radius: 32px;
-  max-width: 600px;
-}
-
 .pin{
 
   display: flex;
   justify-content: center;
   flex-direction: row;
-  // display: block;
-  // box-sizing: border-box;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 32px;
   min-height: 600px;
@@ -113,6 +73,7 @@
   font-weight: 600;
   color: white;
   cursor: pointer;
+  transition: transform .2s;
 }
 
 .save-board-button:hover {
@@ -133,5 +94,10 @@
 
 .back-button:hover {
   background: rgb(239, 239, 239);
+}
+
+.pin-show-image:hover {
+  cursor: zoom-in;
+  filter: brightness(75%);
 }
 
