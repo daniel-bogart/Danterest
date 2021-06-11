@@ -5,14 +5,7 @@
   --main-red: rgb(230, 0, 35);
 }
 
-.masonry {
-  display: flex;
-  flex-flow: column wrap;
-  max-height: 2700px; /* Adjustment for the gutter */
-  column-count: 5;
-  column-gap: 1em;
-  padding: 20px;
-}
+
 
 // .masonry {
 //   display: grid;
@@ -24,20 +17,21 @@
 
 
 .index-pin {
-  display: inline-block;
+  // display: inline-block;
   margin: 0 0 1em;
   width: 300px;
   border-radius: 10%;
   text-align: center;
+  page-break-inside: avoid;
   // cursor: zoom-in;
 }
 
-.pin-image {
-  height: auto;
-  width: 300px;
-  border-radius: 24px;
-  cursor: zoom-in;
-}
+// .pin-image {
+//   height: auto;
+//   width: 300px;
+//   border-radius: 24px;
+//   cursor: zoom-in;
+// }
 
 .index-pin > h3 {
   font-weight: 600;
