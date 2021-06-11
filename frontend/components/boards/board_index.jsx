@@ -14,7 +14,7 @@ class BoardIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="index-board-box">
         {this.props.boards.map((board) => <BoardIndexItem className="index-board" key={board.id} board={board}/>)}
       </div>
     )
