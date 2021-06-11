@@ -13,6 +13,9 @@ Board.destroy_all
 demo_user = User.create!(email: "demo@danterest.com", password: "123123", username: "demo", age: 25)
 
 demo_board = Board.create!(user_id: 1, title: 'test-board', description: 'this is a test board')
+board1 = Board.create!(user_id: 1, title: 'Ocean Life', description: 'paintings of ocean life')
+board2 = Board.create!(user_id: 1, title: 'Park Posters', description: 'park poster graphic art')
+board3 = Board.create!(user_id: 1, title: 'Landscapes', description: 'beautiful landscapes')
 
 
 
