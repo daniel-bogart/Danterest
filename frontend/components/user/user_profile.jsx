@@ -21,7 +21,7 @@ class UserProfile extends React.Component {
           <div className="create-board-button">
             <div className="create-board-button"><FaPlus size={28}/></div>
           </div>
-          <BoardIndexContainer />
+          <BoardIndexContainer user={this.props.user}/>
         </div>
       </div>
     )

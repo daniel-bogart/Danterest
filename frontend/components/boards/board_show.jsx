@@ -9,7 +9,9 @@ class BoardShow extends React.Component {
   };
 
   componentDidMount() {
-    this.props.fetchBoard(this.props.match.params.userId.boardId)
+    this.props.fetchBoard(this.props.userId, this.props.match.params.boardId)
+    console.log(this.props)
+    // this.props.fetchBoard();
   };
 
   goBack() {
@@ -19,6 +21,9 @@ class BoardShow extends React.Component {
   render() {
     
     if (this.props.board === undefined ) return null;
+
+    console.log(this.props.board.title)
+    console.log("this is the board", this.props.match.params.userId.boardId)
 
     return (
       <div className="board-show-container">

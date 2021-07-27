@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => ({
   openModal: (formType) => dispatch(openModal(formType))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nav)
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);

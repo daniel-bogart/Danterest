@@ -1,7 +1,7 @@
 class Api::BoardsController < ApplicationController
 
   def show
-    @board = board.find_by(id: params[:id])
+    @board = Board.find_by(id: params[:id])
     render :show
   end
 
@@ -23,7 +23,7 @@ class Api::BoardsController < ApplicationController
 
   def destroy
     @board = Board.find_by(id params[:id])
-      if @board && board.destroy
+      if @board && Board.destroy
         render json: @board.id
       else
         render json: @board.errors.full_messages, status: 422

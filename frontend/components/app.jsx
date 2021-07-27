@@ -17,10 +17,10 @@ const App = () => (
       <Route path="/" component={NavbarContainer}></Route>
     </header>
     <Switch>
+      <ProtectedRoute exact path="/users/:userId/boards/:boardId" component={BoardShowContainer} />
       <ProtectedRoute exact path="/" component={PinIndexContainer}/>
       <ProtectedRoute path="/pins/:pinId" component={PinShowContainer} />
       <ProtectedRoute path="/users/:userId" component={UserProfileContainer} />
-      <ProtectedRoute path="/users/:userId/:boardId" component={BoardShowContainer} />
       <AuthRoute path="/signup" component={SignupContainer}/>
       <AuthRoute path="/login" component={LoginContainer}/>
       <Redirect to="/"/>
