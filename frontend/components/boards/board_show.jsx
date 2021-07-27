@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaPlus } from 'react-icons/fa';
 
 class BoardShow extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class BoardShow extends React.Component {
       <div className="board-show-container">
         <div className="board-info">
           <h1 className="board-show-title">{this.props.board.title}</h1>
+          <div className="create-board-button"><FaPlus size={28}/></div>
           <h3 className="board-description">{this.props.board.description}</h3>
         </div>
       </div>

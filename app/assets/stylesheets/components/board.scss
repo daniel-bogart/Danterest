@@ -1,0 +1,15 @@
+.board-show-container {
+  display: flex;
+  justify-content: center;
+}
+
+.board-info > h1 {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.board-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
