@@ -22,3 +22,5 @@ class BoardCreate extends React.Component {
     )
   }
 }
+
+export default BoardCreate;

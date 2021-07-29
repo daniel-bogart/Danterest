@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 // import DropDown from './dropdown';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { FaGithub, FaPinterest, FaUserCircle } from 'react-icons/fa';
+import NavDropdown from './dropdown/nav_dropdown';
 
 
 class NavBar extends React.Component {
@@ -52,8 +53,9 @@ class NavBar extends React.Component {
         <a href="https://www.pinterest.com/" target="_blank" 
             className="nav-icons"><FaPinterest size={28}/></a>
         <NavLink className="nav-icons" to={`/users/${this.props.currentUser.id}`}><FaUserCircle size={28}/></NavLink>
-        <div className="nav-logout" onClick={this.props.logout}>Logout</div>
-        <div className="nav-dropdown"><MdKeyboardArrowDown size={25}/></div>
+        {/* <div className="nav-logout" onClick={this.props.logout}>Logout</div> */}
+        {/* <div className="nav-dropdown"><MdKeyboardArrowDown size={25}/></div> */}
+        <NavDropdown currentUser={this.props.currentUser} logout={this.props.logout}></NavDropdown>
       </div>
     ) : (
       <div className="login-signup">

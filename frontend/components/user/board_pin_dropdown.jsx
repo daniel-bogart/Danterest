@@ -1,6 +1,7 @@
 import React from 'react';
 import {MdPerson, MdKeyboardArrowDown } from "react-icons/md";
-import { TiArrowSortedDown } from "react-icons/ti";
+import { MdKeyboardArrowDown } from 'react-icons/md';
+import {NavLink} from 'react-router-dom';
 
 class BoardPinDropdown extends React.Component {
   constructor(props) {
@@ -26,9 +27,20 @@ class BoardPinDropdown extends React.Component {
 
     setTimeout(() => {
       if (showMenu) {
-        window.addEventListener
+        window.addEventListener("click", this.closeMenu);
+      } else {
+        window.removeEventListener("click", this.closeMenu);
       }
-    })
+    }, 0);
   }
 
+  render() {
+    return (
+      <div>
+        
+      </div>
+    )
+  }
 }
+
+export default BoardPinDropdown
