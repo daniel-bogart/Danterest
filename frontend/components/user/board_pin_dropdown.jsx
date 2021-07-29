@@ -36,8 +36,8 @@ class BoardPinDropdown extends React.Component {
 
   render() {
     return (
-      <div>
-        
+      <div className="create-dropdown-container">
+
       </div>
     )
   }
