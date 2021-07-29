@@ -10,13 +10,13 @@ const configureStore = (preloadedState = {}) => {
   );
 };
 
+
+export default configureStore;
+
 // const store = createStore(reducer, composeWithDevTools(
 //   applyMiddleware(...middleware),
 //   // other store enhancers if any
 // ));
-
-export default configureStore;
-
 // import { createStore, applyMiddleware, compose } from 'redux';
 // import thunk from 'redux-thunk';
 // // import logger from 'redux-logger';

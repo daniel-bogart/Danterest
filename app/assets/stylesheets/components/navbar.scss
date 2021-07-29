@@ -131,6 +131,16 @@
   border-radius: 24px;
 }
 
+.darken-dropdown {
+  color: black;
+  padding: 8px 8px;
+  border-radius: 24px;
+}
+
+.darken-dropdown:hover {
+  background: rgb(239, 239, 239);
+}
+
 .nav-icons {
   color: grey;
   padding: 8px;
@@ -152,14 +162,87 @@
 }
 
 .session-dropdown-box {
-  background: red
+  z-index: 8;
 }
 
+  
+.session-dropdown-box {
+    position: relative;
+}
+  
+.drop-menu-index {
+    position: absolute;
+    right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 4px;
+    // margin: 10px;
+    border-radius: 16px;
+    z-index: inherit;
+    background: white;
+}
+
+// .dropdown-ul {
+//   padding: 4px;
+// }
+
+.dropdown-ul > li {
+  text-decoration: none;
+  color:rgb(70, 70, 70);
+  // padding: 8px;
+}
+
+.dropdown-ul > li:first-child {
+  font-weight: bold;
+  padding: 8px;
+}
+
+.dropdown-ul > li:last-child {
+  color: grey;
+  font-size: small;
+  padding: 8px
+}
+
+.dropdown-ul:hover {
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+}
+
+h6 {
+  color: rgb(70, 70, 70);
+}
+
+.dropdown-logout {
+  font-weight: bold;
+  color:rgb(70, 70, 70);
+  padding: 8px;
+}
 .dropdown-logout:hover {
   cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
 }
 
-// .drop-menu-index {
-//   position: relative;
-//   top: 25px;
-// }
+.dropdown-settings {
+  font-weight: bold;
+  color:rgb(70, 70, 70);
+  padding: 8px;
+}
+
+.dropdown-settings:hover {
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+}
+
+.more-options {
+  padding: 4px;
+  padding-top: 12px;
+}
+
+.current-user-info {
+  padding: 4px
+}
+
+.mo-text {
+  padding: 8px;
+}

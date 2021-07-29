@@ -47,7 +47,6 @@ class NavBar extends React.Component {
 
     const display = this.props.currentUser ? (
       <div className="nav-greeting">
-          <div className="user-greeting">Hello, {this.props.currentUser.username}!</div>
         <a href="https://github.com/daniel-bogart" target="_blank"
             className="nav-icons"><FaGithub size={28}/></a>
         <a href="https://www.pinterest.com/" target="_blank" 
