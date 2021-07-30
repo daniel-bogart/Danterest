@@ -29,5 +29,3 @@ const App = () => (
 );
 
 export default App;
-
-// TODO: Fix UserProfile - replace LoginContainer with user profile container

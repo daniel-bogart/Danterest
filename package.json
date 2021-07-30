@@ -5,6 +5,7 @@
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
     "@babel/preset-react": "^7.13.13",
+    "antd": "^4.16.9",
     "babel-loader": "^8.2.2",
     "distinct-colors": "^3.0.0",
     "react": "^17.0.2",

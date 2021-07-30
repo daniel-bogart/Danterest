@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { receiveUser } from '../../actions/user_actions';
 import { createrNewBoard } from '../../actions/board_actions';
 import { removeErrors } from '../../actions/session_actions';
+import { openModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    openModal: (formType) => dispatch(openModal(formType)),
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     createNewBoard: (board) => dispatch(createNewBoard(board)),
     removeErrors: () => dispatch(removeErrors())

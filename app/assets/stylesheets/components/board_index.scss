@@ -21,14 +21,16 @@
 }
 
 .profile-info {
-  display: block;
-  box-sizing: border-box;
-
+  // display: block;
+  // box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-name {
-  display: flex;
-  justify-content: center;
+  // display: flex;
+  // justify-content: center;
   font-size: xx-large;
   color: (69, 69, 69)
 }
@@ -59,19 +61,60 @@
   justify-content: flex-end;
 }
 
-.create-board-button {
-  // display: inline-block;
-  // box-sizing: border-box;
-  // align-items: center;
-  border-radius: 50px;
-  padding: 8px 8px;
-  color: rgb(17, 17, 17);
-}
-.create-board-button:hover {
-  cursor: pointer;
-  background: rgb(239, 239, 239);
-}
 
 .bii-link {
   text-decoration: none;
 }
+
+.board-pin-drop-menu-index > div {
+  padding: 8px;
+  padding-right: 100px;
+}
+
+.board-pin-drop-menu-index > div:first-child {
+  font-size: small;
+}
+
+.board-pin-drop-menu-index {
+  position: absolute;
+  right: 48px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 8px;
+  // margin: 10px;
+  border-radius: 16px;
+  z-index: inherit;
+  background: white;
+}
+
+.drop-create-pin-button {
+  font-weight: bold;
+}
+
+.drop-create-pin-button:hover {
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+} 
+
+.drop-create-board-button {
+  font-weight: bold;
+}
+
+.drop-create-board-button:hover {
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+}
+
+.board-pin-create-button {
+  border-radius: 50px;
+  padding: 8px 8px;
+  color: rgb(17, 17, 17);
+}
+.board-pin-create-button:hover {
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+}
+
+
+
