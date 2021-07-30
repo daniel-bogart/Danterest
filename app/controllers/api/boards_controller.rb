@@ -22,7 +22,7 @@ class Api::BoardsController < ApplicationController
   end
 
   def destroy
-    @board = Board.find_by(id params[:id])
+    @board = Board.find_by(id: params[:id])
       if @board && Board.destroy
         render json: @board.id
       else
@@ -31,13 +31,24 @@ class Api::BoardsController < ApplicationController
   end
 
   def update
-    @board = current_user.pins.find_by(id: params[:id])
-      if @board && @board.update(board_params)
+    @board = Board.find_by(id: params[:id])
+    if @board && @board.user_id == current_user.id 
+      if @board.update(board_params)
         render :show
       else
         render json: @board.errors.full_messages, status: 422
-      end
+      end 
+    end
   end
+
+  # def update
+  #   @board = Board.find_by(id: params[:id])
+  #     if @board && @board.update(board_params)
+  #       render :show
+  #     else
+  #       render json: @board.errors.full_messages, status: 422
+  #     end
+  # end
 
   private
   def board_params

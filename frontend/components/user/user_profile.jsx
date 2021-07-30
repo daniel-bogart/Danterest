@@ -29,7 +29,7 @@ class UserProfile extends React.Component {
             </div>
           </div>
           <div className="create-board-button-container">
-            <BoardPinDropdown/>
+            <BoardPinDropdown openModal={this.props.openModal}/>
           </div>
           <BoardIndexContainer user={this.props.user}/>
         </div>

@@ -42,13 +42,18 @@ class BoardPinDropdown extends React.Component {
         onClick={() => {
           this.showMenu();
         }}>
-          <FaPlus className="board-pin-create-button" size={25}/>
+          <FaPlus 
+          className="board-pin-create-button" 
+          size={25} />
         </div>
         {this.state.showMenu ? (
             <div className="board-pin-drop-menu-index">
               <div>Create</div>
               <div className="drop-create-pin-button">Pin</div>
-              <div className="drop-create-board-button">Board</div>
+              <div 
+              className="drop-create-board-button"
+              onClick={() => this.props.openModal('create-board')}
+              >Board</div>
             </div>
           ) : null}
       </div>
