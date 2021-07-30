@@ -1,7 +1,7 @@
 import React from 'react';
-import {MdPerson, MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import {NavLink} from 'react-router-dom';
+import { FaPlus } from 'react-icons/fa';
 
 class BoardPinDropdown extends React.Component {
   constructor(props) {
@@ -37,7 +37,12 @@ class BoardPinDropdown extends React.Component {
   render() {
     return (
       <div className="create-dropdown-container">
-
+        <div 
+        className="create-dropdown-box"
+        onClick={() => {
+          this.showMenu();
+        }}>
+        </div>
       </div>
     )
   }

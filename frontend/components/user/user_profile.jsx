@@ -18,7 +18,7 @@ class UserProfile extends React.Component {
               <h3 className="profile-email">{this.props.user.email}</h3>
             </div>
           </div>
-          <div className="create-board-button">
+          <div className="create-board-button-container">
             <div className="create-board-button"><FaPlus size={28}/></div>
           </div>
           <BoardIndexContainer user={this.props.user}/>

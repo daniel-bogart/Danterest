@@ -1,5 +1,5 @@
 import React from 'react';
-import {MdPerson, MdKeyboardArrowDown } from "react-icons/md";
+import {MdKeyboardArrowDown } from "react-icons/md";
 import {NavLink} from 'react-router-dom';
 
 class NavDropdown extends React.Component {
