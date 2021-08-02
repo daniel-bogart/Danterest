@@ -5,16 +5,17 @@ import { closeModal } from '../../actions/modal_actions';
 import { removeErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 
-const mSTP = ({errors}) => {
+const mSTP = (state) => {
   return {
-    errors,
+    errors: state.errors,
+    userId: state.session.id
   };
 };
 
 const mDTP = dispatch => {
   return {
     closeModal: () => dispatch(closeModal()),
-    createNewBoard: (board) => dispatch(createNewBoard(board)),
+    createNewBoard: (board, userId) => dispatch(createNewBoard(board, userId)),
     removeErrors: () => dispatch(removeErrors()),
   };
 };

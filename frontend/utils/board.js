@@ -1,3 +1,5 @@
+// const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
 export const fetchAllBoards = (userId) => {
   return $.ajax({
     url: `/api/users/${userId}/boards`,
@@ -19,11 +21,12 @@ export const fetchPinsOnBoard = () => (
   })
 )
 
-export const createNewBoard = (board) => (
+
+export const createNewBoard = (board, userId) => (
   $.ajax({
-    url: `/api/users/${board.user_id}/boards`,
+    url: `/api/users/${userId}/boards`,
     method: 'POST',
-    data: { board }
+    data: board 
   })
 );
 

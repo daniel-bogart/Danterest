@@ -1,4 +1,6 @@
 import React from 'react';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 class BoardCreate extends React.Component {
   constructor(props) {
@@ -9,9 +11,12 @@ class BoardCreate extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e){
+  async handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewBoard(this.state).then(this.props.closeModal());
+    await this.props.createNewBoard({board: {title: this.state.title}}, this.props.userId);
+    this.props.closeModal();
+    // this.props.createNewBoard(this.state.title).then(this.props.closeModal());
+
   }
 
   handleInput(type) {

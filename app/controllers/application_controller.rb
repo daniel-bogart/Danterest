@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :null_session
 
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :require_logged_in
 
   def login!(user)
     session[:session_token] = user.session_token

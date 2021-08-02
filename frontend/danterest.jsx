@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root";
 import configureStore from "./store/store";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 /*
 Write an entry point file that renders the `Root` component, with a `store`
