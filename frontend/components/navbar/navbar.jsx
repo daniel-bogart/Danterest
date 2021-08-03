@@ -33,9 +33,12 @@ class NavBar extends React.Component {
         <Link to="/" className="logo-wrapper" >
           <img className="home-logo2" src={window.dLogo} />
         </Link>
-        <Link to="/" className="home-link">
+        <NavLink exact to="/" 
+        className="home-link" 
+        activeClassName="home-link-active"
+        >
           Home
-        </Link>
+        </NavLink>
       </div>
     ) : (
       <div className="logo-wrapper">

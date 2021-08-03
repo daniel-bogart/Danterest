@@ -48,12 +48,22 @@
   height: 48px;
   border-radius: 24px;
   padding: 0px 16px;
-  background-color: rgb(17, 17, 17);
-  color: white;
+  background-color: white;
+  color: rgb(17, 17, 17);
   text-decoration: none;
   font-size: 16px;
   font-weight: 700;
   margin-left: 16px;
+}
+.home-link:hover {
+  background: rgb(239, 239, 239);
+}
+
+
+
+.home-link-active {
+  background-color: rgb(17, 17, 17);
+  color: white;
 }
 
 .logo-wrapper {
@@ -193,10 +203,15 @@
 //   padding: 4px;
 // }
 
+.dropdown-ul {
+  transition: all .35s ease;
+}
+
 .dropdown-ul > li {
   text-decoration: none;
   color:rgb(70, 70, 70);
   // padding: 8px;
+
 }
 
 .dropdown-ul > li:first-child {
@@ -223,6 +238,7 @@ h6 {
   font-weight: bold;
   color:rgb(70, 70, 70);
   padding: 8px;
+  transition: all .35s ease;
 }
 .dropdown-logout:hover {
   cursor: pointer;
@@ -234,6 +250,7 @@ h6 {
   font-weight: bold;
   color:rgb(70, 70, 70);
   padding: 8px;
+  transition: all .35s ease;
 }
 
 .dropdown-settings:hover {
@@ -253,4 +270,8 @@ h6 {
 
 .mo-text {
   padding: 8px;
+}
+
+.user-dropdown-button {
+  transition: all .35s ease;
 }
