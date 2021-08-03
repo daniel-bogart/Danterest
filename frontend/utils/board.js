@@ -37,10 +37,10 @@ export const deleteBoard = (userId, boardId) => (
   })
 );
 
-export const editBoard = (userId, board) => (
+export const editBoard = (board, userId) => (
   $.ajax({
     url: `/api/users/${userId}/boards/${board.id}`,
     method: 'PATCH',
-    data: board
+    data: {board}
   })
 );

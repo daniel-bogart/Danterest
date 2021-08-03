@@ -13,9 +13,8 @@ class BoardEdit extends React.Component {
 
   async handleSubmit(e) {
     e.preventDefault();
-    await this.props.editBoard({board: {title: this.state.title}}, this.props.userId);
+    await this.props.editBoard({title: this.state.title, id: this.props.boardId}, this.props.userId);
     this.props.closeModal();
-    // this.props.createNewBoard(this.state.title).then(this.props.closeModal());
 
   }
 
@@ -27,21 +26,22 @@ class BoardEdit extends React.Component {
 
   render() {
 
+    const title = this.props.board ? this.props.board.title : ""
+
     return (
-      <div className="board-create-container">
+      <div className="board-edit-container">
         <div>Edit your board</div>
-        <div className="board-create-input">
+        <div className="board-edit-input">
           <h6>Name</h6>
           <input
           type="text"
           value={this.state.title}
-          // placeholder={`${this.props.board.title}`}
-          placeholder='"New board title"'
+          placeholder={`${title}`}
           onChange={this.handleInput('title')}
           />
         </div>
-        <div className="final-board-create-btn-container">
-          <div onClick={this.handleSubmit} className="final-board-create-btn">Create</div>
+        <div className="final-board-edit-btn-container">
+          <div onClick={this.handleSubmit} className="final-board-edit-btn">Create</div>
         </div>
       </div>
     )

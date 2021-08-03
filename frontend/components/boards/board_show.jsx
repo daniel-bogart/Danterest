@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaPlus } from 'react-icons/fa';
 import { RiPencilFill } from 'react-icons/ri';
 
 class BoardShow extends React.Component {

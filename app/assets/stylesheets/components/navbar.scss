@@ -1,6 +1,7 @@
 .home-logo1 img{
   width: 150px;
   margin-top: 5px;
+  transition: all .5s ease;
 };
 
 .home-logo2 {
@@ -9,6 +10,7 @@
   padding: 8px;
   margin-left: -8px;
   border-radius: 50px;
+  transition: all .5s ease;
 };
 
 .home-logo2:hover {
@@ -30,6 +32,7 @@
   border-radius: 24px;
   padding: 0px 16px;
   font-weight: 600;
+  transition: all .5s ease;
 }
 
 // .home-logo2:hover {
@@ -93,11 +96,13 @@
   height: 40px;
   margin: 8px;
   font-weight: 600;
+  transition: all .5s ease;
 }
 
 .login-btn {
   background: rgb(230, 0, 35);
   color: white;
+  // transition: all .5s ease;
 }
 
 .login-btn:hover {
@@ -113,6 +118,7 @@
 .signup-btn:hover {
   background: rgb(239, 239, 239);
   cursor: pointer;
+  filter: brightness(90%);
 }
 
 .nav-username {
@@ -129,6 +135,7 @@
   color: grey;
   padding: 8px 8px;
   border-radius: 24px;
+  transition: all .5s ease;
 }
 
 .darken-dropdown {
@@ -145,6 +152,7 @@
   color: grey;
   padding: 8px;
   border-radius: 24px;
+  transition: all .5s ease;
 }
 
 .nav-icons:hover {

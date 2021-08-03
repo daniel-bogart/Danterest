@@ -4,11 +4,16 @@ import { editBoard } from '../../actions/board_actions';
 import { closeModal } from '../../actions/modal_actions';
 import { removeErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
+  const tempPath = ownProps.location.pathname.split("/")
+  const boardId = tempPath[tempPath.length -1]
   return {
     errors: state.errors,
-    userId: state.session.id
+    userId: state.session.id,
+    boardId: boardId,
+    board: state.entities.boards[boardId]
   };
 };
 
@@ -20,4 +25,4 @@ const mDTP = dispatch => {
   };
 };
 
-export default connect(mSTP, mDTP)(BoardEdit);
+export default withRouter(connect(mSTP, mDTP)(BoardEdit));
