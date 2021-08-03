@@ -56,8 +56,8 @@ export const createNewBoard = (board, userId) => dispatch => (
     .then(board => dispatch(receiveBoard(board)), error => dispatch(receiveBoardErrors(error.responseJSON)))
 );
 
-export const editBoard = board => dispatch => (
-  BoardApiUtil.editBoard(board)
+export const editBoard = (board, userId) => dispatch => (
+  BoardApiUtil.editBoard(board, userId)
     .then(board => dispatch(receiveBoard(board)), error => dispatch(receiveBoardErrors(error.responseJSON)))
 );
 

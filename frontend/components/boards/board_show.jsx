@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
+import { RiPencilFill } from 'react-icons/ri';
 
 class BoardShow extends React.Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class BoardShow extends React.Component {
   componentDidMount() {
     this.props.fetchBoard(this.props.userId, this.props.match.params.boardId)
     console.log(this.props)
-    // this.props.fetchBoard();
   };
 
   goBack() {
@@ -29,8 +29,13 @@ class BoardShow extends React.Component {
     return (
       <div className="board-show-container">
         <div className="board-info">
-          <h1 className="board-show-title">{this.props.board.title}</h1>
-          <div className="create-board-button"><FaPlus size={28}/></div>
+          <div className="board-info-title">
+            <h1 className="board-show-title">{this.props.board.title}</h1>
+            <div 
+            className="create-board-button"
+            onClick={() => this.props.openModal('edit-board')}
+            ><RiPencilFill size={28}/></div>
+          </div>
           <h3 className="board-description">{this.props.board.description}</h3>
         </div>
       </div>

@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.board-info > h1 {
+.board-info-title > h1 {
   font-size: xx-large;
   font-weight: bold;
 }
@@ -12,4 +12,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.board-info-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.create-board-button {
+  padding: 8px;
+  position: relative;
+  bottom: 4px;
+}
+
+.create-board-button:hover {
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 25px;
 }
