@@ -5,6 +5,7 @@ import LoginFormContainer from '../session_forms/login_container';
 import SignupFormContainer from '../session_forms/signup_container';
 import BoardCreateContainer from "../boards/board_create_container";
 import BoardEditContainer from "../boards/board_edit_container";
+import BoardDeleteContainer from '../boards/board_delete_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -23,6 +24,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'edit-board':
       component = <BoardEditContainer/>;
+      break;
+    case 'delete-board':
+      component = <BoardDeleteContainer/>;
       break;
     default:
       return null;

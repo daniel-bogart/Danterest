@@ -9,14 +9,21 @@ class BoardEdit extends React.Component {
       title: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.openNewModal = this.openNewModal.bind(this);
   }
 
   async handleSubmit(e) {
     e.preventDefault();
     await this.props.editBoard({title: this.state.title, id: this.props.boardId}, this.props.userId);
     this.props.closeModal();
-
   }
+
+  async openNewModal(e) {
+    e.preventDefault();
+    await this.props.closeModal();
+    this.props.openModal('delete-board');
+  }
+
 
   handleInput(type) {
     return (e) => {
@@ -42,6 +49,7 @@ class BoardEdit extends React.Component {
         </div>
         <div className="final-board-edit-btn-container">
           <div onClick={this.handleSubmit} className="final-board-edit-btn">Create</div>
+          <div onClick={() => this.openNewModal} className="final-board-delete-btn">Delete</div>
         </div>
       </div>
     )
