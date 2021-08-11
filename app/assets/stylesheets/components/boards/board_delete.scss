@@ -39,3 +39,25 @@
   display: flex;
   flex-direction: column;
 }
+
+.final-board-delete-btn {
+  background: rgb(230, 0, 35);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 24px;
+  padding: 8px 12px;
+  height: 40px;
+  font-weight: 600;
+  transition: all .5s ease;
+}
+
+.final-board-delete-btn:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+}

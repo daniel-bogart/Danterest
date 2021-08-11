@@ -1,6 +1,6 @@
 .board-edit-container-display {
   width: 20vw;
-  height: 20vh;
+  height: auto;
 }
 
 .board-edit-container-display > div:first-child {
@@ -11,11 +11,10 @@
   padding-bottom: 36px;
 }
 
-
-
 .final-board-edit-btn-container {
   display: flex;
   justify-content: flex-end;
+  flex-direction: column;
   margin-top: 42px;
 }
 
@@ -33,6 +32,7 @@
   padding: 8px 12px;
   height: 40px;
   font-weight: 600;
+  margin-bottom: 56px;
 }
 
 .final-board-edit-btn:hover {
@@ -40,23 +40,25 @@
   background: rgb(173, 8, 27);
 }
 
-.final-board-delete-btn {
-  background: rgb(230, 0, 35);
-  color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-sizing: border-box;
-  border: 0;
-  border-radius: 24px;
-  padding: 8px 12px;
-  height: 40px;
-  font-weight: 600;
+.edit-board-delete-btn {
+  // background: rgb(230, 0, 35);
+  // color: white;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+  // align-items: center;
+  // text-align: center;
+  // box-sizing: border-box;
+  // border: 0;
+  // border-radius: 24px;
+  // padding: 8px 12px;
+  // height: 40px;
+  // font-weight: 600;
+  font-size: large;
+  font-weight: bold;
 }
 
-.final-board-delete-btn:hover {
+.delete-button-box:hover {
   cursor: pointer;
-  background: rgb(173, 8, 27);
+  // background: rgb(173, 8, 27);
 }
