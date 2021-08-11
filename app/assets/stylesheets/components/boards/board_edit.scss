@@ -1,9 +1,9 @@
-.board-edit-container {
+.board-edit-container-display {
   width: 20vw;
   height: 20vh;
 }
 
-.board-edit-container > div:first-child {
+.board-edit-container-display > div:first-child {
   display: flex;
   justify-content: center;
   font-size: x-large;

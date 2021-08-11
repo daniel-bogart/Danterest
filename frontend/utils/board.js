@@ -16,8 +16,15 @@ export const fetchBoard = (userId, boardId) => (
 
 export const fetchPinsOnBoard = () => (
   $.ajax({
-    url: '/api/pins_on_board',
+    url: '/api/pins_on_boards',
     method: 'GET'
+  })
+)
+
+export const deletePinOnBoard = (pinOnBoardId) => (
+  $.ajax({
+    url: `/api/pins_on_boards/${pinOnBoardId}`,
+    method: "DELETE"
   })
 )
 

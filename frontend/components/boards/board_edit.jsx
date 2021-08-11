@@ -1,15 +1,16 @@
 import React from 'react';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+import BoardDelete from './board_delete_container';
 
 class BoardEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: ""
+      title: "",
+      newModal: 'false'
     }
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.openNewModal = this.openNewModal.bind(this);
   }
 
   async handleSubmit(e) {
@@ -18,11 +19,6 @@ class BoardEdit extends React.Component {
     this.props.closeModal();
   }
 
-  async openNewModal(e) {
-    e.preventDefault();
-    await this.props.closeModal();
-    this.props.openModal('delete-board');
-  }
 
 
   handleInput(type) {
@@ -36,7 +32,7 @@ class BoardEdit extends React.Component {
     const title = this.props.board ? this.props.board.title : ""
 
     return (
-      <div className="board-edit-container">
+      <div id="board-edit-container" className="board-edit-container-display">
         <div>Edit your board</div>
         <div className="board-edit-input">
           <h6>Name</h6>
@@ -48,8 +44,9 @@ class BoardEdit extends React.Component {
           />
         </div>
         <div className="final-board-edit-btn-container">
-          <div onClick={this.handleSubmit} className="final-board-edit-btn">Create</div>
-          <div onClick={() => this.openNewModal} className="final-board-delete-btn">Delete</div>
+          <div onClick={this.handleSubmit} className="final-board-edit-btn">Done</div>
+          <div onClick={() => this.props.openModal('delete-board')} 
+            className="final-board-delete-btn">Delete</div>
         </div>
       </div>
     )

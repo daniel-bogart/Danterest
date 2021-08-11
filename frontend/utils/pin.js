@@ -12,6 +12,13 @@ export const fetchPin = (pinId) => (
   })
 );
 
+export const fetchUserPins = (userId) => {
+  return $.ajax({
+    url: `/api/users/${userId}/pins`,
+    method: "GET"
+  });
+};
+
 export const createPin = pin => (
   $.ajax({
     url: `/api/pins`,
@@ -36,4 +43,12 @@ export const deletePin = pinId => (
     method: 'DELETE'
   })
 );
+
+export const addToBoard = (pin_on_board) => (
+  $.ajax({
+    url: '/api/pins_on_boards',
+    method: 'POST',
+    data: { pin_on_board }
+  })
+)
 

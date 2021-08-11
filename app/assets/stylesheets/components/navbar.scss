@@ -62,8 +62,12 @@
 
 
 .home-link-active {
-  background-color: rgb(17, 17, 17);
+  background: rgb(17, 17, 17);
   color: white;
+}
+
+.home-link-active:hover {
+  background: rgb(17, 17, 17);
 }
 
 .logo-wrapper {
