@@ -54,11 +54,16 @@
   // padding: 8px 12px;
   // height: 40px;
   // font-weight: 600;
-  font-size: large;
+  font-size: 20px;
   font-weight: bold;
+  margin-bottom: 4px;
 }
 
 .delete-button-box:hover {
   cursor: pointer;
   // background: rgb(173, 8, 27);
+}
+
+.delete-button-text {
+  color: #767676;
 }
