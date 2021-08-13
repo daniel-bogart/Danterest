@@ -48,10 +48,10 @@ export default class PinIndex extends React.Component {
           deletingInterval="16"
           onTypingStart={() => this.changeColor()}
           items={[
-            "weeknight dinner idea",
-            "home decor idea",
-            "new look outfit",
-            "green thumb idea"
+            "graphic art idea",
+            "design inspiration",
+            "travel destination",
+            "gardening idea"
           ]}
           />
         </div>
