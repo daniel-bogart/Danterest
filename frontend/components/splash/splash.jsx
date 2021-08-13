@@ -13,21 +13,16 @@ export default class Splash extends React.Component {
 
 
   render() {
-    if (!this.props.pins[this.props.pins.length-1]) {
-      return (<LoadingIcon/>)
-    } else {
-      return (
-        <ul className="masonry">
-          {this.props.pins.map((pin) => {
-            return (
-              <li className="index-pin" key={pin.id}>
-                <SplashIndexItem className="index-pin" pin={pin}/>
-                <h3>{pin.title}</h3>
-              </li>
-            );
-          })}
-        </ul>
-      );
-    }
+    return (
+      <ul className="splash-masonry">
+        {this.props.pins.map((pin) => {
+          return (
+            <li className="splash-index-pin" key={pin.id}>
+              <SplashIndexItem className="splash-index-pin" pin={pin}/>
+            </li>
+          );
+        })}
+      </ul>
+    );
   }
 }

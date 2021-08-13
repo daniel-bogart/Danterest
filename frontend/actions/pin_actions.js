@@ -31,7 +31,7 @@ export const removePinErrors = () => ({
   type: REMOVE_PIN_ERRORS
 });
 
-const recievedUserPins = (pins) => ({
+export const recievedUserPins = (pins) => ({
   type: RECEIVED_USER_PINS,
   pins
 });

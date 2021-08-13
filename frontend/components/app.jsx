@@ -9,6 +9,7 @@ import PinIndexContainer from "./pins/pin_index_container";
 import PinShowContainer from "./pins/pin_show_container";
 import UserProfileContainer from "./user/user_profile_container";
 import BoardShowContainer from "./boards/board_show_container";
+import SplashContainer from "./splash/splash_container";
 
 const App = () => (
   <div>
@@ -17,8 +18,9 @@ const App = () => (
       <Route path="/" component={NavbarContainer}></Route>
     </header>
     <Switch>
+      {/* <AuthRoute path="/" component={SplashContainer}/> */}
       <ProtectedRoute exact path="/users/:userId/boards/:boardId" component={BoardShowContainer} />
-      <ProtectedRoute exact path="/" component={PinIndexContainer}/>
+      <Route exact path="/" component={PinIndexContainer}/>
       <ProtectedRoute path="/pins/:pinId" component={PinShowContainer} />
       <ProtectedRoute path="/users/:userId" component={UserProfileContainer} />
       <AuthRoute path="/signup" component={SignupContainer}/>
