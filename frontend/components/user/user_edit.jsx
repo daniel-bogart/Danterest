@@ -42,7 +42,7 @@ class UserEdit extends React.Component {
       <div className="user-edit-container">
         <div className="user-edit-surnames">
           <div className="user-edit-firstame">
-            <div>First name</div>
+            <div className="user-edit-label">First name</div>
             <input
             type="text"
             value={this.state.firstName}
@@ -51,7 +51,7 @@ class UserEdit extends React.Component {
             />
           </div>
           <div className="user-edit-lastname">
-            <div>Last name</div>
+            <div className="user-edit-label">Last name</div>
             <input
             type="text"
             value={this.state.lastName}
@@ -61,7 +61,7 @@ class UserEdit extends React.Component {
           </div>
         </div>
         <div className="user-edit-username">
-          <div>Username</div>
+          <div className="user-edit-label">Username</div>
           <input
           type="text"
           value={this.state.username}
