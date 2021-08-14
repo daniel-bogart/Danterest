@@ -13,14 +13,17 @@ class UserProfile extends React.Component {
   };
 
   render() {
+    const firstName = this.props.user.first_name ||= ""
+    const lastName = this.props.user.last_name ||= ""
     return (
       <div className="user-show-page">
         <div className="user-sub-page">
           <div className="profile-info-box">
             <div className='profile-info'>
               <div className="profile-picture"><MdAccountCircle size={100}/></div>
-              <h1 className="profile-name">{this.props.user.username}</h1>
-              <h3 className="profile-email">{this.props.user.email}</h3>
+              <div>{firstName} {lastName}</div>
+              <h1 className="profile-name">@{this.props.user.username}</h1>
+              {/* <h3 className="profile-email">{this.props.user.email}</h3> */}
             </div>
           </div>
           <div className="create-board-button-container">

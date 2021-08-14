@@ -2,3 +2,25 @@
   font-size: small;
   color: #767676;
 }
+
+.final-board-delete-btn {
+  background: rgb(230, 0, 35);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 24px;
+  padding: 8px 12px;
+  height: 40px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.final-board-delete-btn:hover {
+  cursor: pointer;
+  background: rgb(173, 8, 27);
+}
