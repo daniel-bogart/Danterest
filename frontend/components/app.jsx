@@ -18,7 +18,6 @@ const App = () => (
       <Route path="/" component={NavbarContainer}></Route>
     </header>
     <Switch>
-      {/* <AuthRoute path="/" component={SplashContainer}/> */}
       <ProtectedRoute exact path="/users/:userId/boards/:boardId" component={BoardShowContainer} />
       <Route exact path="/" component={PinIndexContainer}/>
       <ProtectedRoute path="/pins/:pinId" component={PinShowContainer} />

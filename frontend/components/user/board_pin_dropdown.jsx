@@ -43,7 +43,7 @@ class BoardPinDropdown extends React.Component {
           this.showMenu();
         }}>
           <FaPlus 
-          className="board-pin-create-button" 
+          className="def-btn board-pin-create-button" 
           size={25} />
         </div>
         {this.state.showMenu ? (

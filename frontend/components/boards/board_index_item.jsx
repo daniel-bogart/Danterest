@@ -12,7 +12,6 @@ class BoardIndexItem extends React.Component {
     const colors = ['#d12723', '#f08238', '#f2c758','#26a8c9']
     var randomColor = colors[Math.floor(Math.random() * colors.length)]
 
-    console.log(randomColor)
     return (
       <Link className="bii-link" to={`/users/${this.props.board.user_id}/boards/${this.props.board.id}`}>
       {/* // <Link className="bii-link" to={`/users/${this.props.user_id}/boards/${this.props.board.id}`}> */}
