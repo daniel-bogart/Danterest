@@ -14,12 +14,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updateUser: (user) => dispatch(updateUser(user)),
-    closeModal: () => dispatch(closeModal()),
-    fetchUser: (userId) => dispatch(fetchUser(userId)),
-  };
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserEdit));
+export default withRouter(connect(mapStateToProps, {updateUser, closeModal, fetchUser})(UserEdit));

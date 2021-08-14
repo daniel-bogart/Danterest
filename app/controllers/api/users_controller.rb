@@ -14,10 +14,9 @@ class Api::UsersController < ApplicationController
   
   def update
     @user = selected_user
-    if @user && @user.find_by(id: params[:id]
+    if @user
+      @user.update({username: params[:user][:username], first_name: params[:user][:firstName], last_name: params[:user][:lastName]})
       render :show
-    elsif !@user
-      render json: ['Could not locate user'], status: 400
     else
       render json: @user.errors.full_messages, status: 401
     end

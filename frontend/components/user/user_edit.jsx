@@ -45,9 +45,9 @@ class UserEdit extends React.Component {
             <div>First name</div>
             <input
             type="text"
-            value={this.state.firsName}
+            value={this.state.firstName}
             placeholder="Ex. Jo"
-            onChange={this.handleInput('firsName')}
+            onChange={this.handleInput('firstName')}
             />
           </div>
           <div className="user-edit-lastname">
