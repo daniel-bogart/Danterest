@@ -4,6 +4,7 @@ import { receiveCurrentUser } from './session_actions';
 export const RECEIVE_USER = "RECEIVE_USER";
 
 export const receiveUser = user => {
+  console.log("this is the user", user)
   return {
     type: RECEIVE_USER,
     user
@@ -15,5 +16,5 @@ export const fetchUser = userId => dispatch => UserAPIUtils.fetchUser(userId)
 
 
 export const updateUser = (user, userId) => dispatch => UserAPIUtils.updateUser(user, userId)
-  .then( user => dispatch(receiveCurrentUser(user)));
+  .then(user => dispatch(receiveCurrentUser(user)));
 

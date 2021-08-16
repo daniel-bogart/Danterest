@@ -6,15 +6,23 @@ import { MdAccountCircle } from "react-icons/md";
 import BoardPinDropdown from './board_pin_dropdown';
 import { HiPencil } from 'react-icons/hi';
 import { openModal } from '../../actions/modal_actions';
+import { fetchUser } from '../../utils/user';
 
 class UserProfile extends React.Component {
   constructor(props) {
     super(props)
   };
 
+  componentDidMount() {
+    console.log("hitting")
+    this.props.fetchUser(this.props.userId)
+  }
+
+
   render() {
-    const firstName = this.props.user.first_name ||= ""
-    const lastName = this.props.user.last_name ||= ""
+    console.log("currentUser", this.props.currentUser)
+    const firstName = this.props.currentUser.first_name ||= ""
+    const lastName = this.props.currentUser.last_name ||= ""
     return (
       <div className="user-show-page">
         <div className="user-sub-page">

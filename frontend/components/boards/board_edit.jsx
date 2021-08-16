@@ -44,6 +44,7 @@ class BoardEdit extends React.Component {
           value={this.state.title}
           placeholder='Like "Places to Go" or "Recipes to Make"'
           onChange={this.handleInput('title')}
+          maxLength="50"
           />
           <h6>Description</h6>
           <input
@@ -51,6 +52,7 @@ class BoardEdit extends React.Component {
           value={this.state.description}
           placeholder="What's your board about?"
           onChange={this.handleInput('description')}
+          maxLength="500"
           />
         </div>
         <div className="final-board-edit-btn-container">

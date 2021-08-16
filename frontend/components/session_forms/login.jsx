@@ -73,6 +73,7 @@ class Login extends React.Component {
                                 value={this.state.email}
                                 onChange={this.handleInput('email')}
                                 placeholder="Email"
+                                maxLength="80"
                                 />
                             </label>
                             <label>
