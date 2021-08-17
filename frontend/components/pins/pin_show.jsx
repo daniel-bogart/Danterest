@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
+import BoardIndexDropdown from '../boards/board_index_dropdown';
 
 class PinShow extends React.Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class PinShow extends React.Component {
           <div className="pinfo">
             <div className="pinfo-nav">
               <FaArrowLeft className="back-button" onClick={this.goBack}/>
+              <BoardIndexDropdown/>
               <button className="save-board-button">Save</button>
             </div>
             <div className="pinfo-text">

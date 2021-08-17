@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    user: ownProps.user,
+    boards: Object.values(state.entities.boards),
     pin: state.entities.pins[ownProps.match.params.pinId],
     session: state.session
   };
@@ -11,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    fetchAllBoards: (userId) => dispatch(fetchAllBoards(userId)),
     fetchPin: (pinId) => dispatch(fetchPin(pinId)),
     deletePin: (pinId) => dispatch(deletePin(pinId))
   };
