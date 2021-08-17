@@ -7,10 +7,7 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       console.log("redux user", action.user)
-      newState[action.user.id] = action.user;
-      return newState;
-    case RECEIVE_USER:
-      console.log("redux user", action.user)
+      console.log("user redux action", action)
       newState[action.user.id] = action.user;
       return newState;
     default:

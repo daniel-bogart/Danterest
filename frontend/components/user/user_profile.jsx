@@ -11,6 +11,10 @@ import { fetchUser } from '../../utils/user';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props)
+    // this.state = {
+    //   firstName = this.props.currentUser.first_name,
+    //   lastName = this.props.currentUser.last_name
+    // }
   };
 
   componentDidMount() {
@@ -20,9 +24,12 @@ class UserProfile extends React.Component {
 
 
   render() {
-    console.log("currentUser", this.props.currentUser)
+    console.log("currentUser", this.props.currentUser.first_name)
     const firstName = this.props.currentUser.first_name ||= ""
     const lastName = this.props.currentUser.last_name ||= ""
+    if (!this.props.currentUser) {
+      return null
+    } else {
     return (
       <div className="user-show-page">
         <div className="user-sub-page">
@@ -46,6 +53,7 @@ class UserProfile extends React.Component {
         </div>
       </div>
     )
+  }
   }
 };
 
