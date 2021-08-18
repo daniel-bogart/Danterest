@@ -1,12 +1,12 @@
 import * as UserAPIUtils from '../utils/user';
-import { receiveCurrentUser } from './session_actions';
+import { receiveCurrentUser, RECEIVE_CURRENT_USER } from './session_actions';
 
-export const RECEIVE_USER = "RECEIVE_USER";
+// export const RECEIVE_CURRENT_USER = "RECEIVE_USER";
 
 export const receiveUser = user => {
   console.log("this is the user", user)
   return {
-    type: RECEIVE_USER,
+    type: RECEIVE_CURRENT_USER,
     user
   };
 };

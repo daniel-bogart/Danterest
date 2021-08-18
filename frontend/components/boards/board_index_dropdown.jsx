@@ -46,7 +46,7 @@ class BoardIndexDropdown extends React.Component {
           size={25} />
         </div>
         {this.state.showMenu ? (
-            <div className="drop-menu-index">
+            <div className="pin-show-board-index">
               <div>Test</div>
               <div>Test1</div>
               <div>Test2</div>

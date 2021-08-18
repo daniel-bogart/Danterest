@@ -16,6 +16,7 @@ class Api::UsersController < ApplicationController
     @user = selected_user
     if @user
       @user.update({username: params[:user][:username], first_name: params[:user][:firstName], last_name: params[:user][:lastName]})
+      # debugger
       render :show
     else
       render json: @user.errors.full_messages, status: 401
@@ -24,6 +25,8 @@ class Api::UsersController < ApplicationController
   
   def show
     @user = selected_user
+    # debugger
+    render :show
   end
   
   def index

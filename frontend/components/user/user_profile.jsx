@@ -24,7 +24,7 @@ class UserProfile extends React.Component {
 
 
   render() {
-    console.log("currentUser", this.props.currentUser.first_name)
+    console.log("currentUser", this.props.currentUser)
     const firstName = this.props.currentUser.first_name ||= ""
     const lastName = this.props.currentUser.last_name ||= ""
     if (!this.props.currentUser) {
