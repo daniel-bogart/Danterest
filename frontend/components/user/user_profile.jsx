@@ -36,7 +36,7 @@ class UserProfile extends React.Component {
           <div className="profile-info-box">
             <div className='profile-info'>
               <div className="profile-picture"><MdAccountCircle size={100}/></div>
-              <div>{firstName} {lastName}</div>
+              <div className="profile-surnames">{firstName} {lastName}</div>
               <h1 className="profile-name">@{this.props.user.username}</h1>
               {/* <h3 className="profile-email">{this.props.user.email}</h3> */}
             </div>

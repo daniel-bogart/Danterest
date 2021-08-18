@@ -40,6 +40,8 @@ class UserEdit extends React.Component {
 
     return (
       <div className="user-edit-container">
+        <div className="user-edit-header">Edit Profile</div>
+        <div className="user-edit-subheader">People visiting your profile will see the following info</div>
         <div className="user-edit-surnames">
           <div className="user-edit-firstame">
             <div className="user-edit-label">First name</div>

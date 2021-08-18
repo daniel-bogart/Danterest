@@ -24,3 +24,17 @@
   cursor: pointer;
   background: rgb(173, 8, 27);
 }
+
+.user-edit-header {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 26px;
+  font-weight: bold;
+  padding-top: 4px;
+  padding-bottom: 8px;
+}
+
+.user-edit-subheader {
+  padding-bottom: 20px;
+}
+

@@ -1,6 +1,7 @@
 import React from 'react';
 import {MdKeyboardArrowDown } from "react-icons/md";
 import {NavLink} from 'react-router-dom';
+import { MdAccountCircle } from "react-icons/md";
 
 class NavDropdown extends React.Component {
   constructor(props) {
@@ -66,18 +67,21 @@ class NavDropdown extends React.Component {
               className="current-user-link" 
               to={`/users/${this.props.currentUser.id}`}
               style={{textDecoration: "none"}}>
-              <div className="current-user-info">
-                <h6 style={{padding: "8px"}}>Currently in</h6>
-                <ul className="dropdown-ul">
-                  <li>Hello, {this.props.currentUser.username}!</li>
-                  <li>{this.props.currentUser.email}</li>
-                </ul>
+              <h6 style={{padding: "10px"}}>Currently in</h6>
+              <div className="dropdown-profile">
+                <MdAccountCircle className="account-circle-drop" size={80}/>
+                <div className="current-user-info">
+                  <ul className="dropdown-ul">
+                    <li>Hello, {this.props.currentUser.username}!</li>
+                    <li>{this.props.currentUser.email}</li>
+                  </ul>
+                </div>
               </div>
               </NavLink>
               <div className="more-options">
                 <h6 className="mo-text">More options</h6>
                 <div className="dropdown-logout" onClick={this.props.logout}>Log out</div>
-                <div className="dropdown-settings">Settings</div>
+                <div className="dropdown-settings" onClick={() => this.props.openModal('edit-user')}>Settings</div>
               </div>
             </div>
           ) : null}

@@ -60,7 +60,7 @@ class NavBar extends React.Component {
         <NavLink className="nav-icons" to={`/users/${this.props.currentUser.id}`}><FaUserCircle size={28}/></NavLink>
         {/* <div className="nav-logout" onClick={this.props.logout}>Logout</div> */}
         {/* <div className="nav-dropdown"><MdKeyboardArrowDown size={25}/></div> */}
-        <NavDropdown currentUser={this.props.currentUser} logout={this.props.logout}></NavDropdown>
+        <NavDropdown openModal={openModal} currentUser={this.props.currentUser} logout={this.props.logout}></NavDropdown>
       </div>
     ) : (
       <div className="login-signup">
