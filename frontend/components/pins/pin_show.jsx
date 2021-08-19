@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import BoardIndexDropdown from '../boards/board_index_dropdown';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 class PinShow extends React.Component {
   constructor(props) {
@@ -28,7 +29,8 @@ class PinShow extends React.Component {
 
 
   componentDidMount() {
-    this.props.fetchPin(this.props.match.params.pinId)
+    this.props.fetchPin(this.props.match.params.pinId);
+    this.props.fetchAllBoards(this.props.userId);
   }
   goBack() {
     this.props.history.goBack();
@@ -46,8 +48,10 @@ class PinShow extends React.Component {
           <div className="pinfo">
             <div className="pinfo-nav">
               <FaArrowLeft className="back-button" onClick={this.goBack}/>
-              <BoardIndexDropdown/>
-              <button className="save-board-button">Save</button>
+              <div className="save-board-button-box">
+                <BoardIndexDropdown openModal={this.props.openModal} boards={this.props.boards}/>
+                {/* <button className="save-board-button">Save</button> */}
+              </div>
             </div>
             <div className="pinfo-text">
               <h1 className="pinfo-title">{this.props.pin.title}</h1>

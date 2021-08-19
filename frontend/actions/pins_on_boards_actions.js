@@ -26,8 +26,8 @@ export const savePin = (pinOnBoard) => dispatch => (
   .then((result) => dispatch(receivedPinOnBoard(result)))
 );
 
-export const fetchPinsOnBoards = (boardId) => dispatch => (
-  BoardAPIUtil.fetchPinsOnBoards(boardId)
+export const fetchPinsOnBoards = (userId, boardId) => dispatch => (
+  BoardAPIUtil.fetchPinsOnBoards(userId, boardId)
   .then((result) => dispatch(receivedBoardPins(result)))
 );
 

@@ -9,3 +9,63 @@
   background: white;
 }
 
+.bii-dropdown {
+  font-weight: bold;
+  color:rgb(70, 70, 70);
+  padding: 8px;
+  transition: all .35s ease;
+}
+.bii-dropdown:hover {
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+}
+
+.save-board-button-container {
+  padding: 0px 0px;
+  border-radius: 24px;
+  margin: 8px;
+}
+
+.save-board-button-container:hover {
+  // cursor: pointer;
+  // background: rgb(239, 239, 239);
+  // border-radius: 8px;
+  .save-board-button {
+    background: rgb(173, 8, 27);
+  }
+
+  // .board-pin-dropdown {
+  //   cursor: pointer;
+  //   background: rgb(239, 239, 239);
+  // }
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+}
+
+.board-pin-dropdown {
+  border-radius: 50px;
+  margin-right: 4px;
+  padding: 0px 4px;
+  transition: all .5s ease;
+  position: relative;
+  top: 8px;
+  left: 4px;
+}
+
+.faplus-create-board {
+  padding: 8px;
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+}
+
+.fa-create-board-box {
+  display: flex;
+  flex-direction: row;
+}
+
+// .create-board-drop-btn {
+//   position: relative;
+//   bottom: 8px
+// }
+

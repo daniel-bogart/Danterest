@@ -59,6 +59,11 @@
   padding-top: 15px;
 }
 
+.save-board-button-box {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .save-board-button {
   background: var(--main-red);
   align-items: center;
@@ -68,16 +73,13 @@
   border-radius: 24px;
   padding: 8px 12px;
   height: 40px;
-  margin: 8px;
+  // margin: 8px;
   font-weight: 600;
   color: white;
   cursor: pointer;
   transition: all .5s ease;
 }
 
-.save-board-button:hover {
-  background: rgb(173, 8, 27);
-}
 
 .pinfo-nav {
   align-items: center;

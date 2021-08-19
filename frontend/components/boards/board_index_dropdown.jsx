@@ -1,5 +1,7 @@
 import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import BIIDropdown from './bii_dropdown';
+import { FaPlus } from 'react-icons/fa';
 
 
 class BoardIndexDropdown extends React.Component {
@@ -41,17 +43,21 @@ class BoardIndexDropdown extends React.Component {
         onClick={() => {
           this.showMenu();
         }}>
-          <MdKeyboardArrowDown 
-          className="def-btn nav-dropdown" 
-          size={25} />
+          <div className="save-board-button-container">
+            <MdKeyboardArrowDown 
+            className="board-pin-dropdown" 
+            size={25} />
+            <button className="save-board-button">Save</button>
+          </div>
         </div>
         {this.state.showMenu ? (
             <div className="pin-show-board-index">
-              <div>Test</div>
-              <div>Test1</div>
-              <div>Test2</div>
-              <div>Test3</div>
-              <div>Test4</div>
+              {this.props.boards.map((board) => <BIIDropdown className="index-board" key={board.id} board={board}/>)}
+              {/* <div style={}> __________________ </div> */}
+              <div className="bii-dropdown fa-create-board-box">
+                <FaPlus className="faplus-create-board" size={24}/>
+                <div onClick={() => this.props.openModal('create-board')} className="create-board-drop-btn">Create board</div>
+              </div>
             </div>
           ) : null}
       </div>

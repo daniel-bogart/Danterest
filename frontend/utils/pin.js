@@ -46,7 +46,7 @@ export const deletePin = pinId => (
 
 export const addToBoard = (pin_on_board) => (
   $.ajax({
-    url: '/api/pins_on_boards',
+    url: `/api/pins_on_boards`,
     method: 'POST',
     data: { pin_on_board }
   })
