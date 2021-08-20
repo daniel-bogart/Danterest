@@ -1,0 +1,32 @@
+.expanded-image {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  position: relative;
+  left: 300px;
+  top: 280px;
+  height: auto;
+  width: 100%;
+  border-radius: 32px;
+  max-width: 600px;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.expanded-image:hover {
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+}
+
+.darken-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+/*# sourceMappingURL=image_model.css.map */

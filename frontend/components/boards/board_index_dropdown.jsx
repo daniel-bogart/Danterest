@@ -52,8 +52,14 @@ class BoardIndexDropdown extends React.Component {
         </div>
         {this.state.showMenu ? (
             <div className="pin-show-board-index">
-              {this.props.boards.map((board) => <BIIDropdown className="index-board" key={board.id} board={board}/>)}
-              {/* <div style={}> __________________ </div> */}
+              {this.props.boards.map((board) => 
+              <BIIDropdown 
+              className="index-board"
+              savePin={this.props.savePin}
+              key={board.id} 
+              board={board}
+              pin={this.props.pin}
+              />)}
               <div onClick={() => this.props.openModal('create-board')} className="bii-dropdown fa-create-board-box">
                 <FaPlus className="faplus-create-board" size={24}/>
                 <div className="create-board-drop-btn">Create board</div>

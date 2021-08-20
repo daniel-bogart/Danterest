@@ -1,0 +1,333 @@
+.home-logo1 img {
+  width: 150px;
+  margin-top: 5px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.home-logo2 {
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  margin-left: -8px;
+  border-radius: 50px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.home-logo2:hover {
+  background: #efefef;
+}
+
+.nav-greeting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 24px;
+}
+
+.nav-logout {
+  margin-left: 16px;
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 24px;
+  padding: 0px 16px;
+  font-weight: 600;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.home-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 48px;
+  border-radius: 24px;
+  padding: 0px 16px;
+  background-color: white;
+  color: #111111;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 16px;
+}
+
+.home-link:hover {
+  background: #efefef;
+}
+
+.home-link-active {
+  background: #111111;
+  color: white;
+}
+
+.home-link-active:hover {
+  background: #111111;
+}
+
+.logo-wrapper {
+  margin-left: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-links-loggedin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+}
+
+.navbar {
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login-signup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.login-signup > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  border-radius: 24px;
+  padding: 8px 12px;
+  height: 40px;
+  margin: 8px;
+  font-weight: 600;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.login-btn {
+  background: #e60023;
+  color: white;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  background: #ad081b;
+}
+
+.signup-btn {
+  background: #efefef;
+  color: black;
+}
+
+.signup-btn:hover {
+  background: #efefef;
+  cursor: pointer;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+.nav-username {
+  margin-top: 12px;
+  padding: 2px;
+}
+
+.nav-logout:hover {
+  cursor: pointer;
+  background: #efefef;
+}
+
+.nav-dropdown {
+  color: grey;
+  padding: 8px 8px;
+  border-radius: 24px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.darken-dropdown {
+  color: black;
+  padding: 8px 8px;
+  border-radius: 24px;
+}
+
+.darken-dropdown:hover {
+  background: #efefef;
+}
+
+.nav-icons {
+  color: grey;
+  padding: 8px;
+  border-radius: 24px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.nav-icons:hover {
+  background: #efefef;
+}
+
+.nav-dropdown:hover {
+  background: #efefef;
+}
+
+.user-greeting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+}
+
+.session-dropdown-box {
+  z-index: 8;
+  position: relative;
+}
+
+.drop-menu-index {
+  position: absolute;
+  right: 20px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 8px;
+  border-radius: 16px;
+  z-index: inherit;
+  background: white;
+}
+
+.dropdown-ul {
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+}
+
+.dropdown-ul > li {
+  text-decoration: none;
+  color: #464646;
+}
+
+.dropdown-ul > li:first-child {
+  font-weight: bold;
+  padding: 8px;
+}
+
+.dropdown-ul > li:last-child {
+  color: grey;
+  font-size: small;
+  padding: 8px;
+}
+
+h6 {
+  color: #464646;
+}
+
+.dropdown-logout {
+  font-weight: bold;
+  color: #464646;
+  padding: 8px;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+}
+
+.dropdown-logout:hover {
+  cursor: pointer;
+  background: #efefef;
+  border-radius: 8px;
+}
+
+.dropdown-settings {
+  font-weight: bold;
+  color: #464646;
+  padding: 8px;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+}
+
+.dropdown-settings:hover {
+  cursor: pointer;
+  background: #efefef;
+  border-radius: 8px;
+}
+
+.more-options {
+  padding: 4px;
+  padding-top: 12px;
+}
+
+.current-user-info {
+  padding: 4px;
+}
+
+.mo-text {
+  padding: 8px;
+}
+
+.user-dropdown-button {
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+}
+
+.dropdown-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dropdown-profile:hover {
+  background: #efefef;
+  border-radius: 8px;
+}
+
+.account-circle-drop {
+  color: #454545;
+}
+/*# sourceMappingURL=navbar.css.map */

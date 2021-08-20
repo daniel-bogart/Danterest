@@ -3,6 +3,7 @@ import { fetchPin, deletePin } from "../../actions/pin_actions";
 import { connect } from "react-redux";
 import { fetchAllBoards } from "../../actions/board_actions";
 import { openModal } from "../../actions/modal_actions";
+import { savePin } from "../../actions/pins_on_boards_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,13 +15,6 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchAllBoards: (userId) => dispatch(fetchAllBoards(userId)),
-    fetchPin: (pinId) => dispatch(fetchPin(pinId)),
-    deletePin: (pinId) => dispatch(deletePin(pinId)),
-    openModal: (formType) => dispatch(openModal(formType))
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(PinShow);
+export default connect(mapStateToProps, {
+  fetchAllBoards, fetchPin, deletePin, openModal, savePin
+})(PinShow);

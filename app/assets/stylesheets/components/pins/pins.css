@@ -1,0 +1,145 @@
+:root {
+  --main-red: rgb(230, 0, 35);
+}
+
+.pin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 32px;
+  min-height: 600px;
+}
+
+.pin-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.pin-show-image-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 300px;
+  min-width: 200px;
+  max-width: 600px;
+  margin: 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 32px;
+}
+
+.pinfo {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pinfo-title {
+  width: 100%;
+  font-size: x-large;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 24px;
+}
+
+.pinfo-description {
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.save-board-button-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.save-board-button {
+  background: var(--main-red);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  border-radius: 24px;
+  padding: 8px 12px;
+  height: 40px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.pinfo-nav {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.back-button {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 24px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.back-button:hover {
+  background: #efefef;
+}
+
+.pin-show-image:hover {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
+}
+
+.pin-show-image {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+/*# sourceMappingURL=pins.css.map */

@@ -44,7 +44,7 @@ export const deletePin = pinId => (
   })
 );
 
-export const addToBoard = (pin_on_board) => (
+export const savePin = (pin_on_board) => (
   $.ajax({
     url: `/api/pins_on_boards`,
     method: 'POST',

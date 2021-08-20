@@ -49,7 +49,12 @@ class PinShow extends React.Component {
             <div className="pinfo-nav">
               <FaArrowLeft className="back-button" onClick={this.goBack}/>
               <div className="save-board-button-box">
-                <BoardIndexDropdown openModal={this.props.openModal} boards={this.props.boards}/>
+                <BoardIndexDropdown 
+                openModal={this.props.openModal} 
+                boards={this.props.boards}
+                savePin={this.props.savePin}
+                pin={this.props.pin}
+                />
                 {/* <button className="save-board-button">Save</button> */}
               </div>
             </div>
