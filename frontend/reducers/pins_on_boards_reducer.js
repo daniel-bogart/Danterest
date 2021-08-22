@@ -6,7 +6,7 @@ const pinsOnBoardsReducer = (oldState = {}, action) => {
   let newState = Object.assign({}, oldState);
   switch (action.type) {
     case RECEIVE_PINS_ON_BOARDS:
-      return action.pinsOnBoards;
+      return newState[action.board.id] = action.pinOnBoard
     case REMOVE_PIN_ON_BOARD:
       delete newState[action.pinOnBoardId];
       return newState;

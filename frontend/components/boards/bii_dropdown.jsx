@@ -8,7 +8,7 @@ class BIIDropdown extends React.Component {
 
   handleClick() {
     console.log("hitting")
-    this.props.savePin({pinOnBoard: { board_id: this.props.board.id, pin_id: this.props.pin.id}})
+    this.props.savePin({board_id: this.props.board.id, pin_id: this.props.pin.id})
   }
 
 

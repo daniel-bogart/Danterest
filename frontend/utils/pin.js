@@ -48,7 +48,7 @@ export const savePin = (pin_on_board) => (
   $.ajax({
     url: `/api/pins_on_boards`,
     method: 'POST',
-    data: { pin_on_board }
+    data: { 'pin_on_board': pin_on_board }
   })
 )
 
