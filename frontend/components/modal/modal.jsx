@@ -7,6 +7,7 @@ import BoardCreateContainer from "../boards/board_create_container";
 import BoardEditContainer from "../boards/board_edit_container";
 import BoardDeleteContainer from '../boards/board_delete_container';
 import UserEditContainer from '../user/user_edit_container';
+import PinCreateContainer from '../pins/pin_create_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -31,6 +32,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'edit-user':
       component = <UserEditContainer/>;
+      break;
+    case 'create-pin':
+      component = <PinCreateContainer/>;
       break;
     default:
       return null;

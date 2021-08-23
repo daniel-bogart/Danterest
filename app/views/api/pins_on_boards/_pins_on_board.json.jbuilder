@@ -1,1 +1,1 @@
-json.extract! pins_on_board, :id, :pins_id, :board_id
+json.extract! pin_on_board, :id, :pin_id, :board_id

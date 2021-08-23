@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import BoardIndexDropdown from '../boards/board_index_dropdown';
-import { MdKeyboardArrowDown } from 'react-icons/md';
 
 class PinShow extends React.Component {
   constructor(props) {

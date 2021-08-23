@@ -1,1 +1,1 @@
-json.partial! "api/pins_on_boards/pins_on_board", pins_on_board: @pins_on_board
+json.partial! "api/pins_on_boards/pins_on_board", pin_on_board: @pin_on_board

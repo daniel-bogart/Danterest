@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
 
 class BoardPinDropdown extends React.Component {
@@ -49,7 +49,12 @@ class BoardPinDropdown extends React.Component {
         {this.state.showMenu ? (
             <div className="board-pin-drop-menu-index">
               <div>Create</div>
-              <div className="drop-create-pin-button">Pin</div>
+              <Link to="pin-builder">
+                <div 
+                className="drop-create-pin-button"
+                >Pin
+                </div>
+              </Link>
               <div 
               className="drop-create-board-button"
               onClick={() => this.props.openModal('create-board')}

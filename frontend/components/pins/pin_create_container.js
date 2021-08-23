@@ -4,6 +4,7 @@ import PinCreate from "./pin_create";
 import { savePin } from "../../actions/pins_on_boards_actions";
 import { closeModal } from "../../actions/modal_actions";
 import { fetchAllBoards } from "../../actions/board_actions";
+import { createPin } from "../../actions/pin_actions";
 
 const mSTP = state => {
   return {
@@ -16,5 +17,5 @@ const mSTP = state => {
 };
 
 export default connect(mSTP, {
-  closeModal, savePin, fetchAllBoards
+  closeModal, savePin, fetchAllBoards, createPin
 })(PinCreate);
