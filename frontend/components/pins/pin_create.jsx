@@ -7,6 +7,8 @@ class PinCreate extends React.Component {
     this.state = {
       title: "",
       description: "",
+      // selectedFile: null
+      image: null,
     }
   }
 
@@ -16,16 +18,31 @@ class PinCreate extends React.Component {
     };
   }
 
+  // fileSelect = e => {
+  //   this.setState({
+  //     selectedFile: e.target.files[0]
+  //   })
+  // }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const form = new FormData();
+    form.append('image')
+  }
+
   componentDidMount() {
     this.props.fetchAllBoards(this.props.userId);
   }
 
   render() {
     return (
-      <div id="pin-background" className="pin-container">
-        <div className="pin">
-          <div className="pin-show-image-container">
-            this is where create image goes
+      <div className="pin-create-container">
+        <div className="pin-create">
+          <div className="pin-create-image-container">
+            <input
+              type="file"
+              // onChange={}
+            />
           </div>
           <div className="pinfo">
             <div className="pinfo-nav">

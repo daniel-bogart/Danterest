@@ -1,0 +1,27 @@
+.pin-show-image-container {
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  min-height: 300px;
+  min-width: 200px;
+  max-width: 600px;
+  margin: 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 32px;
+}
+
+.pin-create-container {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.pin-create {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 32px;
+  min-height: 600px;
+}

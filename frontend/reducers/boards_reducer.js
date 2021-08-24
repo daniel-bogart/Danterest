@@ -17,10 +17,16 @@ const boardsReducer = (state = {}, action) => {
       nextState[action.board.id] = action.board;
       return nextState;
     case RECEIVE_PIN_ON_BOARD:
+      debugger
+      console.log()
       if (nextState[action.pinOnBoard.board_id].pins) {
-        return nextState[action.pinOnBoard.board_id]["pins"].push(action.pinOnBoard.pin_id);
+        debugger
+        nextState[action.pinOnBoard.board_id]["pins"].push(action.pinOnBoard.pin_id);
+        debugger
+        return nextState
       } else {
-        return nextState[action.pinOnBoard.board_id]["pins"] = [action.pinOnBoard.pin_id];
+        nextState[action.pinOnBoard.board_id]["pins"] = [action.pinOnBoard.pin_id];
+        return nextState
       }
     case REMOVE_PIN_ON_BOARD:
       delete nextState[action.pinOnBoard.board_id][pinOnBoard.pin_id];
