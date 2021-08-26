@@ -3,7 +3,7 @@ import {
   RECEIVE_BOARD,
   REMOVE_BOARD
 } from '../actions/board_actions';
-import { RECEIVE_PIN_ON_BOARD, REMOVE_PIN_ON_BOARD
+import { RECEIVE_PINS_ON_BOARDS, REMOVE_PIN_ON_BOARD
 } from "../actions/pins_on_boards_actions";
 
 const boardsReducer = (state = {}, action) => {
@@ -16,18 +16,14 @@ const boardsReducer = (state = {}, action) => {
     case RECEIVE_BOARD:
       nextState[action.board.id] = action.board;
       return nextState;
-    case RECEIVE_PIN_ON_BOARD:
-      debugger
-      console.log()
-      if (nextState[action.pinOnBoard.board_id].pins) {
-        debugger
-        nextState[action.pinOnBoard.board_id]["pins"].push(action.pinOnBoard.pin_id);
-        debugger
+    case RECEIVE_PINS_ON_BOARDS:
+      // if (nextState[action.boardId].pins) {
+      //   nextState[action.boardId]["pins"].push(action.pinsOnBoards);
+      //   return nextState
+      // } else {
+        nextState[action.boardId]["pins"] = [action.pinsOnBoards];
         return nextState
-      } else {
-        nextState[action.pinOnBoard.board_id]["pins"] = [action.pinOnBoard.pin_id];
-        return nextState
-      }
+      // }
     case REMOVE_PIN_ON_BOARD:
       delete nextState[action.pinOnBoard.board_id][pinOnBoard.pin_id];
       return nextState;

@@ -35,6 +35,11 @@ class BoardPinDropdown extends React.Component {
   }
 
   render() {
+    const linkStyle= {
+      textDecoration: 'none',
+      color: 'black'
+    }
+
     return (
       <div className="create-dropdown-container">
         <div 
@@ -49,12 +54,14 @@ class BoardPinDropdown extends React.Component {
         {this.state.showMenu ? (
             <div className="board-pin-drop-menu-index">
               <div>Create</div>
-              <Link to="pin-builder">
-                <div 
-                className="drop-create-pin-button"
-                >Pin
-                </div>
+              <div className="drop-create-pin-button">
+              <Link to="pin-builder" 
+              style={{...linkStyle}}>
+              <div className="drop-create-pin-button">
+                Pin
+              </div>
               </Link>
+              </div>
               <div 
               className="drop-create-board-button"
               onClick={() => this.props.openModal('create-board')}

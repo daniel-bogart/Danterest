@@ -2,10 +2,9 @@ class Api::PinsOnBoardsController < ApplicationController
 
   def create
     @pin_on_board = PinsOnBoard.create(pin_on_board_params)
-    PinsOnBoard.create(params[:pin][:board_id], @pin.id)
     if @pin_on_board.save
-      debugger
       @pin = Pin.find(params[:pin_on_board][:pin_id])
+      PinsOnBoard.create(params[:pin][:board_id], @pin.id)
       render "api/pins/show"
     #else
     #  render json: @board_pin.errors.full_messages, status: 404

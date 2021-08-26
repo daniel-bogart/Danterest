@@ -11,9 +11,10 @@ export const receivedPinOnBoard = pinOnBoard => ({
   pinOnBoard
 })
 
-export const receivedPinsOnBoards = pinsOnBoards => ({
+export const receivedPinsOnBoards = (pinsOnBoards, boardId) => ({
   type: RECEIVE_PINS_ON_BOARDS,
-  pinsOnBoards
+  pinsOnBoards,
+  boardId
 })
 
 export const removePinOnBoard = pinOnBoardId => ({
@@ -26,9 +27,9 @@ export const savePin = (pinOnBoard) => dispatch => (
   .then((result) => dispatch(receivedPinOnBoard(result)))
 );
 
-export const fetchPinsOnBoards = (userId, boardId) => dispatch => (
-  BoardAPIUtil.fetchPinsOnBoards(userId, boardId)
-  .then((result) => dispatch(receivedBoardPins(result)))
+export const fetchPinsOnBoard = (userId, boardId) => dispatch => (
+  BoardAPIUtil.fetchPinsOnBoard(userId, boardId)
+  .then((result) => dispatch(receivedPinsOnBoards(result, boardId)))
 );
 
 export const deletePinOnBoard = (pinOnBoardId) => (
