@@ -8,6 +8,7 @@ class BoardShow extends React.Component {
     super(props);
 
     this.goBack = this.goBack.bind(this);
+    this.pinCount = this.pinCount.bind(this);
   };
 
   componentDidMount() {
@@ -22,7 +23,20 @@ class BoardShow extends React.Component {
     this.props.history.goBack();
   }
 
+  pinCount() {
+    var count = 0;
+    this.props.board.pins.forEach((pin) => {
+      count += 1;
+    })
+    return count;
+  }
+
   render() {
+
+    const countStyle = {
+      fontSize: "larger",
+      fontWeight: "bold" 
+    }
     
     if (this.props.board === undefined ) return null;
 
@@ -38,6 +52,7 @@ class BoardShow extends React.Component {
           </div>
           <h3 className="board-description">{this.props.board.description}</h3>
         </div>
+        <div className="pin-count" style={{fontWeight: "600", fontSize: "22px"}}>{this.pinCount()} Pins</div>
         <ul className="masonry">
           {this.props.board.pins.map((boardPin) => {
             return (

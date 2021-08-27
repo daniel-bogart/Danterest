@@ -55,10 +55,13 @@ class BoardIndexDropdown extends React.Component {
               {this.props.boards.map((board) => 
               <BIIDropdown 
               className="index-board"
+              fetchAllBoards={this.props.fetchAllBoards}
+              openModal={this.props.openModal} 
               savePin={this.props.savePin}
               key={board.id} 
               board={board}
               pin={this.props.pin}
+              userId={this.props.userId}
               />)}
               <div onClick={() => this.props.openModal('create-board')} className="bii-dropdown fa-create-board-box">
                 <FaPlus className="faplus-create-board" size={24}/>
