@@ -15,13 +15,13 @@ class BIIDropdown extends React.Component {
 
   handleClick() {
     const currentPin = this.props.pin.id;
-    var saved = true
+    var saved = false
     {this.props.board.pins.map((pin) => {
       if (currentPin === pin.id) {
-        saved = false
+        saved = true
       }
     })}
-    if (saved === true) {
+    if (saved === false) {
       this.props.savePin({board_id: this.props.board.id, pin_id: this.props.pin.id});
       this.props.openModal('saved-pin');
       this.setState({savedPin: false})
