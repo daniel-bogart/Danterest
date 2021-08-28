@@ -1,4 +1,4 @@
-.pin-show-image-container {
+.pin-create-image-container {
   flex-direction: column;
   justify-content: flex-start;
   box-sizing: border-box;
@@ -24,4 +24,37 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 32px;
   min-height: 600px;
+  width: 32vw;
 }
+
+.pin-create-file-input {
+  height: 600px;
+  width: 300px;
+  padding: 12px;
+}
+
+.pinput {
+  display: block;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  flex-direction: column;
+}
+
+.pincrate {
+  display: block;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  flex-direction: column;
+  padding: 12px;
+  padding-right: 32px;
+}
+
+// .pin-create-image-container {
+//   padding: 12px;
+// }

@@ -1,5 +1,6 @@
 import React from "react";
 import BoardIndexDropdown from '../boards/board_index_dropdown';
+import { FaArrowLeft } from 'react-icons/fa';
 
 class PinCreate extends React.Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class PinCreate extends React.Component {
       // selectedFile: null
       image: null,
     }
+
+    this.goBack = this.goBack.bind(this);
   }
 
   handleInput(type) {
@@ -34,20 +37,29 @@ class PinCreate extends React.Component {
     this.props.fetchAllBoards(this.props.userId);
   }
 
+  goBack() {
+    this.props.history.goBack();
+  }
+
   render() {
+
+    const currentLocation = window.location.href;
     return (
       <div className="pin-create-container">
         <div className="pin-create">
           <div className="pin-create-image-container">
             <input
               type="file"
+              className="pin-create-file-input"
               // onChange={}
             />
           </div>
-          <div className="pinfo">
+          <div className="pincrate">
             <div className="pinfo-nav">
+              <FaArrowLeft className="back-button" onClick={this.goBack}/>
               <div className="save-board-button-box">
                 <BoardIndexDropdown 
+                currentLocation={currentLocation}
                 openModal={this.props.openModal} 
                 boards={this.props.boards}
                 savePin={this.props.savePin}

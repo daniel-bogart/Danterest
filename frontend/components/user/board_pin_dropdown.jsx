@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
 
 class BoardPinDropdown extends React.Component {
@@ -37,7 +37,7 @@ class BoardPinDropdown extends React.Component {
   render() {
     const linkStyle= {
       textDecoration: 'none',
-      color: 'black'
+      color: 'black',
     }
 
     return (
@@ -55,13 +55,13 @@ class BoardPinDropdown extends React.Component {
             <div className="board-pin-drop-menu-index">
               <div>Create</div>
               <div className="drop-create-pin-button">
-              <Link to="pin-builder" 
-              style={{...linkStyle}}>
-              <div className="drop-create-pin-button">
-                Pin
-              </div>
-              </Link>
-              </div>
+                <Link to="pin-builder"
+                  className="pin-create-link"
+                  style={{...linkStyle}}
+                  >
+                  Pin        
+                </Link>
+                </div>
               <div 
               className="drop-create-board-button"
               onClick={() => this.props.openModal('create-board')}

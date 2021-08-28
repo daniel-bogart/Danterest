@@ -19,7 +19,7 @@ export const fetchUserPins = (userId) => {
   });
 };
 
-export const createPin = (pin, boardId) => (
+export const createPin = (pin) => (
   $.ajax({
     url: `/api/pins`,
     method: 'POST',

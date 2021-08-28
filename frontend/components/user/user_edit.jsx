@@ -8,8 +8,8 @@ class UserEdit extends React.Component {
     console.log("props", props)
     this.state = {
       username: `${this.props.currentUser.username}`,
-      firstName: `${this.props.currentUser.firstName ||= ""}`,
-      lastName: `${this.props.currentUser.lastName ||= ""}`
+      firstName: `${this.props.currentUser.first_name ||= ""}`,
+      lastName: `${this.props.currentUser.last_name ||= ""}`
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
