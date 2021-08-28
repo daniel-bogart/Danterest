@@ -6,13 +6,14 @@ class PinCreate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      description: "",
-      // selectedFile: null
-      image: null,
+      userId: this.props.userId,
+      title: '',
+      description: '',
+      photoFile: null
     }
 
     this.goBack = this.goBack.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   handleInput(type) {
@@ -41,8 +42,20 @@ class PinCreate extends React.Component {
     this.props.history.goBack();
   }
 
-  render() {
+  handleUpload(e) {
+    e.preventDefault();
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({
+        photoFile: file
+      });
+    }
+    if (file) fileReader.readAsDataURL(file);
+  }
 
+  render() {
+    console.log("this is photofile!!", this.state.photoFile)
     const currentLocation = window.location.href;
     return (
       <div className="pin-create-container">
@@ -51,19 +64,32 @@ class PinCreate extends React.Component {
             <input
               type="file"
               className="pin-create-file-input"
-              // onChange={}
+              name="image-upload"
+              id="image-upload"
+              onChange={this.handleUpload}
             />
+            <label htmlFor="image-upload">
+              <div>
+                Click to upload
+              </div>
+            </label>
           </div>
           <div className="pincrate">
             <div className="pinfo-nav">
               <FaArrowLeft className="back-button" onClick={this.goBack}/>
               <div className="save-board-button-box">
-                <BoardIndexDropdown 
+                <BoardIndexDropdown
+                fetchAllBoards={this.props.fetchAllBoards}
                 currentLocation={currentLocation}
                 openModal={this.props.openModal} 
                 boards={this.props.boards}
                 savePin={this.props.savePin}
                 pin={this.props.pin}
+                userId={this.props.userId}
+                createPin={this.props.createPin}
+                title={this.state.title}
+                description={this.state.description}
+                photoFile={this.state.photoFile}
                 />
               </div>
             </div>

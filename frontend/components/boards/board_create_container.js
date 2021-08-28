@@ -5,19 +5,16 @@ import { closeModal } from '../../actions/modal_actions';
 import { removeErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
   return {
+    user: ownProps.user,
+    boards: Object.values(state.entities.boards),
+    pin: state.entities.pins[ownProps.match.params.pinId],
     errors: state.errors,
     userId: state.session.id
   };
 };
 
-const mDTP = dispatch => {
-  return {
-    closeModal: () => dispatch(closeModal()),
-    createNewBoard: (board, userId) => dispatch(createNewBoard(board, userId)),
-    removeErrors: () => dispatch(removeErrors()),
-  };
-};
-
-export default connect(mSTP, mDTP)(BoardCreate);
+export default connect(mSTP, {
+  closeModal, createNewBoard, removeErrors
+})(BoardCreate);
