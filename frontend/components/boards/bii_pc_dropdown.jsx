@@ -23,7 +23,7 @@ class BIIPCDropdown extends React.Component {
     const formData = new FormData();
     formData.append('pin[title]', title);
     formData.append('pin[description]', description);
-    formData.append('pin[user_id]', userId);
+    formData.append('pin[author_id]', userId);
     if (photoFile){
       formData.append('pin[photo]', photoFile)
       console.log("THIS IS DA FORM DATA", formData)
