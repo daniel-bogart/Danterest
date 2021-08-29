@@ -9,7 +9,6 @@ const mSTP = (state, ownProps) => {
   return {
     user: ownProps.user,
     boards: Object.values(state.entities.boards),
-    pin: state.entities.pins[ownProps.match.params.pinId],
     errors: state.errors,
     userId: state.session.id
   };

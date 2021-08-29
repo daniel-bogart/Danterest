@@ -8,11 +8,9 @@ import { createPin } from "../../actions/pin_actions";
 import { fetchPin, deletePin } from '../../utils/pin';
 
 const mSTP = (state, ownProps) => {
-  console.log("---PIN----", state.entities.pins[ownProps.match.params.pinId])
   return {
     currentUser: state.entities.users[state.session.id],
     user: ownProps.user,
-    pin: state.entities.pins[ownProps.match.params.pinId],
     pins: Object.values(state.entities.pins),
     session: state.session,
     boards: Object.values(state.entities.boards),

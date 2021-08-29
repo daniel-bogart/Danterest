@@ -55,7 +55,7 @@ class PinCreate extends React.Component {
   }
 
   render() {
-    console.log("this is photofile!!", this.state.photoFile)
+    // console.log("this is photofile!!", this.state.photoFile)
     const currentLocation = window.location.href;
     return (
       <div className="pin-create-container">
@@ -84,7 +84,6 @@ class PinCreate extends React.Component {
                 openModal={this.props.openModal} 
                 boards={this.props.boards}
                 savePin={this.props.savePin}
-                pin={this.props.pin}
                 userId={this.props.userId}
                 createPin={this.props.createPin}
                 title={this.state.title}

@@ -50,7 +50,6 @@ class BoardIndexDropdown extends React.Component {
           savePin={this.props.savePin}
           key={board.id} 
           board={board}
-          pin={this.props.pin}
           userId={this.props.userId}
           createPin={this.props.createPin}
           title={this.props.title}
