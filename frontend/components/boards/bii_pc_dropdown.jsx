@@ -20,20 +20,27 @@ class BIIPCDropdown extends React.Component {
   handleClick() {
     // e.preventDefault();
     const {title, description, userId, photoFile} = this.state;
-    const formData = new FormData();
-    formData.append('pin[title]', title);
-    formData.append('pin[description]', description);
-    formData.append('pin[author_id]', userId);
-    if (photoFile){
-      formData.append('pin[photo]', photoFile)
-      console.log("THIS IS DA FORM DATA", formData)
-    };
-      console.log("THIS IS DA FORM DATA", formData);
-      console.log(Array.from(formData));
-      for (let obj of formData) {
-        console.log(obj)
-      };
-      this.props.createPin(formData)
+
+    const pin = {
+      title: title,
+      description: description,
+      author_id: userId,
+      photo: photoFile
+    }
+    // const formData = new FormData();
+    // formData.append('pin[title]', title);
+    // formData.append('pin[description]', description);
+    // formData.append('pin[author_id]', userId);
+    // if (photoFile){
+    //   formData.append('pin[photo]', photoFile)
+    //   console.log("THIS IS DA FORM DATA", formData)
+    // };
+    //   console.log("THIS IS DA FORM DATA", formData);
+    //   console.log(Array.from(formData));
+    //   for (let obj of formData) {
+    //     console.log(obj)
+    //   };
+      this.props.createPin(pin)
         .then( pin => this.props.savePin({board_id: this.props.board.id, pin_id: pin.id}))
       this.props.openModal('saved-pin');
       this.setState({savedPin: false})
