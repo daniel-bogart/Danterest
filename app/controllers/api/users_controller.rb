@@ -14,10 +14,10 @@ class Api::UsersController < ApplicationController
   
   def update
     @user = selected_user
-    if @user && @user.update_attributes(user_params)
+    if @user
+      @user.update({username: params[:user][:username], first_name: params[:user][:firstName], last_name: params[:user][:lastName]})
+      # debugger
       render :show
-    elsif !@user
-      render json: ['Could not locate user'], status: 400
     else
       render json: @user.errors.full_messages, status: 401
     end
@@ -25,6 +25,8 @@ class Api::UsersController < ApplicationController
   
   def show
     @user = selected_user
+    # debugger
+    render :show
   end
   
   def index
@@ -49,6 +51,6 @@ class Api::UsersController < ApplicationController
   
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password, :age)
+    params.require(:user).permit(:username, :email, :password, :age, :first_name, :last_name)
   end
 end

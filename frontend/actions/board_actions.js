@@ -51,15 +51,19 @@ export const deleteBoard = (userId, boardId) => dispatch => (
     .then(board => dispatch(removeBoard(board)), error => dispatch(receiveBoardErrors(error.responseJSON)))
 );
 
-export const createNewBoard = board => dispatch => (
-  BoardApiUtil.createNewBoard(board)
+export const createNewBoard = (board, userId) => dispatch => (
+  BoardApiUtil.createNewBoard(board, userId)
     .then(board => dispatch(receiveBoard(board)), error => dispatch(receiveBoardErrors(error.responseJSON)))
 );
 
-export const editBoard = board => dispatch => (
-  BoardApiUtil.editBoard(board)
-    .then(board => dispatch(receiveBoard(board)), error => dispatch(receiveBoardErrors(error.responseJSON)))
-);
+export const editBoard = (board, userId) => dispatch => {
+  return BoardApiUtil.editBoard(board, userId)
+    .then(board => {
+  
+      dispatch(receiveBoard(board))
+    },
+    error => dispatch(receiveBoardErrors(error.responseJSON)))
+  };
 
 
 

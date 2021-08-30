@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "pins_on_boards.scss"
+    ],
+    "names": [],
+    "file": "pins_on_boards.css"
+}

@@ -86,6 +86,7 @@ class Signup extends React.Component {
                             value={this.state.email}
                             onChange={this.handleInput('email')}
                             placeholder="Email"
+                            maxLength="80"
                             />
                         </label>
                         <label>
@@ -102,6 +103,7 @@ class Signup extends React.Component {
                             value={this.state.age}
                             onChange={this.handleInput('age')}
                             placeholder="Age"
+                            maxLength="3"
                             />
                         </label>
                         <div className="auth-btn" onClick={this.handleSubmit}>Sign Up</div>

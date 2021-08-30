@@ -1,3 +1,5 @@
+// const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
 export const fetchAllBoards = (userId) => {
   return $.ajax({
     url: `/api/users/${userId}/boards`,
@@ -12,18 +14,26 @@ export const fetchBoard = (userId, boardId) => (
   })
 );
 
-export const fetchPinsOnBoard = () => (
+export const fetchPinsOnBoard = (boardId) => (
   $.ajax({
-    url: '/api/pins_on_board',
+    url: `/api/boards/${boardId}/pins`,
     method: 'GET'
   })
 )
 
-export const createNewBoard = (board) => (
+export const deletePinOnBoard = (pinOnBoardId) => (
   $.ajax({
-    url: `/api/users/${board.user_id}/boards`,
+    url: `/api/pins_on_boards/${pinOnBoardId}`,
+    method: "DELETE"
+  })
+)
+
+
+export const createNewBoard = (board, userId) => (
+  $.ajax({
+    url: `/api/users/${userId}/boards`,
     method: 'POST',
-    data: { board }
+    data: board 
   })
 );
 
@@ -34,10 +44,10 @@ export const deleteBoard = (userId, boardId) => (
   })
 );
 
-export const editBoard = (board) => (
+export const editBoard = (board, userId) => (
   $.ajax({
-    url: `/api/users/${board.user_id}/boards/${board.id}`,
+    url: `/api/users/${userId}/boards/${board.id}`,
     method: 'PATCH',
-    data: { board }
+    data: {board}
   })
 );

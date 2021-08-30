@@ -1,0 +1,91 @@
+#board-delete-container > div:first-child {
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#board-delete-container > div:nth-child(2) {
+  margin-bottom: 40px;
+}
+
+.delete-board-cancel-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  border-radius: 24px;
+  padding: 8px 12px;
+  height: 40px;
+  margin: 8px;
+  font-weight: 600;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  background: #efefef;
+  color: black;
+}
+
+.delete-board-cancel-btn:hover {
+  background: #efefef;
+  cursor: pointer;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+.final-board-delete-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.final-board-delete-btn {
+  background: #e60023;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 0;
+  border-radius: 24px;
+  padding: 8px 12px;
+  height: 40px;
+  font-weight: 600;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.final-board-delete-btn:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+/*# sourceMappingURL=board_delete.css.map */

@@ -1,4 +1,4 @@
-import PinIndex from "./pin_index";
+import Splash from "./splash";
 import { fetchAllPins } from "../../actions/pin_actions";
 import { connect } from "react-redux";
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PinIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(Splash);

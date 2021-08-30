@@ -1,7 +1,11 @@
 class Api::BoardsController < ApplicationController
 
+  # require logged_in?: :create
+  # before_action :require_logged_in, only: [:create]
+  skip_before_action :verify_authenticity_token
+
   def show
-    @board = board.find_by(id: params[:id])
+    @board = Board.find_by(id: params[:id])
     render :show
   end
 
@@ -13,17 +17,17 @@ class Api::BoardsController < ApplicationController
 
   def create
     @board = Board.new(board_params)
-    @board.user_id = current_user.id
+    @board.user_id = params[:user_id]
       if @board.save
-        render :show
+        render "api/boards/show"
       else
         render json: @board.errors.full_messages, status: 422
       end
   end
 
   def destroy
-    @board = Board.find_by(id params[:id])
-      if @board && board.destroy
+    @board = Board.find_by(id: params[:id])
+      if @board && @board.destroy
         render json: @board.id
       else
         render json: @board.errors.full_messages, status: 422
@@ -31,13 +35,24 @@ class Api::BoardsController < ApplicationController
   end
 
   def update
-    @board = current_user.pins.find_by(id: params[:id])
-      if @board && @board.update(board_params)
+    @board = Board.find_by(id: params[:id])
+    if @board && @board.user_id == current_user.id 
+      if @board.update(board_params)
         render :show
       else
         render json: @board.errors.full_messages, status: 422
-      end
+      end 
+    end
   end
+
+  # def update
+  #   @board = Board.find_by(id: params[:id])
+  #     if @board && @board.update(board_params)
+  #       render :show
+  #     else
+  #       render json: @board.errors.full_messages, status: 422
+  #     end
+  # end
 
   private
   def board_params

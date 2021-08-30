@@ -1,6 +1,7 @@
 .home-logo1 img{
   width: 150px;
   margin-top: 5px;
+  transition: all .5s ease;
 };
 
 .home-logo2 {
@@ -9,6 +10,7 @@
   padding: 8px;
   margin-left: -8px;
   border-radius: 50px;
+  transition: all .5s ease;
 };
 
 .home-logo2:hover {
@@ -30,14 +32,9 @@
   border-radius: 24px;
   padding: 0px 16px;
   font-weight: 600;
+  transition: all .5s ease;
 }
 
-// .home-logo2:hover {
-//   border: solid 1px;
-//   border-radius: 100pc;
-//   background-color: aliceblue;
-//   border-color: aliceblue;
-// }
 
 .home-link {
   display: flex;
@@ -45,12 +42,24 @@
   height: 48px;
   border-radius: 24px;
   padding: 0px 16px;
-  background-color: rgb(17, 17, 17);
-  color: white;
+  background-color: white;
+  color: rgb(17, 17, 17);
   text-decoration: none;
   font-size: 16px;
   font-weight: 700;
   margin-left: 16px;
+}
+.home-link:hover {
+  background: rgb(239, 239, 239);
+}
+
+.home-link-active {
+  background: rgb(17, 17, 17);
+  color: white;
+}
+
+.home-link-active:hover {
+  background: rgb(17, 17, 17);
 }
 
 .logo-wrapper {
@@ -93,11 +102,13 @@
   height: 40px;
   margin: 8px;
   font-weight: 600;
+  transition: all .5s ease;
 }
 
 .login-btn {
   background: rgb(230, 0, 35);
   color: white;
+  // transition: all .5s ease;
 }
 
 .login-btn:hover {
@@ -113,6 +124,7 @@
 .signup-btn:hover {
   background: rgb(239, 239, 239);
   cursor: pointer;
+  filter: brightness(90%);
 }
 
 .nav-username {
@@ -127,16 +139,33 @@
 
 .nav-dropdown {
   color: grey;
-  padding: 0px 8px;
+  padding: 8px 8px;
+  border-radius: 24px;
+  transition: all .5s ease;
+}
+
+.darken-dropdown {
+  color: black;
+  padding: 8px 8px;
+  border-radius: 24px;
+}
+
+.darken-dropdown:hover {
+  background: rgb(239, 239, 239);
 }
 
 .nav-icons {
   color: grey;
   padding: 8px;
   border-radius: 24px;
+  transition: all .5s ease;
 }
 
 .nav-icons:hover {
+  background: rgb(239, 239, 239);
+}
+
+.nav-dropdown:hover {
   background: rgb(239, 239, 239);
 }
 
@@ -144,4 +173,112 @@
   display: flex;
   align-items: center;
   font-weight: bold;
+}
+
+.session-dropdown-box {
+  z-index: 8;
+  position: relative;
+}
+  
+.drop-menu-index {
+    position: absolute;
+    right: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 8px;
+    // margin: 10px;
+    border-radius: 16px;
+    z-index: inherit;
+    background: white;
+}
+
+// .dropdown-ul {
+//   padding: 4px;
+// }
+
+.dropdown-ul {
+  transition: all .35s ease;
+}
+
+.dropdown-ul > li {
+  text-decoration: none;
+  color:rgb(70, 70, 70);
+  // padding: 8px;
+
+}
+
+.dropdown-ul > li:first-child {
+  font-weight: bold;
+  padding: 8px;
+}
+
+.dropdown-ul > li:last-child {
+  color: grey;
+  font-size: small;
+  padding: 8px
+}
+
+// .dropdown-ul:hover {
+//   background: rgb(239, 239, 239);
+//   border-radius: 8px;
+// }
+
+h6 {
+  color: rgb(70, 70, 70);
+}
+
+.dropdown-logout {
+  font-weight: bold;
+  color:rgb(70, 70, 70);
+  padding: 8px;
+  transition: all .35s ease;
+}
+.dropdown-logout:hover {
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+}
+
+.dropdown-settings {
+  font-weight: bold;
+  color:rgb(70, 70, 70);
+  padding: 8px;
+  transition: all .35s ease;
+}
+
+.dropdown-settings:hover {
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+}
+
+.more-options {
+  padding: 4px;
+  padding-top: 12px;
+}
+
+.current-user-info {
+  padding: 4px
+}
+
+.mo-text {
+  padding: 8px;
+}
+
+.user-dropdown-button {
+  transition: all .35s ease;
+}
+
+.dropdown-profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.dropdown-profile:hover {
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+}
+
+.account-circle-drop {
+  color: rgb(69, 69, 69);
+  // margin-top: 4px;
 }

@@ -1,0 +1,28 @@
+.home-logo-saved {
+  width: 42px;
+  height: 42px;
+  position: relative;
+  bottom: 12px;
+}
+
+.pin-is-saved {
+  font-size: 32px;
+  font-weight: 600;
+  color: rgb(17, 17, 17)
+}
+
+.pin-saved-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.already-saved-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.check {
+  position: relative;
+  bottom: 12px;
+}
