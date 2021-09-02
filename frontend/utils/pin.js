@@ -19,15 +19,16 @@ export const fetchUserPins = (userId) => {
   });
 };
 
-export const createPin = (pin) => (
-  $.ajax({
+export const createPin = (pin) => {
+  debugger
+  return $.ajax({
     url: `/api/pins`,
     method: 'POST',
-    data: { pin },
+    data: pin,
     contentType: false,
     processData: false
   })
-)
+}
 
 export const updatePin = pin => (
   $.ajax({

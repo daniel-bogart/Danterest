@@ -12,6 +12,7 @@ class Api::PinsController < ApplicationController
   end
 
   def create
+    debugger
     @pin = Pin.new(pin_params)
     @pin.user_id = current_user.id
       if @pin.save
@@ -40,8 +41,6 @@ class Api::PinsController < ApplicationController
         render json: @pin.errors.full_messages, status: 422
       end
   end
-
-
 
   private
   def pin_params
