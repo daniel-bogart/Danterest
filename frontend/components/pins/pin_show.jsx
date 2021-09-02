@@ -29,12 +29,13 @@ class PinShow extends React.Component {
   componentDidMount() {
     this.props.fetchPin(this.props.match.params.pinId);
     this.props.fetchAllBoards(this.props.userId);
+    this.props.fetchAllUsers();
   }
   goBack() {
     this.props.history.goBack();
   }
   render() {
-
+    // console.log("AUTHORID", this.props.pin.author_id)
     if (this.props.pin === undefined ) return null;
     return (
       <div id="pin-background" className="pin-container">

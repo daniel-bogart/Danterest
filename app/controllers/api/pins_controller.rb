@@ -1,6 +1,8 @@
 class Api::PinsController < ApplicationController
   # before_action :require_logged_in, only: [:index]
 
+  skip_before_action :verify_authenticity_token
+
   def show
     @pin = Pin.find(params[:id])
     render :show
@@ -12,9 +14,8 @@ class Api::PinsController < ApplicationController
   end
 
   def create
-    debugger
     @pin = Pin.new(pin_params)
-    @pin.user_id = current_user.id
+    @pin.author_id = current_user.id
       if @pin.save
         # PinsOnBoard.create(params[:pin][:board_id], @pin.id)
         # render :show

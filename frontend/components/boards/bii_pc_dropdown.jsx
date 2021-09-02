@@ -20,6 +20,7 @@ class BIIPCDropdown extends React.Component {
   handleClick() {
     // e.preventDefault();
     const {title, description, userId, photoFile} = this.state;
+    console.log("BOARD_ID", this.props.board.id)
 
     // const pin = {
     //   title: title,
@@ -40,14 +41,16 @@ class BIIPCDropdown extends React.Component {
       for (let obj of formData) {
         console.log(obj)
       };
+      console.log("BOARD_ID", this.props.board.id)
       this.props.createPin(formData)
-        .then( pin => this.props.savePin({board_id: this.props.board.id, pin_id: pin.id}))
+        .then( pin => this.props.savePin({board_id: this.props.board.id, pin_id: pin.pin.id}))
       this.props.openModal('saved-pin');
       this.setState({savedPin: false})
   }
 
 
   render() {
+    console.log("BOARD_ID", this.props.board.id)
     // console.log("DIS IS DA PIN!!!", this.props.pin)
     // console.log("disss is USERID", this.props.userId)
     // console.log("disss is title!", this.props.title)

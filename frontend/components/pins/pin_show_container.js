@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchAllBoards } from "../../actions/board_actions";
 import { openModal } from "../../actions/modal_actions";
 import { savePin } from "../../actions/pins_on_boards_actions";
+import { fetchAllUsers } from "../../actions/user_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -11,10 +12,11 @@ const mapStateToProps = (state, ownProps) => {
     boards: Object.values(state.entities.boards),
     pin: state.entities.pins[ownProps.match.params.pinId],
     session: state.session,
-    userId: state.session.id
+    userId: state.session.id,
+    users: state.entities.users
   };
 };
 
 export default connect(mapStateToProps, {
-  fetchAllBoards, fetchPin, deletePin, openModal, savePin
+  fetchAllBoards, fetchPin, deletePin, openModal, savePin, fetchAllUsers
 })(PinShow);
