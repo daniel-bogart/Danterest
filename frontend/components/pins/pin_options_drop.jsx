@@ -49,7 +49,7 @@ class PinOptionsDrop extends React.Component {
         </div>
       </div>
       {this.state.showMenu ? (
-        <div>
+        <div className="pin-options-drop-index">
           <div>Edit Pin</div>
           <div>Download image</div>
         </div>

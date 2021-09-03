@@ -1,0 +1,24 @@
+.pin-options-drop-index {
+  position: absolute;
+  // right: 100px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  // padding: 8px;
+  // margin: 10px;
+  border-radius: 16px;
+  z-index: inherit;
+  background: white;
+}
+
+.pin-options-drop-index > div {
+  font-weight: 600;
+  color:rgb(70, 70, 70);
+  padding: 16px;
+  transition: all .35s ease;
+  padding-right: 20px;
+}
+
+.pin-options-drop-index > div:hover {
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 8px;
+}
