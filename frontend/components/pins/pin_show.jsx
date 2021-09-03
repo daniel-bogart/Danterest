@@ -35,8 +35,10 @@ class PinShow extends React.Component {
     this.props.history.goBack();
   }
   render() {
-    // console.log("AUTHORID", this.props.pin.author_id)
     if (this.props.pin === undefined ) return null;
+    const authorId = this.props.pin.author_id;
+    const author = this.props.users[authorId];
+    if (author === undefined) return null;
     return (
       <div id="pin-background" className="pin-container">
         <div className="pin" key={this.props.pin.id}>
@@ -63,6 +65,8 @@ class PinShow extends React.Component {
               <h1 className="pinfo-title">{this.props.pin.title}</h1>
               <h3 className="pinfo-description">{this.props.pin.description}</h3>
             </div>
+            <div></div>
+            <div>{`${author.first_name} ${author.last_name}`}</div>
           </div>
         </div>
       </div>
