@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import BoardIndexDropdown from '../boards/board_index_dropdown';
+import { MdAccountCircle } from "react-icons/md";
+import PinOptionsDrop from './pin_options_drop';
 
 class PinShow extends React.Component {
   constructor(props) {
@@ -48,7 +50,14 @@ class PinShow extends React.Component {
           </div>
           <div className="pinfo">
             <div className="pinfo-nav">
-              <FaArrowLeft className="back-button" onClick={this.goBack}/>
+              <div className="pinfo-nav-left">
+                <FaArrowLeft 
+                className="back-button"
+                onClick={this.goBack}
+                size={22}
+                />
+                <PinOptionsDrop/>
+              </div>
               <div className="save-board-button-box">
                 <BoardIndexDropdown 
                 fetchAllBoards={this.props.fetchAllBoards}
@@ -65,8 +74,10 @@ class PinShow extends React.Component {
               <h1 className="pinfo-title">{this.props.pin.title}</h1>
               <h3 className="pinfo-description">{this.props.pin.description}</h3>
             </div>
-            <div></div>
-            <div>{`${author.first_name} ${author.last_name}`}</div>
+            <div className="pin-author">
+              <MdAccountCircle className="pin-author-photo" size={52}/>
+              <div className="pin-author-name">{`${author.first_name} ${author.last_name}`}</div>
+            </div>
           </div>
         </div>
       </div>

@@ -51,6 +51,7 @@
   font-weight: 700;
   text-align: center;
   padding-top: 24px;
+  padding-right: 24px;
 }
 
 .pinfo-description {
@@ -105,6 +106,48 @@
 
 .pin-show-image {
   transition: all .5s ease;
+}
+
+.pin-author {
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pin-author-name {
+  padding: 4px;
+  font-weight: bold;
+}
+.pin-author-name:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.pin-author-photo {
+  padding: 4px;
+  border-radius: 36px;
+}
+
+.pin-author-photo:hover {
+  background: rgb(239, 239, 239);
+  cursor: pointer;
+}
+
+.pinfo-nav-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.triple-dot {
+  padding: 6px;
+  border-radius: 24px;
+}
+
+.triple-dot:hover {
+  background: rgb(239, 239, 239);
+  cursor: pointer;
 }
 
 
