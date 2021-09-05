@@ -34,6 +34,16 @@ class PinOptionsDrop extends React.Component {
   }
 
   render() {
+
+    const { authorId, currentUser} = this.props;
+
+    const isOwner = authorId === parseInt(currentUser) ? (
+      <div
+      onClick={() => this.props.openModal('edit-pin')}
+      >Edit Pin</div>
+    ) : (
+      null
+    );
       
     return (
     <div className="session-dropdown-container">
@@ -50,7 +60,7 @@ class PinOptionsDrop extends React.Component {
       </div>
       {this.state.showMenu ? (
         <div className="pin-options-drop-index">
-          <div>Edit Pin</div>
+          {isOwner}
           <div>Download image</div>
         </div>
         ) : null}

@@ -5,7 +5,7 @@
   // padding: 8px;
   // margin: 10px;
   border-radius: 16px;
-  z-index: inherit;
+  z-index: 9000;
   background: white;
 }
 
@@ -68,5 +68,10 @@
   position: relative;
   top: 12px;
   left: 4px;
+}
+
+.board-select-dropdown-box {
+  z-index: 4;
+  position: relative;
 }
 

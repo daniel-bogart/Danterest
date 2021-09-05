@@ -5,6 +5,7 @@ import { fetchAllBoards } from "../../actions/board_actions";
 import { openModal } from "../../actions/modal_actions";
 import { savePin } from "../../actions/pins_on_boards_actions";
 import { fetchAllUsers } from "../../actions/user_actions";
+import { deletePinOnBoard } from "../../actions/pins_on_boards_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -18,5 +19,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 export default connect(mapStateToProps, {
-  fetchAllBoards, fetchPin, deletePin, openModal, savePin, fetchAllUsers
+  fetchAllBoards, 
+  fetchPin, 
+  deletePin, 
+  openModal, 
+  savePin, 
+  fetchAllUsers,
+  deletePinOnBoard
 })(PinShow);

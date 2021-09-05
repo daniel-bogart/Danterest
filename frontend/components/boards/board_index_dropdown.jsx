@@ -74,6 +74,7 @@ class BoardIndexDropdown extends React.Component {
         board={board}
         pin={this.props.pin}
         userId={this.props.userId}
+        deletePinOnBoard={this.props.deletePinOnBoard}
         />)}
           <div onClick={() => this.props.openModal('create-board')} className="bii-dropdown fa-create-board-box">
           <FaPlus className="faplus-create-board" size={24}/>
@@ -85,7 +86,7 @@ class BoardIndexDropdown extends React.Component {
     return (
       <div className="session-dropdown-container">
         <div 
-        className="session-dropdown-box"
+        className="board-select-dropdown-box"
         onClick={() => {
           this.showMenu();
         }}>

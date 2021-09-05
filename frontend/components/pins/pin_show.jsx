@@ -56,7 +56,11 @@ class PinShow extends React.Component {
                 onClick={this.goBack}
                 size={22}
                 />
-                <PinOptionsDrop/>
+                <PinOptionsDrop
+                currentUser = {this.props.userId}
+                authorId = {this.props.pin.author_id}
+                openModal = {this.props.openModal}
+                />
               </div>
               <div className="save-board-button-box">
                 <BoardIndexDropdown 
@@ -66,6 +70,7 @@ class PinShow extends React.Component {
                 savePin={this.props.savePin}
                 pin={this.props.pin}
                 userId={this.props.userId}
+                deletePinOnBoard={this.props.deletePinOnBoard}
                 />
                 {/* <button className="save-board-button">Save</button> */}
               </div>

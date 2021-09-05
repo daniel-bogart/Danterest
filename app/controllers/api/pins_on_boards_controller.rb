@@ -13,6 +13,7 @@ class Api::PinsOnBoardsController < ApplicationController
 
   def destroy
     @pin_on_board = PinsOnBoard.find_by(id: params[:id])
+    #debugger
     if @pin_on_board.destroy
       render json: @pin_on_board.id 
     #else
