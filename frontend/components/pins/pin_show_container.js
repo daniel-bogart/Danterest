@@ -2,10 +2,11 @@ import PinShow from "./pin_show";
 import { fetchPin, deletePin } from "../../actions/pin_actions";
 import { connect } from "react-redux";
 import { fetchAllBoards } from "../../actions/board_actions";
-import { openModal } from "../../actions/modal_actions";
+import { openModal, closeModal } from "../../actions/modal_actions";
 import { savePin } from "../../actions/pins_on_boards_actions";
 import { fetchAllUsers } from "../../actions/user_actions";
 import { deletePinOnBoard } from "../../actions/pins_on_boards_actions";
+import { updatePin } from "../../actions/pin_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -22,8 +23,10 @@ export default connect(mapStateToProps, {
   fetchAllBoards, 
   fetchPin, 
   deletePin, 
-  openModal, 
+  openModal,
+  closeModal,
   savePin, 
   fetchAllUsers,
-  deletePinOnBoard
+  deletePinOnBoard,
+  updatePin
 })(PinShow);

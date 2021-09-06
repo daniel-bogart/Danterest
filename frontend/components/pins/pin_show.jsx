@@ -52,26 +52,28 @@ class PinShow extends React.Component {
             <div className="pinfo-nav">
               <div className="pinfo-nav-left">
                 <FaArrowLeft 
-                className="back-button"
-                onClick={this.goBack}
-                size={22}
+                  className="back-button"
+                  onClick={this.goBack}
+                  size={22}
                 />
                 <PinOptionsDrop
-                currentUser = {this.props.userId}
-                authorId = {this.props.pin.author_id}
-                openModal = {this.props.openModal}
-                pin={this.props.pin}
+                  currentUser = {this.props.userId}
+                  authorId = {this.props.pin.author_id}
+                  openModal = {this.props.openModal}
+                  pin={this.props.pin}
+                  updatePin={this.props.updatePin}
+                  closeModal={this.props.closeModal}
                 />
               </div>
               <div className="save-board-button-box">
                 <BoardIndexDropdown 
-                fetchAllBoards={this.props.fetchAllBoards}
-                openModal={this.props.openModal} 
-                boards={this.props.boards}
-                savePin={this.props.savePin}
-                pin={this.props.pin}
-                userId={this.props.userId}
-                deletePinOnBoard={this.props.deletePinOnBoard}
+                  fetchAllBoards={this.props.fetchAllBoards}
+                  openModal={this.props.openModal} 
+                  boards={this.props.boards}
+                  savePin={this.props.savePin}
+                  pin={this.props.pin}
+                  userId={this.props.userId}
+                  deletePinOnBoard={this.props.deletePinOnBoard}
                 />
                 {/* <button className="save-board-button">Save</button> */}
               </div>

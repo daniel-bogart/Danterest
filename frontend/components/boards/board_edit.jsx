@@ -30,10 +30,6 @@ class BoardEdit extends React.Component {
   }
 
   render() {
-
-    // const title = this.props.board ? this.props.board.title : ""
-    // const description = this.props.board ? this.props.board.description : ""
-
     return (
       <div id="board-edit-container" className="board-edit-container-display">
         <div>Edit your board</div>

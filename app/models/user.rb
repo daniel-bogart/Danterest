@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
     has_many :pins,
     class_name: :Pin,
-    foreign_key: :user_id
+    foreign_key: :author_id
 
 
     def self.find_by_credentials(email, password)
