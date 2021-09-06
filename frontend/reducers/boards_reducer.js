@@ -16,7 +16,8 @@ const boardsReducer = (state = {}, action) => {
     case RECEIVE_BOARD:
       nextState[action.board.id] = action.board;
       return nextState;
-    case RECEIVE_PINS_ON_BOARDS:
+      case RECEIVE_PINS_ON_BOARDS:
+        console.log("ACTION PINSONBOARDS", action.pinsOnBoards)
       // if (nextState[action.boardId].pins) {
       //   nextState[action.boardId]["pins"].push(action.pinsOnBoards);
       //   return nextState
@@ -25,7 +26,9 @@ const boardsReducer = (state = {}, action) => {
         return nextState
       // }
     case REMOVE_PIN_ON_BOARD:
-      delete nextState[action.pinOnBoard.board_id][pinOnBoard.pin_id];
+      console.log("THIS IS THE ACTION", action)
+      // delete nextState[action.pinOnBoard.board_id][pinOnBoard.pin_id];
+      delete nextState[action.boardId][pins.pin_id];
       return nextState;
     case REMOVE_BOARD:
       delete nextState[action.boardId];

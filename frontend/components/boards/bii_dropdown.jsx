@@ -26,6 +26,7 @@ class BIIDropdown extends React.Component {
       this.props.openModal('saved-pin');
       this.setState({savedPin: false})
     } else {
+      this.props.deletePinOnBoard({board_id: this.props.board.id, pin_id: this.props.pin.id})
       this.props.openModal('already-saved-pin')
     }
   }

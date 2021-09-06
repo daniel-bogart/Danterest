@@ -4,7 +4,7 @@ import { fetchPin} from "../utils/pin";
 
 export const RECEIVE_PINS_ON_BOARDS = "RECEIVE_PINS_ON_BOARDS";
 export const RECEIVE_PIN_ON_BOARD = "RECEIVE_PIN_ON_BOARD";
-export const REMOVE_PIN_ON_BOARD = "REMOVED_PIN_ON_BOARD";
+export const REMOVE_PIN_ON_BOARD = "REMOVE_PIN_ON_BOARD";
 
 export const receivedPinOnBoard = pinOnBoard => ({
   type: RECEIVE_PIN_ON_BOARD,
@@ -17,10 +17,13 @@ export const receivedPinsOnBoards = (pinsOnBoards, boardId) => ({
   boardId
 })
 
-export const removePinOnBoard = pinOnBoardId => ({
-  type: REMOVE_PIN_ON_BOARD,
-  pinOnBoardId
-})
+export const removePinOnBoard = pinOnBoardId => {
+  console.log("PIN ON BOARD ID", pinOnBoardId)
+  return {
+    type: REMOVE_PIN_ON_BOARD,
+    pinOnBoardId
+  }
+}
 
 export const savePin = (pinOnBoard) => dispatch => (
   PinAPIUtil.savePin(pinOnBoard)

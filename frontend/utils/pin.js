@@ -1,3 +1,5 @@
+const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
 export const fetchAllPins = () => (
   $.ajax({
     url: '/api/pins',
@@ -19,15 +21,20 @@ export const fetchUserPins = (userId) => {
   });
 };
 
-export const createPin = (pin) => (
-  $.ajax({
+export const createPin = (pin) => {
+  debugger
+  return $.ajax({
     url: `/api/pins`,
     method: 'POST',
-    data: { pin },
+    data: pin,
     contentType: false,
-    processData: false
+    processData: false,
+    // headers: {
+    //   "X-CSRF-Token": csrfToken,
+    //   "Content-Type": "application/json",
+    // },
   })
-)
+}
 
 export const updatePin = pin => (
   $.ajax({
@@ -40,7 +47,11 @@ export const updatePin = pin => (
 export const deletePin = pinId => (
   $.ajax({
     url: `/api/pins/${pinId}`,
-    method: 'DELETE'
+    method: 'DELETE',
+    // headers: {
+    //   "X-CSRF-Token": csrfToken,
+    //   "Content-Type": "application/json",
+    // },
   })
 );
 

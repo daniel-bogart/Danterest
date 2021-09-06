@@ -1,5 +1,6 @@
 import PinIndex from "./pin_index";
 import { fetchAllPins } from "../../actions/pin_actions";
+import { fetchAllUsers } from "../../actions/user_actions";
 import { connect } from "react-redux";
 
 const mapStateToProps = state => {
@@ -12,7 +13,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchAllPins: () => dispatch(fetchAllPins())
+    fetchAllPins: () => dispatch(fetchAllPins()),
+    fetchAllUsers: () => dispatch(fetchAllUsers())
   };
 };
 

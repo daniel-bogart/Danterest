@@ -15,6 +15,7 @@ export default class PinIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllPins();
+    this.props.fetchAllUsers();
   }
 
   changeColor() {
