@@ -17,6 +17,7 @@ const boardsReducer = (state = {}, action) => {
       nextState[action.board.id] = action.board;
       return nextState;
       case RECEIVE_PINS_ON_BOARDS:
+        console.log("ACTION PINSONBOARDS", action.pinsOnBoards)
       // if (nextState[action.boardId].pins) {
       //   nextState[action.boardId]["pins"].push(action.pinsOnBoards);
       //   return nextState

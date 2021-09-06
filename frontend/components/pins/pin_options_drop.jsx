@@ -1,5 +1,6 @@
 import React from 'react';
 import { HiDotsHorizontal } from 'react-icons/hi';
+// import DownloadLink from 'react-download-link';
 
 
 class PinOptionsDrop extends React.Component {
@@ -11,6 +12,7 @@ class PinOptionsDrop extends React.Component {
 
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+    // this.getDataFromURL = this.getDataFromURL.bind(this);
   }
 
   showMenu() {
@@ -32,8 +34,21 @@ class PinOptionsDrop extends React.Component {
       }
     }, 0);
   }
+  
+  // getDataFromURL = (url) => new Promise((resolve, reject) => {
+  //   console.log("THIS IS THE URL", url)
+  //   setTimeout(() => {
+  //       fetch(url)
+  //           .then(response => response.text())
+  //           .then(data => {
+  //               resolve(data)
+  //           });
+  //   });
+  // }, 2000);
 
   render() {
+
+    // console.log("PHOTOURL", this.props.pin.photoUrl)
 
     const { authorId, currentUser} = this.props;
 
@@ -62,6 +77,11 @@ class PinOptionsDrop extends React.Component {
         <div className="pin-options-drop-index">
           {isOwner}
           <div>Download image</div>
+          {/* <DownloadLink
+          label="Download image"
+          filename={`${this.props.pin.title}`}
+          exportFile={() => Promise.resolve(this.getDataFromURL(this.props.pin.photoUrl))}
+          /> */}
         </div>
         ) : null}
     </div>

@@ -60,6 +60,7 @@ class PinShow extends React.Component {
                 currentUser = {this.props.userId}
                 authorId = {this.props.pin.author_id}
                 openModal = {this.props.openModal}
+                pin={this.props.pin}
                 />
               </div>
               <div className="save-board-button-box">
