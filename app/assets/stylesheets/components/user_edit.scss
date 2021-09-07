@@ -3,7 +3,7 @@
   color: #767676;
 }
 
-.final-board-delete-btn {
+.delete-btn {
   background: rgb(230, 0, 35);
   color: white;
   display: flex;
@@ -20,7 +20,11 @@
   margin-bottom: 12px;
 }
 
-.final-board-delete-btn:hover {
+.done {
+  margin-top: 48px;
+}
+
+.delete-btn:hover {
   cursor: pointer;
   background: rgb(173, 8, 27);
 }

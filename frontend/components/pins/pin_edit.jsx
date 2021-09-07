@@ -63,10 +63,16 @@ class PinEdit extends React.Component {
           </div>
         </div>
         <div className="pin-edit-btns">
-          <div className="delete-board-cancel-btn">Delete</div>
+          <div 
+          onClick={() => this.props.openModal('delete-pin')} 
+          className="cancel-btn">Delete</div>
           <div className="pin-edit-btns-right">
-            <div onClick={() => this.props.closeModal()} className="delete-board-cancel-btn">Cancel</div>
-            <div onClick={this.handleSubmit} className="pin-edit-save-btn">Save</div>
+            <div 
+              onClick={() => this.props.closeModal()} 
+              className="cancel-btn">Cancel</div>
+            <div 
+              onClick={this.handleSubmit} 
+              className="pin-edit-save-btn">Save</div>
           </div>
         </div>
       </div>

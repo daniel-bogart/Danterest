@@ -1,12 +1,13 @@
 .loader-container {
   background: transparent;
   width: 100%;
-  height: 100%; 
+  height: 100%;
+  transition: all .5s ease-in-out;
 }
 .loader {
   position: absolute;
-  left: 50%;
-  top: 35%;
+  left: 47%;
+  top: 20%;
   border: 16px solid #f3f3f3;
   border-top: 16px solid var(--main-red);
   border-radius: 50%;
@@ -14,11 +15,27 @@
   width: 60px;
   height: 60px;
   animation: spin 2s linear infinite;
+  transition: all .5s ease-in-out;
 }
 
 @keyframes spin {
   0% {transform: rotate(0deg);}
   100% {transform: rotate(360deg);}
+}
+
+.loader-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 35.5%;
+  top: 32%;
+  transition: all 2s ease;
+}
+
+.loader-text > div {
+  font-size: 40px;
+  font-weight: bold;
 }
 
 

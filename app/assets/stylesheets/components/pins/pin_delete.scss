@@ -1,0 +1,18 @@
+.pin-delete-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  left: 10%;
+  top: 28px;
+}
+
+.delete-pin {
+  margin-top: 12px;
+}
+
+.delete-pin-text {
+  position: relative;
+  right: 100px;
+  margin-left: 60px;
+}
