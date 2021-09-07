@@ -35,9 +35,11 @@ export const fetchPinsOnBoard = (userId, boardId) => dispatch => (
   .then((result) => dispatch(receivedPinsOnBoards(result, boardId)))
 );
 
-export const deletePinOnBoard = (pinOnBoardId) => (
-  BoardAPIUtil.deletePinOnBoard(pinOnBoardId)
-  .then(() => dispatch(removePinOnBoard(pinOnBoardId)))
-);
+export const deletePinOnBoard = (pinOnBoardId) => dispatch => {
+  return (BoardAPIUtil.deletePinOnBoard(pinOnBoardId)
+  .then((pinOnBoard) => {
+    dispatch(removePinOnBoard(pinOnBoard))
+  }))
+};
 
 

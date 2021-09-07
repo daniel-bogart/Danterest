@@ -6,15 +6,18 @@ import { closeModal, openModal } from "../../actions/modal_actions";
 import { fetchAllBoards } from "../../actions/board_actions";
 import { createPin } from "../../actions/pin_actions";
 import { fetchPin, deletePin } from '../../utils/pin';
+import { fetchUser } from '../../actions/user_actions'
 
 const mSTP = (state, ownProps) => {
+  const sessionId = parseInt(state.session.id);
+  console.log(sessionId)
   return {
-    currentUser: state.entities.users[state.session.id],
+    currentUser: state.entities.users[sessionId],
     user: ownProps.user,
     pins: Object.values(state.entities.pins),
     session: state.session,
     boards: Object.values(state.entities.boards),
-    userId: state.session.id
+    userId: sessionId
   };
 };
 
@@ -25,5 +28,6 @@ export default connect(mSTP, {
   createPin, 
   fetchPin, 
   deletePin, 
-  openModal
+  openModal,
+  fetchUser
 })(PinCreate);

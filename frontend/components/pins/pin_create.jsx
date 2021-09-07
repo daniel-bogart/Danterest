@@ -1,6 +1,8 @@
 import React from "react";
 import BoardIndexDropdown from '../boards/board_index_dropdown';
 import { FaArrowLeft } from 'react-icons/fa';
+import { HiArrowCircleUp } from 'react-icons/hi';
+import { MdAccountCircle } from "react-icons/md";
 
 class PinCreate extends React.Component {
   constructor(props) {
@@ -36,6 +38,7 @@ class PinCreate extends React.Component {
 
   componentDidMount() {
     this.props.fetchAllBoards(this.props.userId);
+    this.props.fetchUser(this.props.userId)
   }
 
   goBack() {
@@ -55,7 +58,7 @@ class PinCreate extends React.Component {
   }
 
   render() {
-    // console.log("this is photofile!!", this.state.photoFile)
+    const author = this.props.currentUser;
     const currentLocation = window.location.href;
     return (
       <div className="pin-create-container">
@@ -69,8 +72,11 @@ class PinCreate extends React.Component {
               onChange={this.handleUpload}
             />
             <label htmlFor="image-upload">
-              <div>
-                Click to upload
+              <div className="image-upload-bg">
+                <div className="pin-image-upload-bg">
+                  <HiArrowCircleUp size={44} className="upload-arrow"/>
+                  <div className="upload-text">Click to upload</div>
+                </div>
               </div>
             </label>
           </div>
@@ -94,16 +100,23 @@ class PinCreate extends React.Component {
             </div>
             <div className="pinput">
               <input
+              className="pin-create-title-input"
               type="text"
               value={this.state.title}
               placeholder="Add your title"
               onChange={this.handleInput('title')}
+              maxLength="50"
               />
-              <input
+              <div className="pin-author">
+                <MdAccountCircle className="pin-author-photo" size={52}/>
+                <div className="pin-author-name">{`${author.first_name} ${author.last_name}`}</div>
+              </div>
+              <textarea
               type="text"
               value={this.state.description}
               placeholder="Tell everyone what your pin is about"
               onChange={this.handleInput('description')}
+              maxLength="500"
               />
             </div>
           </div>

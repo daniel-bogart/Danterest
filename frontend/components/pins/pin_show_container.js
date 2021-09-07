@@ -19,7 +19,22 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
+// const mDTP = dispatch => {
+//   return {
+//     deletePinOnBoard,
+//     fetchAllBoards, 
+//     fetchPin, 
+//     deletePin, 
+//     openModal,
+//     closeModal,
+//     savePin, 
+//     fetchAllUsers,
+//     updatePin
+//   }
+// }
+
 export default connect(mapStateToProps, {
+  deletePinOnBoard,
   fetchAllBoards, 
   fetchPin, 
   deletePin, 
@@ -27,6 +42,5 @@ export default connect(mapStateToProps, {
   closeModal,
   savePin, 
   fetchAllUsers,
-  deletePinOnBoard,
   updatePin
 })(PinShow);
