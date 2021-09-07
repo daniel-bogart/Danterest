@@ -6,7 +6,6 @@ import { updateUser } from "../../actions/user_actions";
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state.session.id)
   return {
     userId: state.session.id,
     currentUser: state.entities.users[state.session.id],

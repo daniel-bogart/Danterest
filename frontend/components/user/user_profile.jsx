@@ -18,13 +18,11 @@ class UserProfile extends React.Component {
   };
 
   componentDidMount() {
-    console.log("hitting")
     this.props.fetchUser(this.props.userId)
   }
 
 
   render() {
-    console.log("currentUser", this.props.currentUser)
     const firstName = this.props.currentUser.first_name ||= ""
     const lastName = this.props.currentUser.last_name ||= ""
     if (!this.props.currentUser) {

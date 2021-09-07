@@ -18,7 +18,6 @@ export const receivedPinsOnBoards = (pinsOnBoards, boardId) => ({
 })
 
 export const removePinOnBoard = pinOnBoardId => {
-  console.log("PIN ON BOARD ID", pinOnBoardId)
   return {
     type: REMOVE_PIN_ON_BOARD,
     pinOnBoardId

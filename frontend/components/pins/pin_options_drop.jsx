@@ -37,8 +37,6 @@ class PinOptionsDrop extends React.Component {
 
   render() {
 
-    // console.log("PHOTOURL", this.props.pin.photoUrl)
-
     const { authorId, currentUser} = this.props;
 
     const isOwner = authorId === parseInt(currentUser) ? (

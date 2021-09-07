@@ -7,7 +7,6 @@ import { openModal } from "../../actions/modal_actions";
 import { fetchPinsOnBoard } from "../../actions/pins_on_boards_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps)
   return {
     // user: state.entities.users[ownProps.match.params.userId],
     board: state.entities.boards[ownProps.match.params.boardId],

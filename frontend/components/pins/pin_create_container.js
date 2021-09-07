@@ -10,7 +10,6 @@ import { fetchUser } from '../../actions/user_actions'
 
 const mSTP = (state, ownProps) => {
   const sessionId = parseInt(state.session.id);
-  console.log(sessionId)
   return {
     currentUser: state.entities.users[sessionId],
     user: ownProps.user,

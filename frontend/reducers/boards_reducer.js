@@ -17,12 +17,9 @@ const boardsReducer = (state = {}, action) => {
       nextState[action.board.id] = action.board;
       return nextState;
       case RECEIVE_PINS_ON_BOARDS:
-        debugger
         nextState[action.boardId]["pins"] = [action.pinsOnBoards];
         return nextState
     case REMOVE_PIN_ON_BOARD:
-      console.log("THIS IS THE ACTION", action)
-      // delete nextState[action.pinOnBoard.board_id][pinOnBoard.pin_id];
       delete nextState[action.boardId][pins.pin_id];
       return nextState;
     case REMOVE_BOARD:

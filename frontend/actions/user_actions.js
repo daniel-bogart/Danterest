@@ -9,7 +9,6 @@ const receiveAllUsers = (users) => ({
 });
 
 export const receiveUser = user => {
-  console.log("this is the user", user)
   return {
     type: RECEIVE_CURRENT_USER,
     user

@@ -5,7 +5,6 @@ import "regenerator-runtime/runtime";
 class UserEdit extends React.Component {
   constructor(props) {
     super(props);
-    console.log("props", props)
     this.state = {
       username: `${this.props.currentUser.username}`,
       firstName: `${this.props.currentUser.first_name ||= ""}`,
@@ -21,8 +20,6 @@ class UserEdit extends React.Component {
       firstName: this.state.firstName, 
       lastName: this.state.lastName
     }
-    console.log("userId", this.props.userId)
-    console.log("user", user);
     await this.props.updateUser(user, this.props.userId);
     this.props.closeModal();
   }
