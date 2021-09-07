@@ -50,15 +50,8 @@ class BIIPCDropdown extends React.Component {
 
 
   render() {
-    console.log("BOARD_ID", this.props.board.id)
-    // console.log("DIS IS DA PIN!!!", this.props.pin)
-    // console.log("disss is USERID", this.props.userId)
-    // console.log("disss is title!", this.props.title)
-    // console.log("disss is description!", this.props.description)
-    // console.log("nowww DIS is photofile", this.props.photoFile)
     return (
         <div onClick={() => this.handleClick()} className="bii-dropdown">
-          <h1>SUCCESS</h1>
           <h1 className="board-title">{this.props.board.title}</h1>
         </div>
     )
