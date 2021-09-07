@@ -1,11 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import PinDelete from "./pin_delete";
+import { deletePin } from '../../actions/pin_actions';
 import { closeModal, openModal } from '../../actions/modal_actions';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import PinEdit from './pin_edit';
-import { fetchPin, deletePin } from "../../actions/pin_actions";
-import { fetchAllUsers } from "../../actions/user_actions";
-import { updatePin } from "../../actions/pin_actions";
 
 const mSTP = (state, ownProps) => {
   const tempPath = ownProps.location.pathname.split("/")
@@ -18,10 +15,7 @@ const mSTP = (state, ownProps) => {
 };
 
 export default withRouter(connect(mSTP, {
-  closeModal, 
-  openModal, 
-  fetchPin, 
-  deletePin, 
-  fetchAllUsers,
-  updatePin
-})(PinEdit));
+  openModal,
+  closeModal,
+  deletePin
+})(PinDelete));

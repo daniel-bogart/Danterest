@@ -11,6 +11,7 @@ import PinCreateContainer from '../pins/pin_create_container';
 import PinSaved from '../misc/pin_saved_modals/pin_saved';
 import AlreadySaved from '../misc/pin_saved_modals/already_saved';
 import PinEditContainer from "../pins/pin_edit_container";
+import PinDeleteContainer from '../pins/pin_delete_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -47,6 +48,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'edit-pin':
       component = <PinEditContainer/>;
+      break;
+    case 'delete-pin':
+      component = <PinDeleteContainer/>;
       break;
     default:
       return null;

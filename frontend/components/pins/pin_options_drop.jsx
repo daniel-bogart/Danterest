@@ -34,17 +34,6 @@ class PinOptionsDrop extends React.Component {
       }
     }, 0);
   }
-  
-  // getDataFromURL = (url) => new Promise((resolve, reject) => {
-  //   console.log("THIS IS THE URL", url)
-  //   setTimeout(() => {
-  //       fetch(url)
-  //           .then(response => response.text())
-  //           .then(data => {
-  //               resolve(data)
-  //           });
-  //   });
-  // }, 2000);
 
   render() {
 
@@ -77,11 +66,6 @@ class PinOptionsDrop extends React.Component {
         <div className="pin-options-drop-index">
           {isOwner}
           <div>Download image</div>
-          {/* <DownloadLink
-          label="Download image"
-          filename={`${this.props.pin.title}`}
-          exportFile={() => Promise.resolve(this.getDataFromURL(this.props.pin.photoUrl))}
-          /> */}
         </div>
         ) : null}
     </div>

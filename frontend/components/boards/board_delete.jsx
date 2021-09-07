@@ -22,8 +22,8 @@ class BoardDelete extends React.Component {
         <div>Are you sure?</div>
         <div>Once you delete a board and all it's Pins, you can't undo it!</div>
         <div className="final-board-delete-btn-container">
-          <div className="delete-board-cancel-btn" onClick={() => this.props.openModal('edit-board')}>Cancel</div>
-          <div onClick={this.handleDelete} className="final-board-delete-btn">Delete Forever</div>
+          <div className="cancel-btn" onClick={() => this.props.openModal('edit-board')}>Cancel</div>
+          <div onClick={this.handleDelete} className="delete-btn">Delete Forever</div>
         </div>
       </div>
     )

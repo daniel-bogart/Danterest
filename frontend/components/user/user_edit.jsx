@@ -70,7 +70,7 @@ class UserEdit extends React.Component {
           onChange={this.handleInput('username')}
           />
         </div>
-        <div onClick={this.handleSubmit} className="final-board-delete-btn">Done</div>
+        <div onClick={this.handleSubmit} className="delete-btn done">Done</div>
       </div>
     )
   }

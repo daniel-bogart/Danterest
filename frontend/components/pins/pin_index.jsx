@@ -70,7 +70,15 @@ export default class PinIndex extends React.Component {
     );
 
     if (!this.props.pins[this.props.pins.length-1]) {
-      return (<LoadingIcon/>)
+      return (
+        <div>
+        <LoadingIcon/>
+          <div className="loader-text">
+            <div>We're adding new ideas to your</div>
+            <div>home feed!</div>
+          </div>
+        </div>
+      )
     } else {
       return (
         <div className="pin-index-box">
