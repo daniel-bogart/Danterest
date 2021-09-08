@@ -41,6 +41,11 @@ class PinShow extends React.Component {
     const authorId = this.props.pin.author_id;
     const author = this.props.users[authorId];
     if (author === undefined) return null;
+    const displayName = (author.first_name) && (author.last_name) ? (
+      `${author.first_name} ${author.last_name}`
+    ) : (
+      author.username 
+    )
     return (
       <div id="pin-background" className="pin-container">
         <div className="pin" key={this.props.pin.id}>
@@ -85,7 +90,7 @@ class PinShow extends React.Component {
             </div>
             <div className="pin-author">
               <MdAccountCircle className="pin-author-photo" size={52}/>
-              <div className="pin-author-name">{`${author.first_name} ${author.last_name}`}</div>
+              <div className="pin-author-name">{displayName}</div>
             </div>
           </div>
         </div>

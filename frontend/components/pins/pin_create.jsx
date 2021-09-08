@@ -60,6 +60,11 @@ class PinCreate extends React.Component {
   render() {
     const author = this.props.currentUser;
     const currentLocation = window.location.href;
+    const displayName = (author.first_name) && (author.last_name) ? (
+      `${author.first_name} ${author.last_name}`
+    ) : (
+      author.username 
+    )
     return (
       <div className="pin-create-container">
         <div className="pin-create">
@@ -109,7 +114,7 @@ class PinCreate extends React.Component {
               />
               <div className="pin-author">
                 <MdAccountCircle className="pin-author-photo" size={52}/>
-                <div className="pin-author-name">{`${author.first_name} ${author.last_name}`}</div>
+                <div className="pin-author-name">{displayName}</div>
               </div>
               <textarea
               type="text"
