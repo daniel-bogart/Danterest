@@ -7,6 +7,7 @@ import { savePin } from "../../actions/pins_on_boards_actions";
 import { fetchAllUsers } from "../../actions/user_actions";
 import { deletePinOnBoard } from "../../actions/pins_on_boards_actions";
 import { updatePin } from "../../actions/pin_actions";
+import { fetchBoard } from "../../actions/board_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -42,5 +43,6 @@ export default connect(mapStateToProps, {
   closeModal,
   savePin, 
   fetchAllUsers,
-  updatePin
+  updatePin,
+  fetchBoard
 })(PinShow);

@@ -46,6 +46,7 @@ class BoardIndexDropdown extends React.Component {
           <BIIPCDropdown 
           className="index-board"
           fetchAllBoards={this.props.fetchAllBoards}
+          fetchBoard={this.props.fetchBoard}
           openModal={this.props.openModal} 
           savePin={this.props.savePin}
           key={board.id} 
@@ -75,6 +76,7 @@ class BoardIndexDropdown extends React.Component {
         pin={this.props.pin}
         userId={this.props.userId}
         deletePinOnBoard={this.props.deletePinOnBoard}
+        fetchBoard={this.props.fetchBoard}
         />)}
           <div onClick={() => this.props.openModal('create-board')} className="bii-dropdown fa-create-board-box">
           <FaPlus className="faplus-create-board" size={24}/>
