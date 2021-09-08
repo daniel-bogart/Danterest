@@ -74,6 +74,7 @@ class PinShow extends React.Component {
                   pin={this.props.pin}
                   userId={this.props.userId}
                   deletePinOnBoard={this.props.deletePinOnBoard}
+                  fetchBoard={this.props.fetchBoard}
                 />
                 {/* <button className="save-board-button">Save</button> */}
               </div>

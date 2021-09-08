@@ -7,7 +7,7 @@ function AlreadySaved(props) {
     <div className="pin-saved-modal">
       <img className="home-logo-saved" src={window.dLogo}/>
       <div className="already-saved-box">
-        <div className="pin-is-saved">Already saved!</div>
+        <div className="pin-is-saved">Pin removed!</div>
         <MdCheck className="check" size={48}/>
       </div>
     </div>

@@ -1,5 +1,7 @@
 class Api::PinsOnBoardsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token
+
   def create
     @pin_on_board = PinsOnBoard.create(pin_on_board_params)
     if @pin_on_board.save
@@ -12,7 +14,7 @@ class Api::PinsOnBoardsController < ApplicationController
   end
 
   def destroy
-    @pin_on_board = PinsOnBoard.find_by(pin_id: params[:id])
+    @pin_on_board = PinsOnBoard.find_by(pin_id: params[:pin_id], board_id: params[:board_id])
     if @pin_on_board.destroy
       render json: @pin_on_board.id 
     #else

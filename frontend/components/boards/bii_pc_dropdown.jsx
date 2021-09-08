@@ -1,4 +1,6 @@
 import React from 'react';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 class BIIPCDropdown extends React.Component {
   constructor(props) {
@@ -14,10 +16,10 @@ class BIIPCDropdown extends React.Component {
   };
 
   componentDidUpdate() {
-      this.props.fetchAllBoards(this.props.userId)
+      this.props.fetchBoard(this.props.userId, this.props.board.id)
   }
 
-  handleClick() {
+  async handleClick() {
     // e.preventDefault();
     const {title, description, userId, photoFile} = this.state;
 
@@ -34,10 +36,9 @@ class BIIPCDropdown extends React.Component {
     if (photoFile){
       formData.append('pin[photo]', photoFile)
     };
-      this.props.createPin(formData)
-        .then( pin => this.props.savePin({board_id: this.props.board.id, pin_id: pin.pin.id}))
+    this.props.createPin(formData)
+      .then( pin => this.props.savePin({board_id: this.props.board.id, pin_id: pin.pin.id}))
       this.props.openModal('saved-pin');
-      this.setState({savedPin: false})
   }
 
 

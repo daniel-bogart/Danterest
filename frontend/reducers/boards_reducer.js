@@ -16,12 +16,12 @@ const boardsReducer = (state = {}, action) => {
     case RECEIVE_BOARD:
       nextState[action.board.id] = action.board;
       return nextState;
-      case RECEIVE_PINS_ON_BOARDS:
-        nextState[action.boardId]["pins"] = [action.pinsOnBoards];
-        return nextState
-    case REMOVE_PIN_ON_BOARD:
-      delete nextState[action.boardId][pins.pin_id];
-      return nextState;
+    case RECEIVE_PINS_ON_BOARDS:
+      nextState[action.boardId]["pins"] = [action.pinsOnBoards];
+      return nextState
+    // case REMOVE_PIN_ON_BOARD:
+    //   delete nextState[action.boardId][pins.pin_id];
+    //   return nextState;
     case REMOVE_BOARD:
       delete nextState[action.boardId];
       return nextState;
