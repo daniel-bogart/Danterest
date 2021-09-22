@@ -43,7 +43,7 @@ class BoardIndexDropdown extends React.Component {
       <div>
         <div className="pin-show-board-index">
           {this.props.boards.map((board) => 
-          <BIIPCDropdown 
+          <BIIPCDropdown
           className="index-board"
           fetchAllBoards={this.props.fetchAllBoards}
           fetchBoard={this.props.fetchBoard}
@@ -66,7 +66,8 @@ class BoardIndexDropdown extends React.Component {
     ) : (
       <div className="pin-show-board-index">
         {this.props.boards.map((board) => 
-        <BIIDropdown 
+        <BIIDropdown
+        boardId={board.id}
         className="index-board"
         fetchAllBoards={this.props.fetchAllBoards}
         openModal={this.props.openModal} 

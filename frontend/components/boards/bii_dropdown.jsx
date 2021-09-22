@@ -7,12 +7,20 @@ class BIIDropdown extends React.Component {
       savedPin: false
     }
     this.handleClick = this.handleClick.bind(this);
+    console.log("BOARD-ID", this.props.boardId)
   };
 
-  // componentDidMount() {
-  //   this.props.fetchBoard(this.props.userId, this.props.board.id)
-  //   // this.props.fetchAllBoards(this.props.userId)
-  // }
+  // componentDidUpdate() {
+  //   const {savePin} = this.state;
+  //   if (savePin === true) {
+  //     this.props.fetchAllBoards(this.props.userId);
+  //     this.setState({savedPin: false})
+  //   };
+  // };
+
+  componentDidMount() {
+    this.props.fetchAllBoards(this.props.userId);
+  }
 
   handleClick() {
     const currentPinId = this.props.pin.id;
@@ -25,7 +33,7 @@ class BIIDropdown extends React.Component {
     if (saved === false) {
       this.props.savePin({board_id: this.props.board.id, pin_id: this.props.pin.id});
       this.props.openModal('saved-pin');
-      this.setState({savedPin: false})
+      this.setState({savedPin: true})
     } else {
       this.props.deletePinOnBoard({pin_id: this.props.pin.id, board_id: this.props.board.id})
       this.props.openModal('already-saved-pin')
