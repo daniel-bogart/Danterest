@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { FaGithub, FaPinterest, FaUserCircle, FaLinkedin } from 'react-icons/fa';
 import NavDropdown from './dropdown/nav_dropdown';
+import { FaSearch } from 'react-icons/fa';
 
 
 class NavBar extends React.Component {
@@ -48,6 +49,14 @@ class NavBar extends React.Component {
       </div>
     );
 
+    const searchBar = this.props.currentUser ? (
+      <div className="search-bar">
+        <FaSearch  size={18} id="search-icon" /> Search
+      </div>
+    ) : (
+      null
+    );
+
     const display = this.props.currentUser ? (
       <div className="nav-greeting">
         <a href="https://github.com/daniel-bogart" target="_blank"
@@ -58,8 +67,6 @@ class NavBar extends React.Component {
             className="nav-icons"><FaLinkedin size={28}/>
         </a>
         <NavLink className="nav-icons" to={`/users/${this.props.currentUser.id}`}><FaUserCircle size={28}/></NavLink>
-        {/* <div className="nav-logout" onClick={this.props.logout}>Logout</div> */}
-        {/* <div className="nav-dropdown"><MdKeyboardArrowDown size={25}/></div> */}
         <NavDropdown openModal={openModal} currentUser={this.props.currentUser} logout={this.props.logout}></NavDropdown>
       </div>
     ) : (
@@ -72,6 +79,7 @@ class NavBar extends React.Component {
     return (
       <nav className="navbar">
         {displayLogo}
+        {searchBar}
         {display}
       </nav>
     )
