@@ -39,3 +39,67 @@ the dropdown menu from the three dots.
 The user page is where one place where users can create pins and boards, as well as access them. The User Page is also where users can edit their profile information.
 
 ![User Page](app/assets/images/user_page.png)
+
+## Featured Code:
+### Masonry
+As a full-stack clone of Pinterest, Masonry is absolutely a defining feature. Masonry can be tricky, considering that you need to auto adjust for screen size.
+```
+.masonry {
+  column-count: 8;
+  column-gap: 0.5em;
+  margin: 1.5em auto;
+  max-width: 100vw;
+  box-sizing: border-box;
+  padding: 10px;
+  column-width: 305px;
+}
+
+@media only screen and (max-width: 1201px) {
+  .masonry {
+    column-count: 4;
+    column-gap: 0.5em;
+    margin: 1.5em auto;
+    max-width: 100vw;
+    box-sizing: border-box;
+    padding: 10px;
+    column-width: 305px;
+  }
+}
+-----------------------------------------------
+  <ul className="masonry">
+  {this.props.pins.map((pin) => {
+    return (
+      <li className="index-pin" key={pin.id}>
+        <PinIndexItem className="index-pin" pin={pin}/>
+        <h3>{pin.title}</h3>
+      </li>
+    );
+  })}
+  </ul>
+
+-----------------------------------------------
+function PinIndexItem(props) {
+  return (
+    <Link to={`/pins/${props.pin.id}`}><img className="pin-image" src={props.pin.photoUrl}/></Link>
+  )
+}
+```
+### Pin Create
+
+Pins are created by appending attributes to formData which is passed as a pin object to the backend.
+```
+
+  async handleClick() {
+    const {title, description, userId, photoFile} = this.state;
+    const formData = new FormData();
+    formData.append('pin[title]', title);
+    formData.append('pin[description]', description);
+    formData.append('pin[author_id]', userId);
+    if (photoFile){
+      formData.append('pin[photo]', photoFile)
+    };
+    this.props.createPin(formData)
+      .then( pin => this.props.savePin({board_id: this.props.board.id, pin_id: pin.pin.id}))
+      this.props.openModal('saved-pin');
+  }
+```

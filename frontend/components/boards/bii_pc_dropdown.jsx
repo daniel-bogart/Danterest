@@ -15,21 +15,8 @@ class BIIPCDropdown extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   };
 
-  // componentDidMount() {
-  //   // this.props.fetchBoard(this.props.userId, this.props.board.id)
-  //   this.props.fetchAllBoards(this.props.userId)
-  // }
-
   async handleClick() {
-    // e.preventDefault();
     const {title, description, userId, photoFile} = this.state;
-
-    // const pin = {
-    //   title: title,
-    //   description: description,
-    //   author_id: userId,
-    //   photo: photoFile
-    // }
     const formData = new FormData();
     formData.append('pin[title]', title);
     formData.append('pin[description]', description);
