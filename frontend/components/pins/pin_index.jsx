@@ -6,6 +6,7 @@ import LoadingIcon from '../misc/loader';
 import SplashIndexItem from "../splash/splash_index_item";
 import Splash from "../splash/splash";
 import ReactRotatingText from "react-rotating-text";
+import { MdAccountCircle } from "react-icons/md";
 
 export default class PinIndex extends React.Component {
   constructor(props) {
@@ -29,10 +30,25 @@ export default class PinIndex extends React.Component {
     const indexDisplay = this.props.currentUser ? (
       <ul className="masonry">
       {this.props.pins.map((pin) => {
+        const authorId = pin.author_id;
+        const author = this.props.users[authorId];
+        console.log("AUTHOR", authorId);
+        console.log("USERS", this.props.users);
+        const displayName = (author.first_name) && (author.last_name) ? (
+          `${author.first_name} ${author.last_name}`
+        ) : (
+          author.username 
+        );
         return (
           <li className="index-pin" key={pin.id}>
             <PinIndexItem className="index-pin" pin={pin}/>
-            <h3>{pin.title}</h3>
+            <div className="pin-info-box">
+              <div className="pin-title">{pin.title}</div>
+              <div className="pin-index-author">
+                <MdAccountCircle className="pin-index-author-photo" size={40}/>
+                <div className="pin-index-author-name">{displayName}</div>
+              </div>
+            </div>
           </li>
         );
       })}
@@ -82,7 +98,9 @@ export default class PinIndex extends React.Component {
     } else {
       return (
         <div className="pin-index-box">
+          <div className="masonry-wrap">
           {indexDisplay}
+          </div>
         </div>
       );
     }
