@@ -31,10 +31,10 @@ const receiveBoardErrors = errors => ({
   errors
 });
 
-export const fetchAllBoards = userId => dispatch => (
-  BoardApiUtil.fetchAllBoards(userId)
+export const fetchAllBoards = userId => dispatch => {
+  return BoardApiUtil.fetchAllBoards(userId)
     .then(boards => dispatch(receiveAllBoards(boards)), error => dispatch(receiveBoardErrors(error.responseJSON)))
-);
+};
 
 export const fetchBoard = (userId, boardId) => dispatch => (
   BoardApiUtil.fetchBoard(userId, boardId)

@@ -11,8 +11,10 @@ class Api::BoardsController < ApplicationController
 
   def index
     # @user = User.find_by(id: params[:id])
-    @boards = current_user.boards
-    render :index
+    # @boards = current_user.boards
+    # render :index
+    @boards = Board.all.where(user_id: params[:user_id])
+    render "/api/boards/index"
   end
 
   def create
@@ -44,15 +46,6 @@ class Api::BoardsController < ApplicationController
       end 
     end
   end
-
-  # def update
-  #   @board = Board.find_by(id: params[:id])
-  #     if @board && @board.update(board_params)
-  #       render :show
-  #     else
-  #       render json: @board.errors.full_messages, status: 422
-  #     end
-  # end
 
   private
   def board_params

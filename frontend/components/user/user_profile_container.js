@@ -1,10 +1,10 @@
 import UserProfile from "./user_profile";
 import { connect } from 'react-redux';
 import { receiveUser } from '../../actions/user_actions';
-import { createrNewBoard } from '../../actions/board_actions';
+import { createNewBoard } from '../../actions/board_actions';
 import { removeErrors } from '../../actions/session_actions';
 import { openModal } from "../../actions/modal_actions";
-import { fetchUser } from "../../actions/user_actions";
+import { fetchUser, fetchAllUsers } from "../../actions/user_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     // user: state.entities.users[state.session.id],
     currentUser: state.entities.users[state.session.id],
     session: state.session,
-    userId: state.session.id
+    userId: state.session.id,
   };
 };
 
@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => {
     openModal: (formType) => dispatch(openModal(formType)),
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     createNewBoard: (board) => dispatch(createNewBoard(board)),
-    removeErrors: () => dispatch(removeErrors())
+    removeErrors: () => dispatch(removeErrors()),
+    fetchAllUsers: () => dispatch(fetchAllUsers())
   };
 };
 

@@ -7,7 +7,6 @@ class BIIDropdown extends React.Component {
       savedPin: false
     }
     this.handleClick = this.handleClick.bind(this);
-    console.log("BOARD-ID", this.props.boardId)
   };
 
   // componentDidUpdate() {

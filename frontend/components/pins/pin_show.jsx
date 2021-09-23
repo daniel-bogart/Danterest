@@ -3,6 +3,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import BoardIndexDropdown from '../boards/board_index_dropdown';
 import { MdAccountCircle } from "react-icons/md";
 import PinOptionsDrop from './pin_options_drop';
+import { NavLink } from 'react-router-dom';
 
 class PinShow extends React.Component {
   constructor(props) {
@@ -89,8 +90,12 @@ class PinShow extends React.Component {
               <h3 className="pinfo-description">{this.props.pin.description}</h3>
             </div>
             <div className="pin-author">
-              <MdAccountCircle className="pin-author-photo" size={52}/>
-              <div className="pin-author-name">{displayName}</div>
+              <NavLink className="author-profile-nav" to={`/users/${authorId}`}>
+                <MdAccountCircle className="pin-author-photo" size={52}/>
+              </NavLink>
+              <NavLink className="author-profile-nav" to={`/users/${authorId}`}>
+                <div className="pin-author-name">{displayName}</div>
+              </NavLink>
             </div>
           </div>
         </div>

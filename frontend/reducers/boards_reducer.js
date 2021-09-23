@@ -13,6 +13,7 @@ const boardsReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_ALL_BOARDS:
       return Object.assign({}, action.boards);
+      // return action.boards;
     case RECEIVE_BOARD:
       nextState[action.board.id] = action.board;
       return nextState;

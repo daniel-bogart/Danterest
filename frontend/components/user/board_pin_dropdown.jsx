@@ -54,18 +54,15 @@ class BoardPinDropdown extends React.Component {
         {this.state.showMenu ? (
             <div className="board-pin-drop-menu-index">
               <div>Create</div>
-              <div className="drop-create-pin-button">
-                <Link to="pin-builder"
-                  className="pin-create-link"
-                  style={{...linkStyle}}
-                  >
-                  Pin        
-                </Link>
-                </div>
+              <Link to="pin-builder"
+                className="pin-create-link">
+                Pin        
+              </Link>
               <div 
               className="drop-create-board-button"
               onClick={() => this.props.openModal('create-board')}
-              >Board</div>
+              >Board
+              </div>
             </div>
           ) : null}
       </div>

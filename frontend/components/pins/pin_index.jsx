@@ -32,8 +32,6 @@ export default class PinIndex extends React.Component {
       {this.props.pins.map((pin) => {
         const authorId = pin.author_id;
         const author = this.props.users[authorId];
-        console.log("AUTHOR", authorId);
-        console.log("USERS", this.props.users);
         const displayName = (author.first_name) && (author.last_name) ? (
           `${author.first_name} ${author.last_name}`
         ) : (

@@ -18,16 +18,18 @@ class UserProfile extends React.Component {
   };
 
   componentDidMount() {
-    this.props.fetchUser(this.props.userId)
+    // this.props.fetchUser(this.props.user.id);
+    this.props.fetchAllUsers();
   }
 
 
   render() {
-    const firstName = this.props.currentUser.first_name ||= ""
-    const lastName = this.props.currentUser.last_name ||= ""
-    if (!this.props.currentUser) {
+    if (!this.props.user) {
       return null
     } else {
+      const firstName = this.props.user.first_name ||= ""
+      const lastName = this.props.user.last_name ||= ""
+      const user = this.props.user
     return (
       <div className="user-show-page">
         <div className="user-sub-page">
@@ -47,7 +49,7 @@ class UserProfile extends React.Component {
             />
             <BoardPinDropdown openModal={this.props.openModal}/>
           </div>
-          <BoardIndexContainer user={this.props.user}/>
+          <BoardIndexContainer user={user}/>
         </div>
       </div>
     )
