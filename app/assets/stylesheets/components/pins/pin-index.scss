@@ -101,12 +101,23 @@
 
 .pin-title {
   margin-left: 2px;
+  font-weight: 500;
 }
 
 .pin-index-author {
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: #111;
+}
+
+.author-index-nav {
+  text-decoration: none;
+  color: #111;
+}
+
+.author-index-nav:hover {
+  text-decoration: underline;
 }
 
 .pin-info-box {

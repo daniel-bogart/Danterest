@@ -7,6 +7,7 @@ import SplashIndexItem from "../splash/splash_index_item";
 import Splash from "../splash/splash";
 import ReactRotatingText from "react-rotating-text";
 import { MdAccountCircle } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 export default class PinIndex extends React.Component {
   constructor(props) {
@@ -43,8 +44,12 @@ export default class PinIndex extends React.Component {
             <div className="pin-info-box">
               <div className="pin-title">{pin.title}</div>
               <div className="pin-index-author">
-                <MdAccountCircle className="pin-index-author-photo" size={40}/>
-                <div className="pin-index-author-name">{displayName}</div>
+                <NavLink className="author-index-nav" to={`/users/${authorId}`}>
+                  <MdAccountCircle className="pin-index-author-photo" size={40}/>
+                </NavLink>
+                <NavLink className="author-index-nav" to={`/users/${authorId}`}>
+                  <div className="pin-index-author-name">{displayName}</div>
+                </NavLink>
               </div>
             </div>
           </li>

@@ -35,10 +35,16 @@ class BoardPinDropdown extends React.Component {
   }
 
   render() {
-    const linkStyle= {
-      textDecoration: 'none',
-      color: 'black',
-    }
+    const {user, currentUser} = this.props
+    const boardLink = (user === currentUser) ? (
+      <div 
+      className="drop-create-board-button"
+      onClick={() => this.props.openModal('create-board')}
+      >Board
+      </div>
+    ) : (
+      null
+    );
 
     return (
       <div className="create-dropdown-container">
@@ -58,11 +64,7 @@ class BoardPinDropdown extends React.Component {
                 className="pin-create-link">
                 Pin        
               </Link>
-              <div 
-              className="drop-create-board-button"
-              onClick={() => this.props.openModal('create-board')}
-              >Board
-              </div>
+              {boardLink}
             </div>
           ) : null}
       </div>
