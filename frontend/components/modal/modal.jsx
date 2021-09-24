@@ -12,8 +12,9 @@ import PinSaved from '../misc/pin_saved_modals/pin_saved';
 import AlreadySaved from '../misc/pin_saved_modals/already_saved';
 import PinEditContainer from "../pins/pin_edit_container";
 import PinDeleteContainer from '../pins/pin_delete_container';
+import { NavLink } from 'react-router-dom';
 
-function Modal({modal, closeModal}) {
+function Modal({modal, closeModal, currentUserId}) {
   if (!modal) {
     return null;
   }
@@ -55,18 +56,42 @@ function Modal({modal, closeModal}) {
     default:
       return null;
   }
-  return (
-    <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
-        { component }
+
+  const currentUrl = window.location.href;
+  const onPinCreate = (currentUrl) => {
+    const string = 'pin-builder';
+    if (currentUrl.includes(string)) {
+      return true;
+    } else {
+      return false
+    };
+  };
+
+  if (onPinCreate(currentUrl)) {
+    return (
+      <NavLink to={`/users/${currentUserId}`}>
+        <div className="modal-background" onClick={closeModal}>
+          <div className="modal-child" onClick={e => e.stopPropagation()}>
+            { component }
+          </div>
+        </div>
+      </NavLink>
+    );
+  } else {
+    return (
+      <div className="modal-background" onClick={closeModal}>
+        <div className="modal-child" onClick={e => e.stopPropagation()}>
+          { component }
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 const mapStateToProps = state => {
   return {
-    modal: state.modal
+    modal: state.modal,
+    currentUserId: state.session.id
   };
 };
 

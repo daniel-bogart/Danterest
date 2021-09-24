@@ -56,6 +56,7 @@ class BoardIndexDropdown extends React.Component {
           title={this.props.title}
           description={this.props.description}
           photoFile={this.props.photoFile}
+          pin={this.props.pin}
           />)}
             <div onClick={() => this.props.openModal('create-board')} className="bii-dropdown fa-create-board-box">
               <FaPlus className="faplus-create-board" size={24}/>
