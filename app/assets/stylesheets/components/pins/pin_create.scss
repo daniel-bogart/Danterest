@@ -111,3 +111,23 @@
   font-size: 32px;
   font-weight: 600;
 }
+
+#show-create-image {
+  height: auto;
+  width: 100%;
+  border-radius: 32px;
+  max-width: 600px;
+  transition: transform .2s;
+}
+
+.display-create-image {
+  height: auto;
+  width: 100%;
+  border-radius: 32px;
+  max-width: 600px;
+  transition: transform .2s;
+}
+
+.upload-bg-none {
+  display: none;
+}

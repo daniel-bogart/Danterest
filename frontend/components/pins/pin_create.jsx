@@ -11,7 +11,8 @@ class PinCreate extends React.Component {
       userId: this.props.userId,
       title: '',
       description: '',
-      photoFile: null
+      photoFile: null,
+      photoUrl: null,
     }
 
     this.goBack = this.goBack.bind(this);
@@ -23,12 +24,6 @@ class PinCreate extends React.Component {
       this.setState({[type]: e.target.value})
     };
   }
-
-  // fileSelect = e => {
-  //   this.setState({
-  //     selectedFile: e.target.files[0]
-  //   })
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -51,13 +46,19 @@ class PinCreate extends React.Component {
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
       this.setState({
-        photoFile: file
+        photoFile: file,
+        photoUrl: fileReader.result,
       });
+      document.getElementById('image-upload-bg').className = 'upload-bg-none';
     }
     if (file) fileReader.readAsDataURL(file);
   }
 
   render() {
+    const { photoUrl } = this.state;
+    const showImage = photoUrl ? <img id="show-create-image" src={photoUrl}/>
+    : null;
+
     const author = this.props.currentUser;
     const currentLocation = window.location.href;
     const displayName = (author.first_name) && (author.last_name) ? (
@@ -77,13 +78,16 @@ class PinCreate extends React.Component {
               onChange={this.handleUpload}
             />
             <label htmlFor="image-upload">
-              <div className="image-upload-bg">
+              <div id="image-upload-bg" className="image-upload-bg">
                 <div className="pin-image-upload-bg">
                   <HiArrowCircleUp size={44} className="upload-arrow"/>
                   <div className="upload-text">Click to upload</div>
                 </div>
               </div>
             </label>
+            <div className="show-create-image">
+              {showImage}
+            </div>
           </div>
           <div className="pincrate">
             <div className="pinfo-nav">
