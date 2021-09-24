@@ -38,29 +38,31 @@ class BoardShow extends React.Component {
 
     return (
       <div className="board-show-container">
-        <div className="board-info">
-          <div className="board-info-title">
-            <h1 className="board-show-title">{this.props.board.title}</h1>
-            <div 
-            className="create-board-button"
-            onClick={() => this.props.openModal('edit-board')}
-            ><RiPencilFill size={28}/></div>
+        <div className="masonry-wrap">
+          <div className="board-info">
+            <div className="board-info-title">
+              <h1 className="board-show-title">{this.props.board.title}</h1>
+              <div 
+              className="create-board-button"
+              onClick={() => this.props.openModal('edit-board')}
+              ><RiPencilFill size={28}/></div>
+            </div>
+            <h3 className="board-description">{this.props.board.description}</h3>
           </div>
-          <h3 className="board-description">{this.props.board.description}</h3>
-        </div>
-        <div className="pin-count" style={{fontWeight: "600", fontSize: "22px"}}>{this.pinCount()} Pins</div>
-        <ul className="masonry">
-          {this.props.board.pins.map((boardPin) => {
-            return (
-              <li className="index-pin" key={boardPin.id}>
-                <PinIndexItem className="index-pin" pin={boardPin}/>
-                <h3>{boardPin.title}</h3>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-    )
+          <div className="pin-count" style={{fontWeight: "600", fontSize: "22px"}}>{this.pinCount()} Pins</div>
+          <ul className="masonry">
+            {this.props.board.pins.map((boardPin) => {
+              return (
+                <li className="index-pin" key={boardPin.id}>
+                  <PinIndexItem className="index-pin" pin={boardPin}/>
+                  <div className="pin-title">{boardPin.title}</div>
+                </li>
+              )
+            })}
+          </ul>
+          </div>
+      </  div>
+    ) 
   }
 
 };
