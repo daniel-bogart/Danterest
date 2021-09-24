@@ -286,3 +286,11 @@ h6 {
   color: rgb(69, 69, 69);
   // margin-top: 4px;
 }
+
+#total-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 10000000;
+  background: white;
+}

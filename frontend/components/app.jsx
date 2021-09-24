@@ -15,7 +15,7 @@ import PinCreateContainer from "./pins/pin_create_container";
 const App = () => (
   <div>
     <Modal />
-    <header>
+    <header id="total-header">
       <Route path="/" component={NavbarContainer}></Route>
     </header>
     <Switch>

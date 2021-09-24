@@ -19,16 +19,6 @@ class BIIPCDropdown extends React.Component {
     this.props.fetchAllBoards(this.props.userId)
   }
 
-  // handleSave(currentPin) {
-  //   const currentPinId = currentPin.pin.id
-  //   let saved = false
-  //   {this.props.board.pins.map((pin) => {
-  //     if (currentPinId === pin.id) {
-  //       saved = true
-  //     }
-  //   })};
-  // }
-
   async handleClick() {
     const {title, description, userId, photoFile} = this.state;
     const formData = new FormData();
