@@ -57,6 +57,8 @@ function Modal({modal, closeModal, currentUserId}) {
       return null;
   }
 
+  console.log("THIS IS THE MODAL", modal)
+
   const currentUrl = window.location.href;
   const onPinCreate = (currentUrl) => {
     const string = 'pin-builder';
@@ -67,7 +69,7 @@ function Modal({modal, closeModal, currentUserId}) {
     };
   };
 
-  if (onPinCreate(currentUrl)) {
+  if (onPinCreate(currentUrl) && modal === 'saved-pin') {
     return (
       <NavLink to={`/users/${currentUserId}`}>
         <div className="modal-background" onClick={closeModal}>
