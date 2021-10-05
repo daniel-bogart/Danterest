@@ -57,8 +57,6 @@ function Modal({modal, closeModal, currentUserId}) {
       return null;
   }
 
-  console.log("THIS IS THE MODAL", modal)
-
   const currentUrl = window.location.href;
   const onPinCreate = (currentUrl) => {
     const string = 'pin-builder';
