@@ -11,7 +11,8 @@ import UserProfileContainer from "./user/user_profile_container";
 import BoardShowContainer from "./boards/board_show_container";
 import SplashContainer from "./splash/splash_container";
 import PinCreateContainer from "./pins/pin_create_container";
-import FooterButtonContainer from "./misc/footer_buttons_container";
+// import FooterButtonContainer from "./misc/footer_buttons_container";
+import FooterButton from "./misc/footer_buttons";
 
 const App = () => (
   <div>
@@ -29,10 +30,10 @@ const App = () => (
       <AuthRoute path="/login" component={LoginContainer}/>
       <Redirect to="/"/>
     </Switch>
-    {/* <footer> */}
-      {/* <Route path="/" component={FooterButtonContainer}/> */}
+    <footer id="total-footer">
+      <Route path="/" component={FooterButton}/>
       {/* <Route path="/" component={NavbarContainer}></Route> */}
-    {/* </footer> */}
+    </footer>
   </div>
 );
 

@@ -1,0 +1,27 @@
+.footer-button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  background: white;
+  border-radius: 52px;
+  text-decoration: none;
+  color: black;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-bottom: 52px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: flex-end;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 9;
+  margin-right: 28px;
+}
+
+#total-footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0px;
+}
