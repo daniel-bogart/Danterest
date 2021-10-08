@@ -11,6 +11,7 @@ import UserProfileContainer from "./user/user_profile_container";
 import BoardShowContainer from "./boards/board_show_container";
 import SplashContainer from "./splash/splash_container";
 import PinCreateContainer from "./pins/pin_create_container";
+import FooterButtonContainer from "./misc/footer_buttons_container";
 
 const App = () => (
   <div>
@@ -28,6 +29,10 @@ const App = () => (
       <AuthRoute path="/login" component={LoginContainer}/>
       <Redirect to="/"/>
     </Switch>
+    {/* <footer> */}
+      {/* <Route path="/" component={FooterButtonContainer}/> */}
+      {/* <Route path="/" component={NavbarContainer}></Route> */}
+    {/* </footer> */}
   </div>
 );
 
