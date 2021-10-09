@@ -1,26 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-class BIIPCDropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      savedPin: false,
-      title: this.props.title,
-      description: this.props.description,
-      userId: this.props.userId,
-      photoFile: this.props.photoFile
-    }
-    this.handleClick = this.handleClick.bind(this);
-  };
+const BIIPCDropdown = (props) => {
 
-  componentDidMount() {
-    this.props.fetchAllBoards(this.props.userId)
-  }
+  let [title, setTitle] = useState(props.title);
+  let [description, setDescription] = useState(props.description);
+  let [userId, setUserId] = useState(props.userId);
+  let [photoFile, setPhotoFile] = useState(props.photoFile);
 
-  async handleClick() {
-    const {title, description, userId, photoFile} = this.state;
+
+  useEffect(() => {
+    props.fetchAllBoards(props.userId);
+  }, []);
+
+  async function handleClick() {
     const formData = new FormData();
     formData.append('pin[title]', title);
     formData.append('pin[description]', description);
@@ -28,19 +22,17 @@ class BIIPCDropdown extends React.Component {
     if (photoFile){
       formData.append('pin[photo]', photoFile)
     };
-    this.props.createPin(formData)
-      .then( pin => this.props.savePin({board_id: this.props.board.id, pin_id: pin.pin.id}))
-      this.props.openModal('saved-pin');
+    props.createPin(formData)
+      .then( pin => props.savePin({board_id: props.board.id, pin_id: pin.pin.id}))
+      props.openModal('saved-pin');
   }
 
 
-  render() {
-    return (
-        <div onClick={() => this.handleClick()} className="bii-dropdown">
-          <h1 className="board-title">{this.props.board.title}</h1>
-        </div>
-    )
-  }
+  return (
+      <div onClick={() => handleClick()} className="bii-dropdown">
+        <h1 className="board-title">{props.board.title}</h1>
+      </div>
+  )
 };
 
 export default BIIPCDropdown;
