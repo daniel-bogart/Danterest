@@ -1,76 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-class UserEdit extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: `${this.props.currentUser.username}`,
-      firstName: `${this.props.currentUser.first_name ||= ""}`,
-      lastName: `${this.props.currentUser.last_name ||= ""}`
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+const UserEdit = (props) => {
 
-  async handleSubmit(e) {
+  let [username, setUsername] = useState(`${props.currentUser.username}`);
+  let [firstName, setFirstName] = useState(`${props.currentUser.first_name ||= ""}`);
+  let [lastName, setLastName] = useState(`${props.currentUser.last_name ||= ""}`);
+
+  async function handleSubmit(e) {
     e.preventDefault();
     const user = {
-      username: this.state.username, 
-      firstName: this.state.firstName, 
-      lastName: this.state.lastName
+      username,
+      firstName,
+      lastName
     }
-    await this.props.updateUser(user, this.props.userId);
-    this.props.closeModal();
+    await props.updateUser(user, props.userId);
+    props.closeModal();
   }
 
 
 
-  handleInput(type) {
+  const handleInput = (type) => {
     return (e) => {
-      this.setState({[type]: e.target.value})
+      if (type === 'username') {
+        setUsername(e.target.value);
+      } else if (type === 'firstName') {
+        setFirstName(e.target.value) ;
+      } else {
+        setLastName(e.target.value);
+      };
     };
-  }
-
-  render() {
+  };
 
 
-    return (
-      <div className="user-edit-container">
-        <div className="user-edit-header">Edit Profile</div>
-        <div className="user-edit-subheader">People visiting your profile will see the following info</div>
-        <div className="user-edit-surnames">
-          <div className="user-edit-firstame">
-            <div className="user-edit-label">First name</div>
-            <input
-            type="text"
-            value={this.state.firstName}
-            placeholder="Ex. Jo"
-            onChange={this.handleInput('firstName')}
-            />
-          </div>
-          <div className="user-edit-lastname">
-            <div className="user-edit-label">Last name</div>
-            <input
-            type="text"
-            value={this.state.lastName}
-            placeholder="Ex. Smith"
-            onChange={this.handleInput('lastName')}
-            />
-          </div>
-        </div>
-        <div className="user-edit-username">
-          <div className="user-edit-label">Username</div>
+  return (
+    <div className="user-edit-container">
+      <div className="user-edit-header">Edit Profile</div>
+      <div className="user-edit-subheader">People visiting your profile will see the following info</div>
+      <div className="user-edit-surnames">
+        <div className="user-edit-firstame">
+          <div className="user-edit-label">First name</div>
           <input
           type="text"
-          value={this.state.username}
-          onChange={this.handleInput('username')}
+          value={firstName}
+          placeholder="Ex. Jo"
+          onChange={handleInput('firstName')}
           />
         </div>
-        <div onClick={this.handleSubmit} className="delete-btn done">Done</div>
+        <div className="user-edit-lastname">
+          <div className="user-edit-label">Last name</div>
+          <input
+          type="text"
+          value={lastName}
+          placeholder="Ex. Smith"
+          onChange={handleInput('lastName')}
+          />
+        </div>
       </div>
-    )
-  }
-}
+      <div className="user-edit-username">
+        <div className="user-edit-label">Username</div>
+        <input
+        type="text"
+        value={username}
+        onChange={handleInput('username')}
+        />
+      </div>
+      <div onClick={handleSubmit} className="delete-btn done">Done</div>
+    </div>
+  );
+};
 
 export default UserEdit;
