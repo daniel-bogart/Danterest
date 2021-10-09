@@ -1,5 +1,4 @@
 import React, {useState, useEffect } from 'react';
-import { fetchAllBoards } from '../../actions/board_actions';
 import BoardIndexItem from "./board_index_item";
 
 const BoardIndex = (props) => {

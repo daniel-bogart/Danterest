@@ -2,9 +2,8 @@ import BoardIndex from "./board_index";
 import { fetchAllBoards } from "../../actions/board_actions";
 import { connect } from "react-redux";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    // user: ownProps.user,
     boards: Object.values(state.entities.boards),
     session: state.session.id
   };
