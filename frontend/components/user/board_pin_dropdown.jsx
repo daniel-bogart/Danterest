@@ -28,10 +28,8 @@ class BoardPinDropdown extends React.Component {
     setTimeout(() => {
       if (showMenu) {
         window.addEventListener("click", this.closeMenu);
-        console.log("ADD")
       } else {
         window.removeEventListener("click", this.closeMenu);
-        console.log("REMOVE")
       }
     }, 0);
   }
