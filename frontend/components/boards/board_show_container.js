@@ -1,4 +1,4 @@
-import BoardShow from "./board_show";
+import NewBoardShow from "./new_board_show";
 import { fetchBoard, deleteBoard, fetchAllBoards } from "../../actions/board_actions";
 import { fetchAllPins } from "../../actions/pin_actions";
 import { connect } from "react-redux";
@@ -29,4 +29,4 @@ export default withRouter(connect(mapStateToProps, {
   fetchBoard,
   deleteBoard,
   fetchPinsOnBoard
-})(BoardShow));
+})(NewBoardShow));
