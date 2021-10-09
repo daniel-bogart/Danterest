@@ -26,6 +26,12 @@
   border-radius: 24px;
 }
 
-.showResults {
+.show-results {
   z-index: 10;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.show-results-wrap {
+  color: black;
 }

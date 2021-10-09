@@ -27,6 +27,9 @@ const NavBar = (props) => {
     } else if (searchTag !== undefined) {
       searchPins();
     }
+    if (newSearch) {
+      handleUpdate(debouncedSearchTag);
+    }
   }, [props.pins, debouncedSearchTag]);
 
   const changeSearchStatus = () => {
@@ -34,6 +37,14 @@ const NavBar = (props) => {
       setSearchbarOpen(false);
     } else {
       setSearchbarOpen(true);
+    }
+  }
+
+  const handleUpdate = (value) => {
+    if (value) {
+      props.history.push(`/search/${value}`);
+    } else if (value === '') {
+      props.history.push("/browse");
     }
   }
 
@@ -67,8 +78,7 @@ const NavBar = (props) => {
 
   const searchPins = () => {
 
-
-    const searchResults = props.pins.filter(pin => 
+    const searchResults = Object.values(props.pins).filter(pin => 
       pin.title.toLowerCase().includes(searchTag.toLowerCase())
     );
 
@@ -107,8 +117,8 @@ const NavBar = (props) => {
     };
   };
 
-  (Object.values(props.pins)[0]) !== undefined ? 
-  console.log("THE PINS", Object.values(props.pins)[0].title)
+  (Object.values(props.pins)) !== undefined ? 
+  console.log("THE PINS", Object.values(props.pins))
   : null;
 
 
@@ -163,8 +173,10 @@ const NavBar = (props) => {
         {searchBar}
         {display}
       </header>
-      <div className='showResults'>
-      {showResults}
+      <div className="show-results-wrap">
+        <div className='show-results'>
+          {showResults}
+        </div>
       </div>
     </nav>
   )
