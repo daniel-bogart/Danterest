@@ -1,50 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-class BoardCreate extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: ""
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+const BoardCreate = (props) => {
+  let [title, setTitle] = useState("");
 
-  async handleSubmit(e) {
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    await this.props.createNewBoard({board: {title: this.state.title}}, this.props.userId);
-    this.props.closeModal();
-    // this.props.createNewBoard(this.state.title).then(this.props.closeModal());
+    await props.createNewBoard({board: {title: title}}, props.userId);
+    props.closeModal();
 
   }
 
-  handleInput(type) {
+  const handleInput = (type) => {
     return (e) => {
-      this.setState({[type]: e.target.value})
+      setTitle(e.target.value);
     };
   }
 
-  render() {
 
-    return (
-      <div className="board-create-container">
-        <div>Create Board</div>
-        <div className="board-create-input">
-          <h6>Name</h6>
-          <input
-          type="text"
-          value={this.state.title}
-          placeholder='Like "Places to Go" or "Recipies to Make"'
-          onChange={this.handleInput('title')}
-          />
-        </div>
-        <div className="final-board-create-btn-container">
-          <div onClick={this.handleSubmit} className="final-board-create-btn">Create</div>
-        </div>
+  return (
+    <div className="board-create-container">
+      <div>Create Board</div>
+      <div className="board-create-input">
+        <h6>Name</h6>
+        <input
+        type="text"
+        value={title}
+        placeholder='Like "Places to Go" or "Recipies to Make"'
+        onChange={handleInput('title')}
+        />
       </div>
-    )
-  }
-}
+      <div className="final-board-create-btn-container">
+        <div onClick={handleSubmit} className="final-board-create-btn">Create</div>
+      </div>
+    </div>
+  );
+
+};
 
 export default BoardCreate;
