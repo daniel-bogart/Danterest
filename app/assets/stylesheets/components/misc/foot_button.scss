@@ -7,7 +7,8 @@
   text-decoration: none;
   color: black;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  margin-bottom: 52px;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 .footer-button:hover {
@@ -17,15 +18,22 @@
 .footer-container {
   display: flex;
   justify-content: flex-end;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
   z-index: 9;
   margin-right: 28px;
+  // position: absolute;
 }
+// height: 64vh;
+// width: 220px;
+// position: absolute;
+// bottom: 20%;
+// left: 8%;
+// overflow-y: auto;
 
 #total-footer {
   position: -webkit-sticky;
   position: sticky;
-  bottom: 0px;
+  bottom: 40px;
+  // opacity: 100%;
+  // height: 0vh;
+  // display: block;
 }

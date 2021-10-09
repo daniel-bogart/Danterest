@@ -31,8 +31,7 @@ const App = () => (
       <Redirect to="/"/>
     </Switch>
     <footer id="total-footer">
-      <Route path="/" component={FooterButton}/>
-      {/* <Route path="/" component={NavbarContainer}></Route> */}
+      <ProtectedRoute path="/" component={FooterButton}/>
     </footer>
   </div>
 );
