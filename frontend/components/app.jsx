@@ -9,9 +9,7 @@ import PinIndexContainer from "./pins/pin_index_container";
 import PinShowContainer from "./pins/pin_show_container";
 import UserProfileContainer from "./user/user_profile_container";
 import BoardShowContainer from "./boards/board_show_container";
-import SplashContainer from "./splash/splash_container";
 import PinCreateContainer from "./pins/pin_create_container";
-// import FooterButtonContainer from "./misc/footer_buttons_container";
 import FooterButton from "./misc/footer_buttons";
 
 const App = () => (
