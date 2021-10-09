@@ -1,52 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 
-class BIIDropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      savedPin: false
-    }
-    this.handleClick = this.handleClick.bind(this);
-  };
+const BIIDropdown = (props) => {
 
-  // componentDidUpdate() {
-  //   const {savePin} = this.state;
-  //   if (savePin === true) {
-  //     this.props.fetchAllBoards(this.props.userId);
-  //     this.setState({savedPin: false})
-  //   };
-  // };
 
-  componentDidMount() {
-    this.props.fetchAllBoards(this.props.userId);
-  }
+  useEffect(() => {
+    props.fetchAllBoards(props.userId)
+  }, [])
 
-  handleClick() {
-    const currentPinId = this.props.pin.id;
+  const handleClick = () => {
+    const currentPinId = props.pin.id;
     let saved = false
-    {this.props.board.pins.map((pin) => {
+    {props.board.pins.map((pin) => {
       if (currentPinId === pin.id) {
         saved = true
       }
     })}
     if (saved === false) {
-      this.props.savePin({board_id: this.props.board.id, pin_id: this.props.pin.id});
-      this.props.openModal('saved-pin');
-      this.setState({savedPin: true})
+      props.savePin({board_id: props.board.id, pin_id: props.pin.id});
+      props.openModal('saved-pin');
     } else {
-      this.props.deletePinOnBoard({pin_id: this.props.pin.id, board_id: this.props.board.id})
-      this.props.openModal('already-saved-pin')
+      props.deletePinOnBoard({pin_id: props.pin.id, board_id: props.board.id})
+      props.openModal('already-saved-pin')
     }
   }
 
 
-  render() {
-    return (
-        <div onClick={() => this.handleClick()} className="bii-dropdown">
-          <h1 className="board-title">{this.props.board.title}</h1>
-        </div>
-    )
-  }
+
+  return (
+    <div onClick={() => handleClick()} className="bii-dropdown">
+      <h1 className="board-title">{props.board.title}</h1>
+    </div>
+  )
+  
 };
 
 export default BIIDropdown;
