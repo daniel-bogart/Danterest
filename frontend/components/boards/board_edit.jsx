@@ -1,35 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import BoardDelete from './board_delete_container';
 
-class BoardEdit extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: `${this.props.board.title}`,
-      description: `${this.props.board.description ||= ""}`,
-      newModal: 'false'
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+const BoardEdit = (props) => {
 
-  async handleSubmit(e) {
+    let [title, setTitle] = useState(`${props.board.title}`);
+    let [description, setDescription] = useState(`${props.board.description ||= ""}`);
+  
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    await this.props.editBoard({title: this.state.title, id: this.props.boardId}, this.props.userId);
-    this.props.editBoard({description: this.state.description, id: this.props.boardId}, this.props.userId);
-    this.props.closeModal();
-  }
+    await props.editBoard({title: title, id: props.boardId}, props.userId);
+    props.editBoard({description: description, id: props.boardId}, props.userId);
+    props.closeModal();
+  };
 
 
 
-  handleInput(type) {
+  const handleInput = (type) => {
     return (e) => {
-      this.setState({[type]: e.target.value})
+      if (type === 'title') {
+        setTitle(e.target.value)
+      } else {
+        setDescription(e.target.value)
+      };
     };
-  }
+  };
 
-  render() {
+
     return (
       <div id="board-edit-container" className="board-edit-container-display">
         <div>Edit your board</div>
@@ -37,23 +35,23 @@ class BoardEdit extends React.Component {
           <h6>Name</h6>
           <input
           type="text"
-          value={this.state.title}
+          value={title}
           placeholder='Like "Places to Go" or "Recipes to Make"'
-          onChange={this.handleInput('title')}
+          onChange={handleInput('title')}
           maxLength="50"
           />
           <h6>Description</h6>
           <input
           type="text"
-          value={this.state.description}
+          value={description}
           placeholder="What's your board about?"
-          onChange={this.handleInput('description')}
+          onChange={handleInput('description')}
           maxLength="500"
           />
         </div>
         <div className="final-board-edit-btn-container">
-          <div onClick={this.handleSubmit} className="final-board-edit-btn">Done</div>
-          <div className="delete-button-box" onClick={() => this.props.openModal('delete-board')}>
+          <div onClick={handleSubmit} className="final-board-edit-btn">Done</div>
+          <div className="delete-button-box" onClick={() => props.openModal('delete-board')}>
             <div className="edit-board-delete-btn">Delete board</div>
               <div className="delete-button-text">
                 <div>Delete this board and all its Pins forever.</div>
@@ -62,8 +60,7 @@ class BoardEdit extends React.Component {
           </div>
         </div>
       </div>
-    )
-  }
-}
+    );
+};
 
 export default BoardEdit;
