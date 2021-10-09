@@ -28,7 +28,7 @@ const NavBar = (props) => {
     </div>
   );
   const searchBar = props.currentUser ? (
-    <div className="search-bar">
+    <div className="search-bar" onClick={() => openModal('search-bar')}>
       <FaSearch  size={18} id="search-icon" /> Search
     </div>
   ) : (

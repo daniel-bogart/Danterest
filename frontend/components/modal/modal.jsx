@@ -13,6 +13,7 @@ import AlreadySaved from '../misc/pin_saved_modals/already_saved';
 import PinEditContainer from "../pins/pin_edit_container";
 import PinDeleteContainer from '../pins/pin_delete_container';
 import { NavLink } from 'react-router-dom';
+import SearchContainer from "../navbar/search_bar/search_container";
 
 function Modal({modal, closeModal, currentUserId}) {
   if (!modal) {
@@ -52,6 +53,9 @@ function Modal({modal, closeModal, currentUserId}) {
       break;
     case 'delete-pin':
       component = <PinDeleteContainer/>;
+      break;
+    case 'search-bar':
+      component = <SearchContainer/>;
       break;
     default:
       return null;

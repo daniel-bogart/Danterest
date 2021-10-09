@@ -1,0 +1,29 @@
+.search-container {
+  // width: 81vw;
+  // height: 80vh;
+  // position: absolute;
+  // top: -110px;
+  // left: -54px;
+}
+
+
+.search-proper {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  background: rgb(239, 239, 239);
+  border-radius: 24px;
+  padding: 0px 16px;
+  height: 52px;
+  margin: 8px;
+  position: relative;
+  top: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  color: grey;
+}
+
+.search-proper:focus {
+  border-radius: 24px;
+}
