@@ -1,11 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaGithub, FaPinterest, FaUserCircle, FaLinkedin } from 'react-icons/fa';
 import NavDropdown from './dropdown/nav_dropdown';
 import { FaSearch } from 'react-icons/fa';
+import useDebounce from '../../utils/debounce';
 
 
 const NavBar = (props) => {
+
+  const [searchTag, setSearchTag] = useState('');
+  const [newSearch, setNewSeach] = useState(false);
+  const [searchbarOpen, setSearchbarOpen] = useState(true);
+  const myRef = React.createRef();
+  const [pins, setPins] = useState(<p>No Results</p>);
+  const debouncedSearchTag = useDebounce(searchTag, 500);
+  const pinRef = useRef();
+
+  useEffect(async () => {
+    if (searchTag === '' && !newSearch) {
+      const newSearchTag = props.match.params.searchTag;
+      setSearchTag(newSearchTag);
+      myRef.current.focus();
+      await props.fetchAllPins();
+    } else if (searchTerm.length > 0) {
+      searchPins();
+    }
+  }, [props.pins, debouncedSearchTag]);
+
+  const changeSearchStatus = () => {
+    if (searchbarOpen) {
+      setSearchbarOpen(false);
+    } else {
+      setSearchbarOpen(true);
+    }
+  }
 
   const { openModal } = props;
   const displayLogo = props.currentUser ? (
@@ -27,13 +55,32 @@ const NavBar = (props) => {
       </Link>
     </div>
   );
+
+  const handleInput = () => {
+    return (e) => {
+      setSearchTag(e.target.value);
+      setNewSeach(true);
+    };
+  };
+
   const searchBar = props.currentUser ? (
-    <div className="search-bar" onClick={() => openModal('search-bar')}>
-      <FaSearch  size={18} id="search-icon" /> Search
+    <div className="search-wrapper">
+      <FaSearch className="fa-search" size={20}/>
+      <p onClick={() => changeSearchStatus()}></p>
+      <input
+        className="search-proper"
+        ref={myRef}
+        type="text"
+        placeholder='Search'
+        value={searchTag}
+        onChange={handleInput()}
+      />
+      <p onClick={() => changeSearchStatus()}></p>
     </div>
   ) : (
     null
   );
+
   const display = props.currentUser ? (
     <div className="nav-greeting">
       <a href="https://github.com/daniel-bogart" target="_blank"
