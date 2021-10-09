@@ -1,7 +1,6 @@
 .search-bar {
-  display: flex;
+  // display: flex;
   flex: 1;
-  flex-direction: row;
   align-items: center;
   background: rgb(239, 239, 239);
   border-radius: 24px;
@@ -20,9 +19,11 @@
 }
 
 .fa-search {
-  position: absolute;
-  top: 31px;
-  left: 1842px;
+  // position: relative;
+  // top: 31px;
+  // left: 1664px;
+  display: flex;
+  justify-content: flex-end;
   z-index: 10;
   color: grey;
 }

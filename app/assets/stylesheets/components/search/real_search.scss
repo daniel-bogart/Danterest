@@ -1,12 +1,14 @@
 .search-wrapper {
   flex: 1;
   margin-right: 24px;
+  margin-left: 16px;
+  z-index: 10
 }
 
 .search-proper {
-  display: flex;
+  // display: flex;
   flex: 1;
-  flex-direction: row;
+  // flex-direction: row;
   align-items: center;
   background: rgb(239, 239, 239);
   border-radius: 24px;
@@ -22,4 +24,8 @@
 
 .search-proper:focus {
   border-radius: 24px;
+}
+
+.showResults {
+  z-index: 10;
 }
