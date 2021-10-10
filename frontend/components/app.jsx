@@ -17,10 +17,10 @@ const App = () => (
   <div>
     <Modal />
     <header id="total-header">
-      {/* <Switch> */}
-        {/* <Route path="/search/:searchTag" component={NavbarContainer}></Route> */}
-      <Route path="/" component={NavbarContainer}></Route>
-      {/* </Switch> */}
+      <Switch>
+        <Route path="/search/:searchTag" component={NavbarContainer}></Route>
+        <Route path="/" component={NavbarContainer}></Route>
+      </Switch>
     </header>
     <Switch>
       <ProtectedRoute exact path="/users/:userId/boards/:boardId" component={BoardShowContainer} />
@@ -31,7 +31,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SignupContainer}/>
       <AuthRoute path="/login" component={LoginContainer}/>
       <Redirect to="/"/>
-      <ProtectedRoute path="/search/:searchTag" component={DummySearch} />
+      {/* <ProtectedRoute path="/search/:searchTag" component={DummySearch} /> */}
     </Switch>
     <footer id="total-footer">
       <ProtectedRoute path="/" component={FooterButton}/>

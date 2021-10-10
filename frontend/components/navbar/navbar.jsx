@@ -64,7 +64,6 @@ const NavBar = (props) => {
 
   const handleInput = () => {
     return (e) => {
-      console.log("EEEEEEEEE", e.currentTarget.value)
       setSearchTag(e.target.value);
       setNewSearch(true);
       setTimeout(() => {
