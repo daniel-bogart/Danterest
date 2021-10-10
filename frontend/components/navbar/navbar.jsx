@@ -9,7 +9,7 @@ import PinIndexItem from '../pins/pin_index_item';
 const NavBar = (props) => {
 
   const [searchTag, setSearchTag] = useState('');
-  const [newSearch, setNewSeach] = useState(false);
+  const [newSearch, setNewSearch] = useState(false);
   const myRef = React.createRef();
   const [pins, setPins] = useState([]);
   const debouncedSearchTag = useDebounce(searchTag, 500);
@@ -37,6 +37,7 @@ const NavBar = (props) => {
     } else if (value === '') {
       props.history.push("/");
       setPins([]);
+      setNewSearch(false);
     }
   }
 
@@ -65,8 +66,15 @@ const NavBar = (props) => {
     return (e) => {
       console.log("EEEEEEEEE", e.currentTarget.value)
       setSearchTag(e.target.value);
-      setNewSeach(true);
+      setNewSearch(true);
+      setTimeout(() => {
+        setNewSearch(false)
+      }, 501);
     };
+  };
+
+  const handleClick = () => {
+    setSearchTag('');
   };
 
   const searchPins = () => {
@@ -80,7 +88,7 @@ const NavBar = (props) => {
     searchResults.forEach((pin) => {
 
       newPins.push(
-        <div className="pin-search-item" key={pin.id}>
+        <div className="pin-search-item" onClick={() => handleClick()} key={pin.id}>
           <PinIndexItem className="index-pin" pin={pin}/>
           <div className="pin-info-box">
             <div className="pin-title">{pin.title}</div>
@@ -105,8 +113,6 @@ const NavBar = (props) => {
       {pins}
     </div>
   );
-
-  console.log("SEARCH TAG", searchTag);
 
   const searchBar = props.currentUser ? (
     <div className="search-wrapper">

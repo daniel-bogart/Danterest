@@ -23,7 +23,6 @@ const App = () => (
       {/* </Switch> */}
     </header>
     <Switch>
-      <ProtectedRoute path="/search/:searchTag" component={DummySearch} />
       <ProtectedRoute exact path="/users/:userId/boards/:boardId" component={BoardShowContainer} />
       <ProtectedRoute path="/users/pin-builder" component={PinCreateContainer} />
       <Route exact path="/" component={PinIndexContainer}/>
@@ -32,6 +31,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SignupContainer}/>
       <AuthRoute path="/login" component={LoginContainer}/>
       <Redirect to="/"/>
+      <ProtectedRoute path="/search/:searchTag" component={DummySearch} />
     </Switch>
     <footer id="total-footer">
       <ProtectedRoute path="/" component={FooterButton}/>

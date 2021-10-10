@@ -27,7 +27,7 @@
 }
 
 .show-results {
-  z-index: 10;
+  z-index: 5;
   flex-wrap: wrap;
   justify-content: center;
   margin-right: 260px;
@@ -36,11 +36,25 @@
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   padding: 24px;
+
+  column-count: 8;
+  column-gap: 0.5em;
+  box-sizing: border-box;
+  column-width: 272px;
+}
+
+@media only screen and (max-width: 1201px) {
+  .show-results {
+    column-count: 4;
+    column-gap: 0.3em;
+    box-sizing: border-box;
+    column-width: 272px;
+  }
 }
 
 .show-results-wrap {
   color: black;
-  z-index: 10;
+  z-index: 5;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
