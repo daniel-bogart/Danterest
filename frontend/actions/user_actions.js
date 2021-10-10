@@ -19,8 +19,11 @@ export const fetchUser = userId => dispatch => UserAPIUtils.fetchUser(userId)
   .then(usersId => dispatch(receiveUser(usersId)));
 
 
-export const updateUser = (user, userId) => dispatch => UserAPIUtils.updateUser(user, userId)
-  .then(user => dispatch(receiveCurrentUser(user)));
+export const updateUser = (user, userId) => dispatch => {
+  return (
+    UserAPIUtils.updateUser(user, userId)
+  .then(user => dispatch(receiveCurrentUser(user)))
+  )};
 
 export const fetchAllUsers = () => dispatch => UserAPIUtils.fetchAllUsers()
   .then(users => dispatch(receiveAllUsers(users)));

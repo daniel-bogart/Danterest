@@ -20,6 +20,7 @@ const UserProfile = (props) => {
     } else {
       const firstName = props.user.first_name ||= ""
       const lastName = props.user.last_name ||= ""
+      const pronouns = props.user.pronouns ||= ""
       const {user, currentUser} = props
 
       const editUser = (currentUser === user) ? (
@@ -49,6 +50,7 @@ const UserProfile = (props) => {
             <div className='profile-info'>
               <div className="profile-picture"><MdAccountCircle size={100}/></div>
               <div className="profile-surnames">{firstName} {lastName}</div>
+              <div className="profile-name">{pronouns}</div>
               <h1 className="profile-name">@{props.user.username}</h1>
             </div>
           </div>

@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = selected_user
     if @user
-      @user.update({username: params[:user][:username], first_name: params[:user][:firstName], last_name: params[:user][:lastName]})
+      @user.update({username: params[:user][:username], first_name: params[:user][:firstName], last_name: params[:user][:lastName], pronouns: params[:user][:pronouns]})
   
       render :show
     else

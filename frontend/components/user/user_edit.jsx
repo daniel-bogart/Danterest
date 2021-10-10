@@ -7,13 +7,15 @@ const UserEdit = (props) => {
   let [username, setUsername] = useState(`${props.currentUser.username}`);
   let [firstName, setFirstName] = useState(`${props.currentUser.first_name ||= ""}`);
   let [lastName, setLastName] = useState(`${props.currentUser.last_name ||= ""}`);
+  let [pronouns, setPronouns] = useState(`${props.currentUser.pronouns ||= ""}`)
 
   async function handleSubmit(e) {
     e.preventDefault();
     const user = {
       username,
       firstName,
-      lastName
+      lastName,
+      pronouns
     }
     await props.updateUser(user, props.userId);
     props.closeModal();
@@ -27,8 +29,10 @@ const UserEdit = (props) => {
         setUsername(e.target.value);
       } else if (type === 'firstName') {
         setFirstName(e.target.value) ;
-      } else {
+      } else if (type === 'lastName') {
         setLastName(e.target.value);
+      } else {
+        setPronouns(e.target.value);
       };
     };
   };
@@ -64,6 +68,14 @@ const UserEdit = (props) => {
         type="text"
         value={username}
         onChange={handleInput('username')}
+        />
+      </div>
+      <div className="user-edit-username">
+        <div className="user-edit-label">Pronouns</div>
+        <input
+        type="text"
+        value={pronouns}
+        onChange={handleInput('pronouns')}
         />
       </div>
       <div onClick={handleSubmit} className="delete-btn done">Done</div>
