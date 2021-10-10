@@ -11,13 +11,16 @@ import UserProfileContainer from "./user/user_profile_container";
 import BoardShowContainer from "./boards/board_show_container";
 import PinCreateContainer from "./pins/pin_create_container";
 import FooterButton from "./misc/footer_buttons";
-import DummySearch from "./navbar/search_bar/dummy_search";
+import DummySearch from "./navbar/dummy_search";
 
 const App = () => (
   <div>
     <Modal />
     <header id="total-header">
+      {/* <Switch> */}
+        {/* <Route path="/search/:searchTag" component={NavbarContainer}></Route> */}
       <Route path="/" component={NavbarContainer}></Route>
+      {/* </Switch> */}
     </header>
     <Switch>
       <ProtectedRoute path="/search/:searchTag" component={DummySearch} />

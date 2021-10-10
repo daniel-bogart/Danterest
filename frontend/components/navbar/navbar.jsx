@@ -11,12 +11,10 @@ const NavBar = (props) => {
   const [searchTag, setSearchTag] = useState('');
   const [newSearch, setNewSeach] = useState(false);
   const myRef = React.createRef();
-  const [pins, setPins] = useState(<p>No Results</p>);
+  const [pins, setPins] = useState([]);
   const debouncedSearchTag = useDebounce(searchTag, 500);
   const pinRef = useRef();
   pinRef.current = pins;
-
-  console.log("PIIIIINS", pins);
 
   useEffect(async () => {
     if (searchTag === '' && !newSearch) {
@@ -38,6 +36,7 @@ const NavBar = (props) => {
       props.history.push(`/search/${value}`);
     } else if (value === '') {
       props.history.push("/");
+      setPins([]);
     }
   }
 
@@ -75,38 +74,21 @@ const NavBar = (props) => {
     const searchResults = Object.values(props.pins).filter(pin => 
       pin.title.toLowerCase().includes(searchTag.toLowerCase())
     );
-    console.log("SEARCH!!!", searchResults)
 
     const newPins = [];
-    console.log("BOAS", newPins)
 
     searchResults.forEach((pin) => {
-      const authorId = pin.author_id;
-      // const author = props.users[authorId];
-      // const displayName = ((author.first_name) && (author.last_name)) ? (
-      //   `${author.first_name} ${author.last_name}`
-      // ) : (
-      //   author.username 
-      // );
+
       newPins.push(
         <div className="pin-search-item" key={pin.id}>
           <PinIndexItem className="index-pin" pin={pin}/>
           <div className="pin-info-box">
             <div className="pin-title">{pin.title}</div>
-            <div className="pin-index-author">
-              {/* <NavLink className="author-index-nav" to={`/users/${authorId}`}>
-                <MdAccountCircle className="pin-index-author-photo" size={40}/>
-              </NavLink> */}
-              {/* <NavLink className="author-index-nav" to={`/users/${authorId}`}>
-                <div className="pin-index-author-name">{displayName}</div>
-              </NavLink> */}
-            </div>
           </div>
         </div>
       )
     });
 
-    console.log("BOOOOOOP", newPins)
 
     if (newPins.length > 0) {
       setPins(newPins);
@@ -116,11 +98,15 @@ const NavBar = (props) => {
   };
 
 
-  const showResults = searchTag !== undefined ? (
-    pins
-  ) : (
+  const showResults = (searchTag === '') || (searchTag === undefined) ? (
     null
+  ) : (
+    <div className='show-results'>
+      {pins}
+    </div>
   );
+
+  console.log("SEARCH TAG", searchTag);
 
   const searchBar = props.currentUser ? (
     <div className="search-wrapper">
@@ -168,9 +154,7 @@ const NavBar = (props) => {
         {display}
       </header>
       <div className="show-results-wrap">
-        <div className='show-results'>
-          {showResults}
-        </div>
+        {showResults}
       </div>
     </nav>
   )

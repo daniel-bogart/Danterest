@@ -30,6 +30,12 @@
   z-index: 10;
   flex-wrap: wrap;
   justify-content: center;
+  margin-right: 273px;
+  margin-left: 197px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  padding: 24px;
 }
 
 .show-results-wrap {
@@ -37,4 +43,13 @@
   z-index: 10;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.pin-search-item {
+  height: auto;
+  width: 276px;
+  border-radius: 10%;
+  transform: translateX(0px) translateY(0px);
+  page-break-inside: avoid;
+  margin: 0 0 1em;
 }
