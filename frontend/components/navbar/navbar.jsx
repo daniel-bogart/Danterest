@@ -80,8 +80,6 @@ const NavBar = (props) => {
     setSearchTag('');
   };
 
-  console.log("USER ARRAY", Object.values(props.users));
-
 
   const searchPins = () => {
 
