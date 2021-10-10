@@ -12,7 +12,9 @@ const NavBar = (props) => {
   const [newSearch, setNewSearch] = useState(false);
   const myRef = React.createRef();
   const [pins, setPins] = useState([]);
+  const [users, setUsers] = useState([]);
   const [resultHeader, setResultHeader] = useState('');
+  const [userResultHeader, setUserResultHeader] = useState('');
   const debouncedSearchTag = useDebounce(searchTag, 500);
   const pinRef = useRef();
   pinRef.current = pins;
@@ -26,6 +28,7 @@ const NavBar = (props) => {
       await props.fetchAllPins();
     } else if (searchTag.length > 0) {
       searchPins();
+      searchUsers();
     }
     if (newSearch) {
       handleUpdate(debouncedSearchTag);
@@ -77,6 +80,8 @@ const NavBar = (props) => {
     setSearchTag('');
   };
 
+  console.log("USER ARRAY", Object.values(props.users));
+
 
   const searchPins = () => {
 
@@ -108,13 +113,48 @@ const NavBar = (props) => {
     };
   };
 
+  const searchUsers = () => {
+
+    const userSearchResults = Object.values(props.users).filter(user =>
+      user.username.toLowerCase().includes(searchTag.toLowerCase())
+    );
+
+    const newUsers = []
+
+    userSearchResults.forEach((user) => {
+      const displayName = user.first_name && user.last_name ? 
+        `${user.first_name} ${user.last_name}` : user.username
+      newUsers.push(
+        <div className="pin-search-item" onClick={() => handleClick()} key={user.id}>
+          <NavLink className="author-index-nav" to={`/users/${user.id}`}>
+            <div className="search-user-name">{displayName}</div>
+          </NavLink>
+        </div>
+      )
+    });
+
+    if (newUsers.length > 0) {
+      setUsers(newUsers);
+      setUserResultHeader(<h1 className="pin-results-header">User results</h1>)
+    } else {
+      setUsers([]);
+      setUserResultHeader(<h1 className="pin-results-header">No user results</h1>)
+    };
+  };
+
 
   const showResults = (searchTag === '') || (searchTag === undefined) ? (
     null
   ) : (
     <div className='show-results'>
-      {resultHeader}
-      {pins}
+      <div className="user-search-box">
+        {userResultHeader}
+        <div className="user-search-index">{users}</div>
+      </div>
+      <div className="pin-search-box">
+        {resultHeader}
+        <div className="pin-search-index">{pins}</div>
+      </div>
     </div>
   );
 
