@@ -11,6 +11,7 @@ import UserProfileContainer from "./user/user_profile_container";
 import BoardShowContainer from "./boards/board_show_container";
 import PinCreateContainer from "./pins/pin_create_container";
 import FooterButton from "./misc/footer_buttons";
+import DummySearch from "./navbar/search_bar/dummy_search";
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
       <Route path="/" component={NavbarContainer}></Route>
     </header>
     <Switch>
+      <ProtectedRoute path="/search/:searchTag" component={DummySearch} />
       <ProtectedRoute exact path="/users/:userId/boards/:boardId" component={BoardShowContainer} />
       <ProtectedRoute path="/users/pin-builder" component={PinCreateContainer} />
       <Route exact path="/" component={PinIndexContainer}/>

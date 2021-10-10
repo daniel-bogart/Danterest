@@ -34,4 +34,7 @@
 
 .show-results-wrap {
   color: black;
+  z-index: 10;
+  flex-wrap: wrap;
+  justify-content: center;
 }
