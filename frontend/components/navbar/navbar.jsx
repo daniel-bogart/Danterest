@@ -12,6 +12,7 @@ const NavBar = (props) => {
   const [newSearch, setNewSearch] = useState(false);
   const myRef = React.createRef();
   const [pins, setPins] = useState([]);
+  const [resultHeader, setResultHeader] = useState('');
   const debouncedSearchTag = useDebounce(searchTag, 500);
   const pinRef = useRef();
   pinRef.current = pins;
@@ -76,6 +77,7 @@ const NavBar = (props) => {
     setSearchTag('');
   };
 
+
   const searchPins = () => {
 
     const searchResults = Object.values(props.pins).filter(pin => 
@@ -99,8 +101,10 @@ const NavBar = (props) => {
 
     if (newPins.length > 0) {
       setPins(newPins);
+      setResultHeader(<h1 className="pin-results-header">Pin results</h1>)
     } else {
-      setPins(<p>No Results</p>)
+      setPins([]);
+      setResultHeader(<h1 className="pin-results-header">No pin results</h1>)
     };
   };
 
@@ -109,6 +113,7 @@ const NavBar = (props) => {
     null
   ) : (
     <div className='show-results'>
+      {resultHeader}
       {pins}
     </div>
   );
