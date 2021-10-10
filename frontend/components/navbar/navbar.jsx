@@ -113,9 +113,13 @@ const NavBar = (props) => {
 
   const searchUsers = () => {
 
-    const userSearchResults = Object.values(props.users).filter(user =>
-      user.username.toLowerCase().includes(searchTag.toLowerCase())
-    );
+    const userSearchResults = Object.values(props.users).filter(user => {
+      const displayName = user.first_name && user.last_name ? 
+      `${user.first_name} ${user.last_name}` : user.username
+      return (
+        displayName.toLowerCase().includes(searchTag.toLowerCase())
+      )
+    });
 
     const newUsers = []
 
