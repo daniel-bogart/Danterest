@@ -30,8 +30,8 @@
   z-index: 10;
   flex-wrap: wrap;
   justify-content: center;
-  margin-right: 273px;
-  margin-left: 197px;
+  margin-right: 260px;
+  margin-left: 178px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
@@ -43,6 +43,8 @@
   z-index: 10;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
+  top: -28px;
 }
 
 .pin-search-item {
