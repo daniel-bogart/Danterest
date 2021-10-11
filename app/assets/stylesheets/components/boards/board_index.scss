@@ -9,10 +9,10 @@
   flex: wrap;
 }
 .index-board-box {
-  padding: 48px;
+  padding: 24px;
   display: flex;
-  flex-direction: flex-start;
-  flex: wrap;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
 .profile-info-box {
@@ -77,6 +77,7 @@
 
 .bii-link {
   text-decoration: none;
+  margin-top: 16px;
 }
 
 .board-pin-drop-menu-index > * {
