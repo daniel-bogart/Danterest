@@ -17,7 +17,7 @@ const BoardIndexItem = (props) => {
           </div>
         </div>
           <h1 className="board-title">{props.board.title}</h1>
-          <h1>{boardPins.length} Pins</h1>
+          <h1 className="bp-length">{boardPins.length} Pins</h1>
       </Link>
     )
 };
