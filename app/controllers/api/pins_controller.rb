@@ -17,8 +17,6 @@ class Api::PinsController < ApplicationController
     @pin = Pin.new(pin_params)
     @pin.author_id = current_user.id
       if @pin.save
-        # PinsOnBoard.create(params[:pin][:board_id], @pin.id)
-        # render :show
         render "/api/pins/show"
       else
         render json: @pin.errors.full_messages, status: 404

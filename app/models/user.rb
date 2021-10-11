@@ -23,6 +23,8 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_one_attached :photo
+
     has_many :boards,
     foreign_key: :user_id,
     class_name: :Board
