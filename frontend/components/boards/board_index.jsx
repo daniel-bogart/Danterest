@@ -8,9 +8,14 @@ const BoardIndex = (props) => {
     props.fetchAllBoards(props.user.id)
   }, []);
 
+
   return (
     <div className="index-board-box">
-      {props.boards.map((board) => <BoardIndexItem className="index-board" key={board.id} board={board}/>)}
+      {props.boards.map((board) => {
+        return (
+        <BoardIndexItem boardPins={board.pins} className="index-board" key={board.id} board={board}/>)}
+        )
+      }
     </div>
   )
 };

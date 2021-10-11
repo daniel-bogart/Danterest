@@ -1,7 +1,4 @@
-// .user-show-page {
-//   display: flex;
-//   justify-content: flex-start
-// }
+
 .user-sub-page {
   padding: 48px;
   display: block;
@@ -21,24 +18,16 @@
 }
 
 .profile-info {
-  // display: block;
-  // box-sizing: border-box;
   color: #111;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-// .profile-picture {
-//   color: rgb(44, 44, 44)
-// }
 
 .profile-name {
-  // display: flex;
-  // justify-content: center;
   font-size: 18px;
   margin: 4px;
-  // color: (69, 69, 69)
 }
 
 .profile-surnames {
@@ -48,20 +37,13 @@
 }
 
 .bii {
-  display: flex;
-  align-items: center;
-  border-radius: 24px;
-  padding: 16px 16px;
-  // background-color: rgb(17, 17, 17);
-  color: rgb(17, 17, 17);
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 700;
-  margin-left: 16px;
-  width: 100px;
-  height: 100px;
   text-decoration: none;
   transition: all .5s ease;
+  width: 241px;
+  height: 161px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .bii:hover {
@@ -78,6 +60,10 @@
 .bii-link {
   text-decoration: none;
   margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+  color: black;
 }
 
 .board-pin-drop-menu-index > * {
@@ -147,6 +133,41 @@
 .def-btn:hover {
   cursor: pointer;
   background: rgb(239, 239, 239);
+}
+
+.display-board-1 {
+  width: 160px;
+  height: 160px;
+}
+
+.display-board-3 {
+  display: flex;
+  flex-direction: column;
+  width: 80px;
+  height: 160px;
+  margin-left: 1px;
+}
+
+.top-bp-image, .bottom-bp-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  background-color: rgb(239, 239, 239);
+}
+.top-bp-image {
+      margin-bottom: 1px;
+      border-radius: 0px 20px 0px 0px;
+}
+.bottom-bp-image{
+  border-radius: 0px 0px 20px 0px;
+}
+
+.left-bp-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 20px 0px 0px 20px;
+  background-color: rgb(239, 239, 239);
 }
 
 

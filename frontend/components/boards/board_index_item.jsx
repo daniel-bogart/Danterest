@@ -3,17 +3,21 @@ import { Link } from 'react-router-dom';
 
 const BoardIndexItem = (props) => {
 
-    // const colors = ['#b28fec', '#6b924a', '#3250f3', '#f2e52d', '#d369ba', '#b0e2e7', '#d96516', '#0f9de3', '#850cf2', '#d09c13', '#81ed61', '#a1299f', '#2c51ab', '#ce1525', '#fcb38e', '#ca200e' ];
-    // const colors = ['#f80c12', '#ee1100', '#ff3311', '#ff4422', '#ff6644', '#ff9933', '#feae2d', '#ccbb33', '#d0c310', '#aacc22', '#69d025', '#22ccaa', '#12bdb9', '#11aabb', '#4444dd', '#3311bb', '#3b0cbd', '#442299'];
-    const colors = ['#d12723', '#f08238', '#f2c758','#26a8c9']
-    var randomColor = colors[Math.floor(Math.random() * colors.length)]
+    const boardPins = props.boardPins;
 
     return (
       <Link className="bii-link" to={`/users/${props.board.user_id}/boards/${props.board.id}`}>
-      {/* // <Link className="bii-link" to={`/users/${props.user_id}/boards/${props.board.id}`}> */}
-        <div className="bii" style={{background: `${randomColor}`}}>
-          <h1 className="board-title">{props.board.title}</h1>
+        <div className="bii">
+          <div className="display-board-1">
+            {boardPins[0] ? <img src={boardPins[0].photoUrl} className="left-bp-image" /> : <div className="left-bp-image"></div> }
+          </div>
+          <div className="display-board-3">
+            {boardPins[1] ? <img src={boardPins[1].photoUrl} className="top-bp-image" /> : <div className="top-bp-image"></div> }
+            {boardPins[2] ? <img src={boardPins[2].photoUrl} className="bottom-bp-image" /> : <div className="bottom-bp-image"></div> }       
+          </div>
         </div>
+          <h1 className="board-title">{props.board.title}</h1>
+          <h1>{boardPins.length} Pins</h1>
       </Link>
     )
 };
