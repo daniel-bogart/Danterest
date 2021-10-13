@@ -41,8 +41,9 @@ The user page is where one place where users can create pins and boards, as well
 ![User Page](app/assets/images/user_page.png)
 
 ## Featured Code:
-### Masonry
-As a full-stack clone of Pinterest, Masonry is absolutely a defining feature. Masonry can be tricky, considering that you need to auto adjust for screen size.
+### Masonry / Lazy Loading
+As a full-stack clone of Pinterest, Masonry is absolutely a defining feature. Masonry can be tricky, considering that you need to auto adjust for screen size. But, of course, since Pinterest has an extremely large number of pins, it becomes expensive and highly inefficient to load pins that are not on the screen. 
+Using intersectional observer, Danterest is able to detect whether or not an element is on the screen and load it only when it comes into view, shaving on expensive and unnecessary rendering.
 ```
 .masonry {
   column-count: 8;
@@ -79,8 +80,29 @@ As a full-stack clone of Pinterest, Masonry is absolutely a defining feature. Ma
 
 -----------------------------------------------
 function PinIndexItem(props) {
+  const supportsLazyLoading = useNativeLazyLoading()
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '0px 0px',
+    skip: supportsLazyLoading === true
+  })
+
+
   return (
-    <Link to={`/pins/${props.pin.id}`}><img className="pin-image" src={props.pin.photoUrl}/></Link>
+    <div
+      ref={ref}
+      data-inview={inView}
+    > {inView || supportsLazyLoading ? (
+        <Link to={`/pins/${props.pin.id}`}>
+          <img 
+            alt="pin-image"
+            className="pin-image" 
+            src={props.pin.photoUrl}
+          />
+        </Link>
+    ) : null}
+    </div>
   )
 }
 ```
