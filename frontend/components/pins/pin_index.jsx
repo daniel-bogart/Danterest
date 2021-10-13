@@ -32,7 +32,12 @@ const PinIndex = (props) => {
       );
       return (
         <li className="index-pin" key={pin.id}>
-          <PinIndexItem className="index-pin" pin={pin}/>
+          <PinIndexItem 
+            className="index-pin" 
+            pin={pin} 
+            authorId={authorId}
+            displayName={displayName}
+          />
           <div className="pin-info-box">
             <div className="pin-title">{pin.title}</div>
             <div className="pin-index-author">
