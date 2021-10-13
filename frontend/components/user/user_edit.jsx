@@ -7,7 +7,7 @@ const UserEdit = (props) => {
   let [username, setUsername] = useState(`${props.currentUser.username}`);
   let [firstName, setFirstName] = useState(`${props.currentUser.first_name ||= ""}`);
   let [lastName, setLastName] = useState(`${props.currentUser.last_name ||= ""}`);
-  let [pronouns, setPronouns] = useState(`${props.currentUser.pronouns ||= ""}`)
+  let [pronouns, setPronouns] = useState(`${props.currentUser.pronouns ||= ""}`);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -20,7 +20,6 @@ const UserEdit = (props) => {
     await props.updateUser(user, props.userId);
     props.closeModal();
   }
-
 
 
   const handleInput = (type) => {
@@ -42,6 +41,7 @@ const UserEdit = (props) => {
     <div className="user-edit-container">
       <div className="user-edit-header">Edit Profile</div>
       <div className="user-edit-subheader">People visiting your profile will see the following info</div>
+
       <div className="user-edit-surnames">
         <div className="user-edit-firstame">
           <div className="user-edit-label">First name</div>
