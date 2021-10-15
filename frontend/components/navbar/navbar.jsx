@@ -162,7 +162,6 @@ const NavBar = (props) => {
 
   const searchBar = props.currentUser ? (
     <div className="search-wrapper">
-      {/* <FaSearch className="fa-search" size={20}/> */}
       <p onClick={() => changeSearchStatus()}></p>
       <input
         className="search-proper"

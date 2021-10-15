@@ -100,7 +100,7 @@ const PinIndex = (props) => {
         <div className="masonry-wrap">
         {indexDisplay}
         </div>
-      </div>
+      </div> 
     );
   }
 };
