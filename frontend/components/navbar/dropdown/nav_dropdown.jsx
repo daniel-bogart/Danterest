@@ -35,16 +35,6 @@ class NavDropdown extends React.Component {
     }, 0);
   }
 
-  handleClick() {
-    if (this.state.expanded === 'false') {
-    document.getElementById("nav-dropdown-switch").className.baseVal = 'darken-dropdown';
-    this.setState({expanded: 'true'});
-    } else {
-      document.getElementById("nav-dropdown-switch").className.baseVal = 'nav-dropdown';
-      this.setState({expanded: 'false'});
-
-    }
-  }
 
   render() {
     return (
