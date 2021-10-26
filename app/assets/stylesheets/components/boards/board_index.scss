@@ -68,7 +68,6 @@
 
 .board-pin-drop-menu-index > * {
   padding: 8px;
-  // padding-right: 100px;
   margin: 4px;
   display: flex;
   flex: 1;
@@ -88,14 +87,6 @@
   z-index: inherit;
   background: white;
 }
-
-// .drop-create-pin-button {
-//   font-weight: bold;
-//   transition: all .35s ease;
-//   color: rgb(17, 17, 17);
-//   text-decoration: none;
-//   // padding: 8px;
-// }
 
 .pin-create-link {
   color: #111;
